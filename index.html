@@ -929,24 +929,42 @@
         </div>
       </div>
 
-      <!-- Right side: Submit & visual -->
+      <!-- Right side: Contact Form -->
       <div class="flex flex-col items-start lg:items-end z-10 pl-0 lg:pl-8 w-full">
-        <div
-          class="w-32 h-32 brutal-border flex flex-col items-center justify-center p-4 rotate-6 opacity-40 bg-bg hidden lg:flex shrink-0 mb-8">
-          <span class="material-symbols-outlined text-5xl">rocket_launch</span>
-          <span class="font-mono text-[10px] text-center mt-2 font-bold leading-tight">READY TO<br>SCALE?</span>
-        </div>
+        <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" class="w-full flex flex-col gap-4">
+          <input type="hidden" name="access_key" value="a0b85c5c-cc8e-4157-b3f2-57eee839dc50">
+          
+          <div id="contact-form-inner" class="flex flex-col gap-4 w-full">
+            <div class="flex flex-col gap-2 w-full">
+              <label class="font-mono text-xs font-bold uppercase text-ink/70">Name</label>
+              <input type="text" name="name" required placeholder="Your Name"
+                class="w-full brutal-border bg-bg px-4 py-3 font-mono text-sm text-ink placeholder:text-ink/40 focus:outline-none focus:ring-2 focus:ring-electric transition-shadow">
+            </div>
 
-        <div class="w-full mt-auto flex flex-col gap-4">
-          <a href="mailto:hello@kytestudios.in"
-            class="w-full bg-electric text-surface brutal-border shadow-brutal interactive-element px-8 py-5 font-mono font-bold uppercase flex items-center justify-center gap-3 hover:bg-ink transition-colors">
-            Send Email <span class="material-symbols-outlined">mail</span>
-          </a>
-          <a href="tel:+919355185187"
-            class="w-full bg-surface text-ink brutal-border shadow-brutal interactive-element px-8 py-5 font-mono font-bold uppercase flex items-center justify-center gap-3 hover:bg-tangerine transition-colors">
-            Call Now <span class="material-symbols-outlined">call</span>
-          </a>
-        </div>
+            <div class="flex flex-col gap-2 w-full">
+              <label class="font-mono text-xs font-bold uppercase text-ink/70">Email</label>
+              <input type="email" name="email" required placeholder="your@email.com"
+                class="w-full brutal-border bg-bg px-4 py-3 font-mono text-sm text-ink placeholder:text-ink/40 focus:outline-none focus:ring-2 focus:ring-electric transition-shadow">
+            </div>
+
+            <div class="flex flex-col gap-2 w-full">
+              <label class="font-mono text-xs font-bold uppercase text-ink/70">Message</label>
+              <textarea name="message" required placeholder="Tell us about your project..." rows="3"
+                class="w-full brutal-border bg-bg px-4 py-3 font-mono text-sm text-ink placeholder:text-ink/40 focus:outline-none focus:ring-2 focus:ring-electric transition-shadow resize-none"></textarea>
+            </div>
+
+            <button type="submit" id="contact-submit-btn"
+              class="w-full mt-2 bg-electric text-surface brutal-border shadow-brutal interactive-element px-8 py-4 font-mono font-bold uppercase flex items-center justify-center gap-3 hover:bg-ink transition-colors cursor-pointer">
+              <span>Send Message</span> <span class="material-symbols-outlined">send</span>
+            </button>
+          </div>
+
+          <div id="contact-success" class="hidden flex-col items-center justify-center gap-4 brutal-border bg-bg p-8 md:p-12 text-center h-full w-full">
+            <span class="material-symbols-outlined text-6xl text-tangerine">verified</span>
+            <div class="font-sans font-black text-3xl uppercase tracking-tighter mt-2">Received!</div>
+            <p class="font-mono text-sm">Thanks for reaching out.<br>We'll get back to you shortly.</p>
+          </div>
+        </form>
       </div>
     </div>
   </section>
@@ -1556,6 +1574,47 @@
             const cloneEl = magnifierContent.querySelector(`[data-magnify-id="${id}"]`);
             if (cloneEl) cloneEl.classList.remove('clone-hovered');
           }
+        });
+      });
+    }
+
+    // Web3Forms AJAX Submission
+    const web3ContactForm = document.getElementById('contact-form');
+    if (web3ContactForm) {
+      web3ContactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const submitBtn = document.getElementById('contact-submit-btn');
+        const originalContent = submitBtn.innerHTML;
+        submitBtn.innerHTML = '<span>Sending...</span> <span class="material-symbols-outlined animate-spin" style="animation: spin 1s linear infinite;">sync</span>';
+        
+        const formData = new FormData(web3ContactForm);
+        const object = Object.fromEntries(formData);
+        const json = JSON.stringify(object);
+        
+        fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: json
+        })
+        .then(async (response) => {
+          if (response.status == 200) {
+            document.getElementById('contact-form-inner').classList.add('hidden');
+            document.getElementById('contact-success').classList.remove('hidden');
+            document.getElementById('contact-success').classList.add('flex');
+          } else {
+            console.log(response);
+            submitBtn.innerHTML = originalContent;
+            alert("Something went wrong! Please try again.");
+          }
+        })
+        .catch(error => {
+          console.log(error);
+          submitBtn.innerHTML = originalContent;
+          alert("Something went wrong! Please try again.");
         });
       });
     }
