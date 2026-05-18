@@ -62,64 +62,21 @@
       color: #111111;
     }
 
-    .custom-cursor, .custom-cursor-follower {
-      display: none;
-    }
-
     @media (pointer: fine) {
-      body, a, button, .interactive-element, .cursor-pointer {
-        cursor: none !important;
+
+      body,
+      html {
+        cursor: url("data:image/svg+xml;charset=utf-8,%3Csvg width='28' height='28' viewBox='0 0 28 28' fill='%23FF5522' stroke='%23111111' stroke-width='2.5' stroke-linejoin='round' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2 2L24 10L14 14L10 24Z'/%3E%3C/svg%3E") 2 2, auto;
       }
 
-      .custom-cursor {
-        display: block;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 12px;
-        height: 12px;
-        background-color: #FF5522;
-        border-radius: 50%;
-        pointer-events: none;
-        z-index: 9999;
-      }
-
-      .custom-cursor-follower {
-        display: block;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 40px;
-        height: 40px;
-        border: 2px solid #0055FF;
-        border-radius: 50%;
-        pointer-events: none;
-        z-index: 9998;
-        transition: border-color 0.3s;
-        overflow: hidden;
-        background-color: transparent;
-      }
-
-      .custom-cursor-follower.hovering {
-        border-color: #FF5522;
-        border-width: 3px;
-        box-shadow: inset 0 0 15px rgba(0, 85, 255, 0.15), 0 10px 20px rgba(0,0,0,0.1);
-      }
-      
-      .magnifier-content {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        pointer-events: none;
-        transform-origin: 0 0;
-        background-color: #FAF9F6;
-        opacity: 0;
-        transition: opacity 0.3s;
-      }
-      
-      .custom-cursor-follower.hovering .magnifier-content {
-        opacity: 1;
+      a,
+      button,
+      .interactive-element,
+      .cursor-pointer,
+      input,
+      textarea,
+      select {
+        cursor: url("data:image/svg+xml;charset=utf-8,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='%23FF5522' stroke='%23111111' stroke-width='2.5' stroke-linejoin='round' xmlns='http://www.w3.org/2000/svg'%3E%3Cg transform='scale(1.15) translate(0, 0)'%3E%3Cpath d='M2 2L24 10L14 14L10 24Z'/%3E%3C/g%3E%3C/svg%3E") 2 2, pointer !important;
       }
     }
 
@@ -252,8 +209,6 @@
 </head>
 
 <body class="grid-flow selection:bg-electric selection:text-white">
-  <div class="custom-cursor"></div>
-  <div class="custom-cursor-follower"></div>
   <div class="noise-overlay"></div>
 
   <!-- Navbar -->
@@ -586,7 +541,7 @@
         class="bg-surface brutal-border shadow-brutal p-4 font-sans font-black text-4xl md:text-5xl uppercase tracking-tighter -rotate-1 inline-block">
         Featured Work
       </h2>
-      <span class="font-mono text-electric font-bold pb-2 hidden md:inline">See How We Drive Results</span>
+      <span class="font-mono text-electric font-bold pb-2 hidden md:inline"></span>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16">
@@ -776,7 +731,7 @@
               <div>
                 <h3 class="font-serif font-bold text-xl text-black uppercase">Full-Stack Dev</h3>
               </div>
-              <div class="text-3xl">⚙️</div>
+              <div class="text-3xl"></div>
             </div>
             <div class="flex flex-wrap gap-2">
               <span class="font-mono text-xs border border-black px-2 py-1 uppercase">Next.js</span>
@@ -797,7 +752,7 @@
               <div>
                 <h3 class="font-serif font-bold text-xl text-black uppercase">UI/UX Design</h3>
               </div>
-              <div class="text-3xl">🎨</div>
+              <div class="text-3xl"></div>
             </div>
             <div class="flex flex-wrap gap-2">
               <span class="font-mono text-xs border border-black px-2 py-1 uppercase">Figma</span>
@@ -818,7 +773,7 @@
               <div>
                 <h3 class="font-serif font-bold text-xl text-black uppercase">Performance</h3>
               </div>
-              <div class="text-3xl">⚡</div>
+              <div class="text-3xl"></div>
             </div>
             <div class="flex flex-wrap gap-2">
               <span class="font-mono text-xs border border-black px-2 py-1 uppercase">Lighthouse</span>
@@ -839,7 +794,7 @@
               <div>
                 <h3 class="font-serif font-bold text-xl text-black uppercase">Database Design</h3>
               </div>
-              <div class="text-3xl">🗄️</div>
+              <div class="text-3xl"></div>
             </div>
             <div class="flex flex-wrap gap-2">
               <span class="font-mono text-xs border border-black px-2 py-1 uppercase">PostgreSQL</span>
@@ -860,7 +815,7 @@
               <div>
                 <h3 class="font-serif font-bold text-xl text-black uppercase">DevOps & Cloud</h3>
               </div>
-              <div class="text-3xl">☁️</div>
+              <div class="text-3xl"></div>
             </div>
             <div class="flex flex-wrap gap-2">
               <span class="font-mono text-xs border border-black px-2 py-1 uppercase">AWS</span>
@@ -881,7 +836,7 @@
               <div>
                 <h3 class="font-serif font-bold text-xl text-black uppercase">AI & ML</h3>
               </div>
-              <div class="text-3xl">🤖</div>
+              <div class="text-3xl"></div>
             </div>
             <div class="flex flex-wrap gap-2">
               <span class="font-mono text-xs border border-black px-2 py-1 uppercase">OpenAI API</span>
@@ -931,9 +886,10 @@
 
       <!-- Right side: Contact Form -->
       <div class="flex flex-col items-start lg:items-end z-10 pl-0 lg:pl-8 w-full">
-        <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" class="w-full flex flex-col gap-4">
+        <form id="contact-form" action="https://api.web3forms.com/submit" method="POST"
+          class="w-full flex flex-col gap-4">
           <input type="hidden" name="access_key" value="a0b85c5c-cc8e-4157-b3f2-57eee839dc50">
-          
+
           <div id="contact-form-inner" class="flex flex-col gap-4 w-full">
             <div class="flex flex-col gap-2 w-full">
               <label class="font-mono text-xs font-bold uppercase text-ink/70">Name</label>
@@ -953,13 +909,45 @@
                 class="w-full brutal-border bg-bg px-4 py-3 font-mono text-sm text-ink placeholder:text-ink/40 focus:outline-none focus:ring-2 focus:ring-electric transition-shadow resize-none"></textarea>
             </div>
 
+            <div class="flex flex-col gap-2 w-full">
+              <label class="font-mono text-xs font-bold uppercase text-ink/70">Phone Number</label>
+              <div class="flex gap-2">
+                <select name="country_code" class="brutal-border bg-bg pl-3 pr-2 py-3 font-mono text-sm text-ink focus:outline-none focus:ring-2 focus:ring-electric transition-shadow w-28 cursor-pointer appearance-none">
+                  <option value="+1">🇺🇸 +1</option>
+                  <option value="+44">🇬🇧 +44</option>
+                  <option value="+91" selected>🇮🇳 +91</option>
+                  <option value="+61">🇦🇺 +61</option>
+                  <option value="+81">🇯🇵 +81</option>
+                  <option value="+49">🇩🇪 +49</option>
+                  <option value="+33">🇫🇷 +33</option>
+                  <option value="+39">🇮🇹 +39</option>
+                  <option value="+34">🇪🇸 +34</option>
+                  <option value="+86">🇨🇳 +86</option>
+                  <option value="+55">🇧🇷 +55</option>
+                  <option value="+52">🇲🇽 +52</option>
+                  <option value="+27">🇿🇦 +27</option>
+                  <option value="+971">🇦🇪 +971</option>
+                  <option value="+65">🇸🇬 +65</option>
+                  <option value="+82">🇰🇷 +82</option>
+                  <option value="+31">🇳🇱 +31</option>
+                  <option value="+41">🇨🇭 +41</option>
+                  <option value="+46">🇸🇪 +46</option>
+                </select>
+                <input type="tel" name="phone" required placeholder="93551 85187"
+                  class="flex-1 brutal-border bg-bg px-4 py-3 font-mono text-sm text-ink placeholder:text-ink/40 focus:outline-none focus:ring-2 focus:ring-electric transition-shadow">
+              </div>
+            </div>
+
+            <div class="h-captcha" data-captcha="true"></div>
+
             <button type="submit" id="contact-submit-btn"
               class="w-full mt-2 bg-electric text-surface brutal-border shadow-brutal interactive-element px-8 py-4 font-mono font-bold uppercase flex items-center justify-center gap-3 hover:bg-ink transition-colors cursor-pointer">
               <span>Send Message</span> <span class="material-symbols-outlined">send</span>
             </button>
           </div>
 
-          <div id="contact-success" class="hidden flex-col items-center justify-center gap-4 brutal-border bg-bg p-8 md:p-12 text-center h-full w-full">
+          <div id="contact-success"
+            class="hidden flex-col items-center justify-center gap-4 brutal-border bg-bg p-8 md:p-12 text-center h-full w-full">
             <span class="material-symbols-outlined text-6xl text-tangerine">verified</span>
             <div class="font-sans font-black text-3xl uppercase tracking-tighter mt-2">Received!</div>
             <p class="font-mono text-sm">Thanks for reaching out.<br>We'll get back to you shortly.</p>
@@ -985,17 +973,30 @@
       <div class="flex flex-wrap gap-6 font-mono text-sm font-bold uppercase">
         <a href="https://instagram.com/kyte_studios" target="_blank" rel="noopener noreferrer"
           class="flex items-center gap-2 hover:text-electric transition-colors">
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+          </svg>
           Instagram
         </a>
         <a href="https://twitter.com/kytestudiox" target="_blank" rel="noopener noreferrer"
           class="flex items-center gap-2 hover:text-tangerine transition-colors">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865l8.875 11.633Z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+            <path
+              d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865l8.875 11.633Z" />
+          </svg>
           X
         </a>
         <a href="https://www.linkedin.com/company/kytestudio" target="_blank" rel="noopener noreferrer"
           class="flex items-center gap-2 hover:text-electric transition-colors">
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+            <rect x="2" y="9" width="4" height="12"></rect>
+            <circle cx="4" cy="4" r="2"></circle>
+          </svg>
           LinkedIn
         </a>
       </div>
@@ -1426,172 +1427,30 @@
         });
       });
     });
-    // Custom Cursor Logic
-    if (window.matchMedia("(pointer: fine)").matches) {
-      const cursor = document.querySelector('.custom-cursor');
-      const cursorFollower = document.querySelector('.custom-cursor-follower');
-      
-      const interactiveElements = document.querySelectorAll('a, button, .interactive-element, .cursor-pointer');
-      interactiveElements.forEach((el, index) => {
-        el.setAttribute('data-magnify-id', index);
-      });
 
-      const magnifierContent = document.createElement('div');
-      magnifierContent.classList.add('magnifier-content');
-      
-      const clone = document.body.cloneNode(true);
-      clone.querySelectorAll('script, .custom-cursor, .custom-cursor-follower, .noise-overlay').forEach(el => el.remove());
-      
-      const fixedElements = clone.querySelectorAll('.fixed');
-      fixedElements.forEach(el => {
-        el.classList.remove('fixed');
-        el.classList.add('absolute', 'clone-fixed-element');
-      });
-
-      clone.querySelectorAll('*').forEach(el => {
-        el.removeAttribute('style');
-        el.removeAttribute('id');
-      });
-      
-      while (clone.firstChild) {
-        magnifierContent.appendChild(clone.firstChild);
-      }
-      cursorFollower.appendChild(magnifierContent);
-
-      const followerSize = 40;
-      const hoverSize = 120;
-      const scale = 1.5;
-
-      gsap.set(magnifierContent, { scale: scale });
-      gsap.set(cursor, { xPercent: -50, yPercent: -50 });
-      gsap.set(cursorFollower, { xPercent: -50, yPercent: -50, width: followerSize, height: followerSize });
-      gsap.set(magnifierContent.querySelectorAll('.clone-fixed-element'), { y: window.scrollY });
-
-      let mouseX = window.innerWidth / 2;
-      let mouseY = window.innerHeight / 2;
-      let isHovering = false;
-      let hoverStylesInjected = false;
-      
-      const cloneHoverStyle = document.createElement('style');
-      document.head.appendChild(cloneHoverStyle);
-
-      function updateCloneHoverStyles() {
-        let cssText = '';
-        for (let i = 0; i < document.styleSheets.length; i++) {
-          try {
-            const sheet = document.styleSheets[i];
-            for (let j = 0; j < sheet.cssRules.length; j++) {
-              const rule = sheet.cssRules[j];
-              if (rule.cssText.includes(':hover')) {
-                cssText += rule.cssText.replace(/:hover/g, '.clone-hovered') + '\n';
-              }
-            }
-          } catch(e) {
-            // Ignore cross-origin stylesheet errors
-          }
-        }
-        cloneHoverStyle.textContent = cssText;
-      }
-
-      window.addEventListener('mousemove', (e) => {
-        mouseX = e.clientX;
-        mouseY = e.clientY;
-        
-        gsap.to(cursor, {
-          x: mouseX,
-          y: mouseY,
-          duration: 0.1,
-          ease: 'power2.out'
-        });
-        
-        gsap.to(cursorFollower, {
-          x: mouseX,
-          y: mouseY,
-          duration: 0.5,
-          ease: 'power2.out'
-        });
-        
-        const currentSize = isHovering ? hoverSize : followerSize;
-        gsap.to(magnifierContent, {
-          x: (currentSize / 2) - mouseX * scale,
-          y: (currentSize / 2) - (mouseY + window.scrollY) * scale,
-          duration: 0.5,
-          ease: 'power2.out'
-        });
-      });
-      
-      window.addEventListener('scroll', () => {
-        const currentSize = isHovering ? hoverSize : followerSize;
-        gsap.to(magnifierContent, {
-          y: (currentSize / 2) - (mouseY + window.scrollY) * scale,
-          duration: 0.1,
-          ease: 'none'
-        });
-        gsap.set(magnifierContent.querySelectorAll('.clone-fixed-element'), { y: window.scrollY });
-      });
-
-      interactiveElements.forEach(el => {
-        el.addEventListener('mouseenter', () => {
-          if (!hoverStylesInjected) {
-            updateCloneHoverStyles();
-            hoverStylesInjected = true;
-          }
-
-          isHovering = true;
-          cursorFollower.classList.add('hovering');
-          gsap.to(cursor, { scale: 0, duration: 0.2 });
-          gsap.to(cursorFollower, { width: hoverSize, height: hoverSize, duration: 0.3, ease: 'power2.out' });
-          
-          gsap.to(magnifierContent, {
-            x: (hoverSize / 2) - mouseX * scale,
-            y: (hoverSize / 2) - (mouseY + window.scrollY) * scale,
-            duration: 0.3,
-            ease: 'power2.out'
-          });
-
-          const id = el.getAttribute('data-magnify-id');
-          if (id !== null) {
-            const cloneEl = magnifierContent.querySelector(`[data-magnify-id="${id}"]`);
-            if (cloneEl) cloneEl.classList.add('clone-hovered');
-          }
-        });
-
-        el.addEventListener('mouseleave', () => {
-          isHovering = false;
-          cursorFollower.classList.remove('hovering');
-          gsap.to(cursor, { scale: 1, duration: 0.2 });
-          gsap.to(cursorFollower, { width: followerSize, height: followerSize, duration: 0.3, ease: 'power2.out' });
-          
-          gsap.to(magnifierContent, {
-            x: (followerSize / 2) - mouseX * scale,
-            y: (followerSize / 2) - (mouseY + window.scrollY) * scale,
-            duration: 0.3,
-            ease: 'power2.out'
-          });
-
-          const id = el.getAttribute('data-magnify-id');
-          if (id !== null) {
-            const cloneEl = magnifierContent.querySelector(`[data-magnify-id="${id}"]`);
-            if (cloneEl) cloneEl.classList.remove('clone-hovered');
-          }
-        });
-      });
-    }
 
     // Web3Forms AJAX Submission
     const web3ContactForm = document.getElementById('contact-form');
     if (web3ContactForm) {
-      web3ContactForm.addEventListener('submit', function(e) {
+      web3ContactForm.addEventListener('submit', function (e) {
         e.preventDefault();
+
+        const formData = new FormData(web3ContactForm);
         
+        // Client-side hCaptcha validation
+        const hCaptchaResponse = formData.get('h-captcha-response');
+        if (!hCaptchaResponse) {
+          alert('Please complete the Captcha challenge before submitting!');
+          return;
+        }
+
         const submitBtn = document.getElementById('contact-submit-btn');
         const originalContent = submitBtn.innerHTML;
         submitBtn.innerHTML = '<span>Sending...</span> <span class="material-symbols-outlined animate-spin" style="animation: spin 1s linear infinite;">sync</span>';
-        
-        const formData = new FormData(web3ContactForm);
+
         const object = Object.fromEntries(formData);
         const json = JSON.stringify(object);
-        
+
         fetch('https://api.web3forms.com/submit', {
           method: 'POST',
           headers: {
@@ -1600,25 +1459,26 @@
           },
           body: json
         })
-        .then(async (response) => {
-          if (response.status == 200) {
-            document.getElementById('contact-form-inner').classList.add('hidden');
-            document.getElementById('contact-success').classList.remove('hidden');
-            document.getElementById('contact-success').classList.add('flex');
-          } else {
-            console.log(response);
+          .then(async (response) => {
+            if (response.status == 200) {
+              document.getElementById('contact-form-inner').classList.add('hidden');
+              document.getElementById('contact-success').classList.remove('hidden');
+              document.getElementById('contact-success').classList.add('flex');
+            } else {
+              console.log(response);
+              submitBtn.innerHTML = originalContent;
+              alert("Something went wrong! Please try again.");
+            }
+          })
+          .catch(error => {
+            console.log(error);
             submitBtn.innerHTML = originalContent;
             alert("Something went wrong! Please try again.");
-          }
-        })
-        .catch(error => {
-          console.log(error);
-          submitBtn.innerHTML = originalContent;
-          alert("Something went wrong! Please try again.");
-        });
+          });
       });
     }
   </script>
+  <script src="https://web3forms.com/client/script.js" async defer></script>
 </body>
 
 </html>
