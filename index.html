@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>KyteStudios</title>
+  <title>Website Development Agency | Kyte Studios</title>
   <link rel="icon" type="image/png" href="./Kite_Transparent.png">
   <link rel="apple-touch-icon" href="./Kite_Transparent.png">
 
@@ -102,6 +102,91 @@
       -ms-overflow-style: none;
       scrollbar-width: none;
     }
+
+    /* Additional Animations */
+    .pulse-badge {
+      animation: subtle-pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes subtle-pulse {
+
+      0%,
+      100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 85, 34, 0.3);
+      }
+
+      50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 4px rgba(255, 85, 34, 0);
+      }
+    }
+
+    .float-animation {
+      animation: gentle-float 3s ease-in-out infinite;
+    }
+
+    @keyframes gentle-float {
+
+      0%,
+      100% {
+        transform: translateY(0px);
+      }
+
+      50% {
+        transform: translateY(-8px);
+      }
+    }
+
+    .glow-on-hover {
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+    }
+
+    .glow-on-hover:hover {
+      box-shadow: 0 0 20px rgba(0, 85, 255, 0.3), 6px 6px 0px 0px #111111;
+      transform: translateY(-4px);
+    }
+
+    .work-card {
+      transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .work-card:hover {
+      transform: translateY(-12px) rotate(1deg);
+    }
+
+    .section-title-underline {
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-title-underline::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: #0055FF;
+      transform: scaleX(0);
+      transform-origin: left;
+      animation: underline-expand 0.8s ease-out forwards;
+    }
+
+    @keyframes underline-expand {
+      to {
+        transform: scaleX(1);
+      }
+    }
+
+    .contact-form-input {
+      transition: all 0.3s ease;
+    }
+
+    .contact-form-input:focus {
+      box-shadow: 0 0 0 3px rgba(0, 85, 255, 0.1), inset 0 0 0 1px #0055FF;
+      transform: scale(1.02);
+    }
   </style>
 </head>
 
@@ -117,12 +202,18 @@
         <span class="font-sans font-black text-2xl md:text-3xl tracking-tighter leading-none">KyteStudios</span>
       </a>
       <nav class="hidden md:flex gap-4 font-mono text-sm font-bold uppercase items-center">
+        <a href="#hero"
+          class="nav-link px-3 py-1.5 border-2 border-transparent hover:border-ink hover:bg-electric hover:text-surface hover:shadow-brutal-sm transition-all hover:-translate-y-1"
+          data-section="hero">Home</a>
         <a href="#expertise"
-          class="px-3 py-1.5 border-2 border-transparent hover:border-ink hover:bg-electric hover:text-surface hover:shadow-brutal-sm transition-all hover:-translate-y-1">Expertise</a>
+          class="nav-link px-3 py-1.5 border-2 border-transparent hover:border-ink hover:bg-electric hover:text-surface hover:shadow-brutal-sm transition-all hover:-translate-y-1"
+          data-section="expertise">Expertise</a>
         <a href="#work"
-          class="px-3 py-1.5 border-2 border-transparent hover:border-ink hover:bg-tangerine hover:text-ink hover:shadow-brutal-sm transition-all hover:-translate-y-1">Work</a>
+          class="nav-link px-3 py-1.5 border-2 border-transparent hover:border-ink hover:bg-tangerine hover:text-ink hover:shadow-brutal-sm transition-all hover:-translate-y-1"
+          data-section="work">Work</a>
         <a href="#testimonials"
-          class="px-3 py-1.5 border-2 border-transparent hover:border-ink hover:bg-electric hover:text-surface hover:shadow-brutal-sm transition-all hover:-translate-y-1">Testimonials</a>
+          class="nav-link px-3 py-1.5 border-2 border-transparent hover:border-ink hover:bg-electric hover:text-surface hover:shadow-brutal-sm transition-all hover:-translate-y-1"
+          data-section="testimonials">Testimonials</a>
       </nav>
       <a href="#contact"
         class="bg-ink text-surface px-6 py-3 font-mono text-sm font-bold uppercase brutal-border interactive-element hidden md:flex items-center gap-2">
@@ -137,12 +228,18 @@
     <!-- Mobile Menu Dropdown -->
     <div id="mobile-menu"
       class="max-w-7xl mx-auto mt-2 bg-surface brutal-border shadow-brutal p-4 flex flex-col gap-2 md:hidden opacity-0 pointer-events-none -translate-y-4 transition-all duration-300 transform origin-top">
+      <a href="#hero"
+        class="mobile-link nav-link text-center px-4 py-3 border-2 border-transparent hover:border-ink hover:bg-electric hover:text-surface font-mono text-sm font-bold uppercase transition-all"
+        data-section="hero">Home</a>
       <a href="#expertise"
-        class="mobile-link text-center px-4 py-3 border-2 border-transparent hover:border-ink hover:bg-electric hover:text-surface font-mono text-sm font-bold uppercase transition-all">Expertise</a>
+        class="mobile-link nav-link text-center px-4 py-3 border-2 border-transparent hover:border-ink hover:bg-electric hover:text-surface font-mono text-sm font-bold uppercase transition-all"
+        data-section="expertise">Expertise</a>
       <a href="#work"
-        class="mobile-link text-center px-4 py-3 border-2 border-transparent hover:border-ink hover:bg-tangerine hover:text-ink font-mono text-sm font-bold uppercase transition-all">Work</a>
+        class="mobile-link nav-link text-center px-4 py-3 border-2 border-transparent hover:border-ink hover:bg-tangerine hover:text-ink font-mono text-sm font-bold uppercase transition-all"
+        data-section="work">Work</a>
       <a href="#testimonials"
-        class="mobile-link text-center px-4 py-3 border-2 border-transparent hover:border-ink hover:bg-electric hover:text-surface font-mono text-sm font-bold uppercase transition-all">Testimonials</a>
+        class="mobile-link nav-link text-center px-4 py-3 border-2 border-transparent hover:border-ink hover:bg-electric hover:text-surface font-mono text-sm font-bold uppercase transition-all"
+        data-section="testimonials">Testimonials</a>
       <a href="#contact"
         class="mobile-link text-center bg-ink text-surface px-4 py-3 border-2 border-ink hover:bg-surface hover:text-ink font-mono text-sm font-bold uppercase flex justify-center items-center gap-2 transition-colors">
         Let's Talk <span class="material-symbols-outlined text-[18px]">chat</span>
@@ -158,7 +255,7 @@
       <div class="lg:col-span-7 flex flex-col gap-6 relative z-10">
         <!-- Badge -->
         <div
-          class="gsap-slide-up bg-surface brutal-border shadow-brutal p-3 inline-flex items-center gap-2 self-start -rotate-2">
+          class="gsap-slide-up bg-surface brutal-border shadow-brutal p-3 inline-flex items-center gap-2 self-start -rotate-2 pulse-badge">
           <span class="w-3 h-3 bg-tangerine rounded-full animate-pulse brutal-border border-ink"></span>
           <span class="font-mono text-sm font-bold tracking-tight uppercase">KyteStudios // Digital Product
             Agency</span>
@@ -221,63 +318,201 @@
   </section>
 
   <!-- Capabilities Matrix -->
-  <section id="expertise" class="max-w-7xl mx-auto px-6 py-24">
-    <div class="bg-ink text-surface brutal-border border-ink shadow-brutal p-8 md:p-12 rotate-1 relative z-10">
-      <!-- Floating accent -->
+  <section id="expertise" class="max-w-7xl mx-auto px-6 py-24 flex flex-col gap-12">
+    <h2
+      class="font-serif font-black text-4xl md:text-5xl text-ink uppercase inline-block bg-surface p-3 brutal-border shadow-brutal -rotate-1 self-start z-10 gsap-section">
+      Services
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 z-10">
+      <!-- Service 1 -->
       <div
-        class="absolute -top-5 -right-2 md:-right-4 bg-tangerine brutal-border text-ink font-mono text-xs font-bold p-2 rotate-6 shadow-brutal">
-        HOW WE HELP
+        class="gsap-section bg-surface brutal-border shadow-brutal p-6 relative group rotate-1 hover:rotate-0 hover:-translate-y-2 transition-all duration-300">
+
+        <h3 class="font-serif font-bold text-2xl md:text-3xl text-ink mb-4 mt-2">Web & App Development</h3>
+        <p class="font-mono text-sm text-ink/80 mb-6 leading-relaxed">
+          From high-converting websites to powerful mobile apps, we build
+          <span class="text-electric font-bold">stunning digital products</span>. We engineer fast,
+          <span class="text-tangerine font-bold">cross-platform applications</span> for iOS, Android, and the Web that
+          launch quickly and scale effortlessly.
+        </p>
+        <div class="flex flex-wrap gap-2">
+          <div
+            class="flex items-center gap-1.5 px-3 py-1 brutal-border bg-bg font-mono text-xs cursor-pointer hover:bg-electric hover:text-surface hover:shadow-brutal-sm hover:-translate-y-1 transition-all duration-200">
+            <span class="material-symbols-outlined text-sm">devices</span> UI/UX Design
+          </div>
+          <div
+            class="flex items-center gap-1.5 px-3 py-1 brutal-border bg-bg font-mono text-xs cursor-pointer hover:bg-electric hover:text-surface hover:shadow-brutal-sm hover:-translate-y-1 transition-all duration-200">
+            <span class="material-symbols-outlined text-sm">phone_iphone</span> Mobile Apps (iOS/Android)
+          </div>
+          <div
+            class="flex items-center gap-1.5 px-3 py-1 brutal-border bg-bg font-mono text-xs cursor-pointer hover:bg-electric hover:text-surface hover:shadow-brutal-sm hover:-translate-y-1 transition-all duration-200">
+            <span class="material-symbols-outlined text-sm">layers</span> Full-Stack Web
+          </div>
+          <div
+            class="flex items-center gap-1.5 px-3 py-1 brutal-border bg-bg font-mono text-xs cursor-pointer hover:bg-electric hover:text-surface hover:shadow-brutal-sm hover:-translate-y-1 transition-all duration-200">
+            <span class="material-symbols-outlined text-sm">bolt</span> Performance Optimization
+          </div>
+        </div>
       </div>
 
-      <h2
-        class="font-sans font-black text-4xl md:text-6xl uppercase tracking-tighter mb-12 border-b-2 border-surface/20 pb-6">
-        Our Expertise
-      </h2>
+      <!-- Service 2 -->
+      <div
+        class="gsap-section bg-surface brutal-border shadow-brutal p-6 relative group -rotate-1 hover:rotate-0 hover:-translate-y-2 transition-all duration-300">
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-8 font-mono text-sm md:text-base">
-        <div class="flex flex-col gap-2 border-b border-surface/20 pb-4 group cursor-default">
-          <div class="flex justify-between items-center text-tangerine font-bold">
-            <span>01. Web & UI Design</span>
+        <h3 class="font-serif font-bold text-2xl md:text-3xl text-ink mb-4 mt-2">AI Workflows</h3>
+        <p class="font-mono text-sm text-ink/80 mb-6 leading-relaxed">
+          Don't just chase the AI hype—build systems that actually work for your business. We design and integrate
+          intelligent AI workflows that
+          <span class="text-electric font-bold">automate repetitive tasks</span>,
+          <span class="text-tangerine font-bold">extract deep data insights</span>
+          , and
+          <span class="text-electric font-bold">power smart</span>,
+
+          decision-making, allowing your team to focus on growth while your software handles the heavy lifting.
+          to maximize your digital ROI.
+        </p>
+        <div class="flex flex-wrap gap-2">
+          <div
+            class="flex items-center gap-1.5 px-3 py-1 brutal-border bg-bg font-mono text-xs cursor-pointer hover:bg-electric hover:text-surface hover:shadow-brutal-sm hover:-translate-y-1 transition-all duration-200">
+            <span class="material-symbols-outlined text-sm">flash_on </span> Agentic Workflows
           </div>
-          <div class="text-surface/60 group-hover:text-surface transition-colors">High-Converting Websites & Interactive
-            Experiences</div>
-        </div>
-        <div class="flex flex-col gap-2 border-b border-surface/20 pb-4 group cursor-default">
-          <div class="flex justify-between items-center text-electric font-bold">
-            <span>02. Custom Platforms</span>
+          <div
+            class="flex items-center gap-1.5 px-3 py-1 brutal-border bg-bg font-mono text-xs cursor-pointer hover:bg-electric hover:text-surface hover:shadow-brutal-sm hover:-translate-y-1 transition-all duration-200">
+            <span class="material-symbols-outlined text-sm">ads_click</span> Event-Driven Smart Triggers
           </div>
-          <div class="text-surface/60 group-hover:text-surface transition-colors">Scalable Apps, SaaS Products &
-            Dashboards</div>
-        </div>
-        <div class="flex flex-col gap-2 border-b border-surface/20 pb-4 group cursor-default">
-          <div class="flex justify-between items-center text-surface font-bold">
-            <span>03. AI Automation</span>
+          <div
+            class="flex items-center gap-1.5 px-3 py-1 brutal-border bg-bg font-mono text-xs cursor-pointer hover:bg-electric hover:text-surface hover:shadow-brutal-sm hover:-translate-y-1 transition-all duration-200">
+            <span class="material-symbols-outlined text-sm">trending_up</span> Legacy System Integration
           </div>
-          <div class="text-surface/60 group-hover:text-surface transition-colors">Smart Assistants & Intelligent
-            Business Workflows</div>
-        </div>
-        <div class="flex flex-col gap-2 border-b border-surface/20 pb-4 group cursor-default">
-          <div class="flex justify-between items-center text-surface font-bold">
-            <span>04. System Integrations</span>
-          </div>
-          <div class="text-surface/60 group-hover:text-surface transition-colors">Seamless Connections & Real-Time Data
-            Flow</div>
-        </div>
-        <div class="flex flex-col gap-2 border-b-0 pb-0 md:border-b border-surface/20 md:pb-4 group cursor-default">
-          <div class="flex justify-between items-center text-surface font-bold">
-            <span>05. Cloud Infrastructure</span>
-          </div>
-          <div class="text-surface/60 group-hover:text-surface transition-colors">Secure Hosting & Zero-Downtime
-            Deployments</div>
-        </div>
-        <div class="flex flex-col gap-2 border-b-0 pb-0 group cursor-default">
-          <div class="flex justify-between items-center text-surface font-bold">
-            <span>06. Product Strategy</span>
-          </div>
-          <div class="text-surface/60 group-hover:text-surface transition-colors">Future-Proof Planning &
-            High-Performance Scaling</div>
         </div>
       </div>
+
+      <!-- Service 3 -->
+      <div
+        class="gsap-section bg-surface brutal-border shadow-brutal p-6 relative group rotate-2 hover:rotate-0 hover:-translate-y-2 transition-all duration-300">
+
+        <h3 class="font-serif font-bold text-2xl md:text-3xl text-ink mb-4 mt-2">Internal Tooling</h3>
+        <p class="font-mono text-sm text-ink/80 mb-6 leading-relaxed">
+          Stop fighting with messy spreadsheets and disconnected apps. We build
+          <span class="text-electric font-bold">custom internal tools</span>,
+          <span class="text-tangerine font-bold">admin panels</span>
+          , and
+          <span class="text-electric font-bold">dashboards</span>,
+
+          tailored exactly to how your business runs, so your team can work faster and mistake-free.
+        <div class="flex flex-wrap gap-2">
+          <div
+            class="flex items-center gap-1.5 px-3 py-1 brutal-border bg-bg font-mono text-xs cursor-pointer hover:bg-electric hover:text-surface hover:shadow-brutal-sm hover:-translate-y-1 transition-all duration-200">
+            <span class="material-symbols-outlined text-sm">draw</span> Logo Design
+          </div>
+          <div
+            class="flex items-center gap-1.5 px-3 py-1 brutal-border bg-bg font-mono text-xs cursor-pointer hover:bg-electric hover:text-surface hover:shadow-brutal-sm hover:-translate-y-1 transition-all duration-200">
+            <span class="material-symbols-outlined text-sm">menu_book</span> Brand Guidelines
+          </div>
+          <div
+            class="flex items-center gap-1.5 px-3 py-1 brutal-border bg-bg font-mono text-xs cursor-pointer hover:bg-electric hover:text-surface hover:shadow-brutal-sm hover:-translate-y-1 transition-all duration-200">
+            <span class="material-symbols-outlined text-sm">font_download</span> Typography
+          </div>
+          <div
+            class="flex items-center gap-1.5 px-3 py-1 brutal-border bg-bg font-mono text-xs cursor-pointer hover:bg-electric hover:text-surface hover:shadow-brutal-sm hover:-translate-y-1 transition-all duration-200">
+            <span class="material-symbols-outlined text-sm">palette</span> Art Direction
+          </div>
+        </div>
+      </div>
+
+
+      <div
+        class="gsap-section bg-surface brutal-border shadow-brutal p-6 relative group -rotate-2 hover:rotate-0 hover:-translate-y-2 transition-all duration-300">
+
+        <h3 class="font-serif font-bold text-2xl md:text-3xl text-ink mb-4 mt-2">Cloud Infrastructure</h3>
+        <p class="font-mono text-sm text-ink/80 mb-6 leading-relaxed">
+          Keep your software fast, secure, and always online. We design and manage
+          <span class="text-tangerine font-bold">bulletproof cloud setups</span> and
+          <span class="text-electric font-bold">automated pipelines</span>,
+          so your platform scales to thousands of users effortlessly without crashing or slowing down.
+        </p>
+        <div class="flex flex-wrap gap-2">
+          <div
+            class="flex items-center gap-1.5 px-3 py-1 brutal-border bg-bg font-mono text-xs cursor-pointer hover:bg-electric hover:text-surface hover:shadow-brutal-sm hover:-translate-y-1 transition-all duration-200">
+            <span class="material-symbols-outlined text-sm">cloud</span> AWS / Supabase
+          </div>
+          <div
+            class="flex items-center gap-1.5 px-3 py-1 brutal-border bg-bg font-mono text-xs cursor-pointer hover:bg-electric hover:text-surface hover:shadow-brutal-sm hover:-translate-y-1 transition-all duration-200">
+            <span class="material-symbols-outlined text-sm">bolt</span> Auto-Scaling
+          </div>
+          <div
+            class="flex items-center gap-1.5 px-3 py-1 brutal-border bg-bg font-mono text-xs cursor-pointer hover:bg-electric hover:text-surface hover:shadow-brutal-sm hover:-translate-y-1 transition-all duration-200">
+            <span class="material-symbols-outlined text-sm">security</span> Database Backup
+          </div>
+          <div
+            class="flex items-center gap-1.5 px-3 py-1 brutal-border bg-bg font-mono text-xs cursor-pointer hover:bg-electric hover:text-surface hover:shadow-brutal-sm hover:-translate-y-1 transition-all duration-200">
+            <span class="material-symbols-outlined text-sm">sync_alt</span> CI/CD Automation
+          </div>
+        </div>
+      </div>
+
+
+      <div
+        class="gsap-section bg-surface brutal-border shadow-brutal p-6 relative group rotate-1 hover:rotate-0 hover:-translate-y-2 transition-all duration-300">
+
+        <h3 class="font-serif font-bold text-2xl md:text-3xl text-ink mb-4 mt-2">SaaS Development</h3>
+        <p class="font-mono text-sm text-ink/80 mb-6 leading-relaxed">
+          Turn your software idea into a recurring revenue engine. We build robust
+          <span class="text-electric font-bold">multi-tenant platforms</span>, secure
+          <span class="text-tangerine font-bold">subscription systems</span>, and clean
+          user dashboards, ensuring a seamless, day-one launch for your subscribers.
+        </p>
+        <div class="flex flex-wrap gap-2">
+          <div
+            class="flex items-center gap-1.5 px-3 py-1 brutal-border bg-bg font-mono text-xs cursor-pointer hover:bg-electric hover:text-surface hover:shadow-brutal-sm hover:-translate-y-1 transition-all duration-200">
+            <span class="material-symbols-outlined text-sm">credit_card</span> Stripe / Billing
+          </div>
+          <div
+            class="flex items-center gap-1.5 px-3 py-1 brutal-border bg-bg font-mono text-xs cursor-pointer hover:bg-electric hover:text-surface hover:shadow-brutal-sm hover:-translate-y-1 transition-all duration-200">
+            <span class="material-symbols-outlined text-sm">group</span> Multi-Tenancy
+          </div>
+          <div
+            class="flex items-center gap-1.5 px-3 py-1 brutal-border bg-bg font-mono text-xs cursor-pointer hover:bg-electric hover:text-surface hover:shadow-brutal-sm hover:-translate-y-1 transition-all duration-200">
+            <span class="material-symbols-outlined text-sm">analytics</span> Usage Analytics
+          </div>
+          <div
+            class="flex items-center gap-1.5 px-3 py-1 brutal-border bg-bg font-mono text-xs cursor-pointer hover:bg-electric hover:text-surface hover:shadow-brutal-sm hover:-translate-y-1 transition-all duration-200">
+            <span class="material-symbols-outlined text-sm">vpn_key</span> Auth & Roles
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="gsap-section bg-surface brutal-border shadow-brutal p-6 relative group -rotate-1 hover:rotate-0 hover:-translate-y-2 transition-all duration-300">
+
+        <h3 class="font-serif font-bold text-2xl md:text-3xl text-ink mb-4 mt-2">Chatbot & WhatsApp Automation</h3>
+        <p class="font-mono text-sm text-ink/80 mb-6 leading-relaxed">
+          Be there for your clients 24/7 without lifting a finger. We build
+          <span class="text-electric font-bold">intelligent bots</span> and official
+          <span class="text-tangerine font-bold">WhatsApp pipelines</span> that answer customer queries, send instant
+          payment reminders, and close deals automatically.
+        </p>
+        <div class="flex flex-wrap gap-2">
+          <div
+            class="flex items-center gap-1.5 px-3 py-1 brutal-border bg-bg font-mono text-xs cursor-pointer hover:bg-electric hover:text-surface hover:shadow-brutal-sm hover:-translate-y-1 transition-all duration-200">
+            <span class="material-symbols-outlined text-sm">chat</span> WhatsApp Business API
+          </div>
+          <div
+            class="flex items-center gap-1.5 px-3 py-1 brutal-border bg-bg font-mono text-xs cursor-pointer hover:bg-electric hover:text-surface hover:shadow-brutal-sm hover:-translate-y-1 transition-all duration-200">
+            <span class="material-symbols-outlined text-sm">notifications_active</span> Auto-Reminders
+          </div>
+          <div
+            class="flex items-center gap-1.5 px-3 py-1 brutal-border bg-bg font-mono text-xs cursor-pointer hover:bg-electric hover:text-surface hover:shadow-brutal-sm hover:-translate-y-1 transition-all duration-200">
+            <span class="material-symbols-outlined text-sm">smart_toy</span> AI Support Agents
+          </div>
+          <div
+            class="flex items-center gap-1.5 px-3 py-1 brutal-border bg-bg font-mono text-xs cursor-pointer hover:bg-electric hover:text-surface hover:shadow-brutal-sm hover:-translate-y-1 transition-all duration-200">
+            <span class="material-symbols-outlined text-sm">hub</span> CRM Data Sync
+          </div>
+        </div>
+      </div>
+
+
     </div>
   </section>
 
@@ -445,6 +680,162 @@
     </div>
   </section>
 
+  <!-- Capabilities Field Guide Section -->
+  <section id="capabilities" class="py-24 px-6">
+    <div
+      class="bg-[#0055FF] text-white p-6 md:p-12 brutal-border shadow-brutal rotate-1 relative overflow-hidden max-w-7xl mx-auto">
+      <div class="relative z-10">
+        <div class="flex items-center justify-between gap-2 md:gap-4 mb-16 gsap-section">
+          <div class="flex items-center gap-2 md:gap-4 min-w-0">
+            <span class="material-symbols-outlined text-white flex-shrink-0">verified</span>
+            <h2 class="font-serif font-black text-2xl md:text-5xl text-white uppercase inline-block truncate">
+              Capabilities
+            </h2>
+          </div>
+          <div class="flex gap-2 flex-shrink-0">
+            <button id="prev-capability"
+              class="w-8 h-8 md:w-10 md:h-10 brutal-border flex items-center justify-center bg-white text-[#0055FF] hover:bg-white/80 transition-colors interactive-element flex-shrink-0">
+              <span class="material-symbols-outlined text-sm md:text-base">arrow_back</span>
+            </button>
+            <button id="next-capability"
+              class="w-8 h-8 md:w-10 md:h-10 brutal-border flex items-center justify-center bg-white text-[#0055FF] hover:bg-white/80 transition-colors interactive-element flex-shrink-0">
+              <span class="material-symbols-outlined text-sm md:text-base">arrow_forward</span>
+            </button>
+          </div>
+        </div>
+
+        <div id="capabilities-carousel"
+          class="flex overflow-x-auto snap-x snap-mandatory pb-8 pt-4 -mx-6 px-6 gap-6 hide-scrollbar cursor-grab active:cursor-grabbing scroll-smooth">
+          <!-- Capability Card 1 -->
+          <div
+            class="w-[95%] md:w-[85%] lg:w-[50%] snap-center shrink-0 gsap-section bg-[#FFFDF9] text-black brutal-border shadow-brutal p-6 -rotate-1 flex flex-col gap-4 hover:shadow-lg transition-shadow">
+            <div class="flex items-start justify-between">
+              <div>
+                <h3 class="font-serif font-bold text-xl text-black uppercase">Full-Stack Dev</h3>
+              </div>
+              <div class="text-3xl">⚙️</div>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="font-mono text-xs border border-black px-2 py-1 uppercase">Next.js</span>
+              <span class="font-mono text-xs border border-black px-2 py-1 uppercase">TypeScript</span>
+              <span class="font-mono text-xs border border-black px-2 py-1 uppercase">Tailwind</span>
+              <span class="font-mono text-xs border border-black px-2 py-1 uppercase">Prisma</span>
+            </div>
+            <div class="border-t border-black/20 pt-3 mt-auto">
+              <div class="font-mono text-xs text-black/60 mb-1">Proficiency:</div>
+              <div class="font-mono font-bold text-sm">Expert Level</div>
+            </div>
+          </div>
+
+          <!-- Capability Card 2 -->
+          <div
+            class="w-[95%] md:w-[85%] lg:w-[50%] snap-center shrink-0 gsap-section bg-[#FFFDF9] text-black brutal-border shadow-brutal p-6 rotate-1 flex flex-col gap-4 hover:shadow-lg transition-shadow">
+            <div class="flex items-start justify-between">
+              <div>
+                <h3 class="font-serif font-bold text-xl text-black uppercase">UI/UX Design</h3>
+              </div>
+              <div class="text-3xl">🎨</div>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="font-mono text-xs border border-black px-2 py-1 uppercase">Figma</span>
+              <span class="font-mono text-xs border border-black px-2 py-1 uppercase">Framer Motion</span>
+              <span class="font-mono text-xs border border-black px-2 py-1 uppercase">Storybook</span>
+              <span class="font-mono text-xs border border-black px-2 py-1 uppercase">GSAP</span>
+            </div>
+            <div class="border-t border-black/20 pt-3 mt-auto">
+              <div class="font-mono text-xs text-black/60 mb-1">Proficiency:</div>
+              <div class="font-mono font-bold text-sm">Expert Level</div>
+            </div>
+          </div>
+
+          <!-- Capability Card 3 -->
+          <div
+            class="w-[95%] md:w-[85%] lg:w-[50%] snap-center shrink-0 gsap-section bg-[#FFFDF9] text-black brutal-border shadow-brutal p-6 -rotate-1 flex flex-col gap-4 hover:shadow-lg transition-shadow">
+            <div class="flex items-start justify-between">
+              <div>
+                <h3 class="font-serif font-bold text-xl text-black uppercase">Performance</h3>
+              </div>
+              <div class="text-3xl">⚡</div>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="font-mono text-xs border border-black px-2 py-1 uppercase">Lighthouse</span>
+              <span class="font-mono text-xs border border-black px-2 py-1 uppercase">Web Vitals</span>
+              <span class="font-mono text-xs border border-black px-2 py-1 uppercase">Sentry</span>
+              <span class="font-mono text-xs border border-black px-2 py-1 uppercase">New Relic</span>
+            </div>
+            <div class="border-t border-black/20 pt-3 mt-auto">
+              <div class="font-mono text-xs text-black/60 mb-1">Proficiency:</div>
+              <div class="font-mono font-bold text-sm">Expert Level</div>
+            </div>
+          </div>
+
+          <!-- Capability Card 4 -->
+          <div
+            class="w-[95%] md:w-[85%] lg:w-[50%] snap-center shrink-0 gsap-section bg-[#FFFDF9] text-black brutal-border shadow-brutal p-6 rotate-2 flex flex-col gap-4 hover:shadow-lg transition-shadow">
+            <div class="flex items-start justify-between">
+              <div>
+                <h3 class="font-serif font-bold text-xl text-black uppercase">Database Design</h3>
+              </div>
+              <div class="text-3xl">🗄️</div>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="font-mono text-xs border border-black px-2 py-1 uppercase">PostgreSQL</span>
+              <span class="font-mono text-xs border border-black px-2 py-1 uppercase">Supabase</span>
+              <span class="font-mono text-xs border border-black px-2 py-1 uppercase">Redis</span>
+              <span class="font-mono text-xs border border-black px-2 py-1 uppercase">DynamoDB</span>
+            </div>
+            <div class="border-t border-black/20 pt-3 mt-auto">
+              <div class="font-mono text-xs text-black/60 mb-1">Proficiency:</div>
+              <div class="font-mono font-bold text-sm">Advanced</div>
+            </div>
+          </div>
+
+          <!-- Capability Card 5 -->
+          <div
+            class="w-[95%] md:w-[85%] lg:w-[50%] snap-center shrink-0 gsap-section bg-[#FFFDF9] text-black brutal-border shadow-brutal p-6 -rotate-2 flex flex-col gap-4 hover:shadow-lg transition-shadow">
+            <div class="flex items-start justify-between">
+              <div>
+                <h3 class="font-serif font-bold text-xl text-black uppercase">DevOps & Cloud</h3>
+              </div>
+              <div class="text-3xl">☁️</div>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="font-mono text-xs border border-black px-2 py-1 uppercase">AWS</span>
+              <span class="font-mono text-xs border border-black px-2 py-1 uppercase">Kubernetes</span>
+              <span class="font-mono text-xs border border-black px-2 py-1 uppercase">GitHub Actions</span>
+              <span class="font-mono text-xs border border-black px-2 py-1 uppercase">Terraform</span>
+            </div>
+            <div class="border-t border-black/20 pt-3 mt-auto">
+              <div class="font-mono text-xs text-black/60 mb-1">Proficiency:</div>
+              <div class="font-mono font-bold text-sm">Advanced</div>
+            </div>
+          </div>
+
+          <!-- Capability Card 6 -->
+          <div
+            class="w-[95%] md:w-[85%] lg:w-[50%] snap-center shrink-0 gsap-section bg-[#FFFDF9] text-black brutal-border shadow-brutal p-6 rotate-1 flex flex-col gap-4 hover:shadow-lg transition-shadow">
+            <div class="flex items-start justify-between">
+              <div>
+                <h3 class="font-serif font-bold text-xl text-black uppercase">AI & ML</h3>
+              </div>
+              <div class="text-3xl">🤖</div>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="font-mono text-xs border border-black px-2 py-1 uppercase">OpenAI API</span>
+              <span class="font-mono text-xs border border-black px-2 py-1 uppercase">LangChain</span>
+              <span class="font-mono text-xs border border-black px-2 py-1 uppercase">PyTorch</span>
+              <span class="font-mono text-xs border border-black px-2 py-1 uppercase">Hugging Face</span>
+            </div>
+            <div class="border-t border-black/20 pt-3 mt-auto">
+              <div class="font-mono text-xs text-black/60 mb-1">Proficiency:</div>
+              <div class="font-mono font-bold text-sm">Expert Level</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Contact Form -->
   <section id="contact" class="max-w-7xl mx-auto px-6 py-24 pb-40">
     <div
@@ -582,6 +973,15 @@
       mobileMenuBtn.addEventListener('click', toggleMobileMenu);
     }
 
+    // Close mobile menu when nav link is clicked
+    document.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', () => {
+        if (isMobileMenuOpen) {
+          toggleMobileMenu();
+        }
+      });
+    });
+
     // GSAP Animations
     gsap.registerPlugin(ScrollTrigger);
 
@@ -614,17 +1014,326 @@
       });
     }
 
-    // Scroll animations for sections
-    gsap.utils.toArray('.gsap-section').forEach(section => {
-      gsap.from(section, {
-        opacity: 0,
-        y: 50,
+    // Capabilities Carousel Controls
+    const capabilitiesCarousel = document.getElementById('capabilities-carousel');
+    const prevCapBtn = document.getElementById('prev-capability');
+    const nextCapBtn = document.getElementById('next-capability');
+
+    if (capabilitiesCarousel && prevCapBtn && nextCapBtn) {
+      prevCapBtn.addEventListener('click', () => {
+        capabilitiesCarousel.scrollBy({ left: -capabilitiesCarousel.clientWidth * 0.8, behavior: 'smooth' });
+      });
+      nextCapBtn.addEventListener('click', () => {
+        capabilitiesCarousel.scrollBy({ left: capabilitiesCarousel.clientWidth * 0.8, behavior: 'smooth' });
+      });
+    }
+
+    // Active Link Highlighting on Scroll
+    function updateActiveNavLink() {
+      const sections = ['hero', 'expertise', 'work', 'testimonials', 'contact'];
+      let currentSection = 'hero';
+
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          if (rect.top <= window.innerHeight / 2) {
+            currentSection = section;
+          }
+        }
+      }
+
+      // Update all nav links
+      document.querySelectorAll('.nav-link').forEach(link => {
+        const linkSection = link.getAttribute('data-section');
+        link.classList.remove('bg-electric', 'text-surface', 'border-ink', 'shadow-brutal-sm');
+
+        if (linkSection === currentSection) {
+          link.classList.add('bg-electric', 'text-surface', 'border-ink', 'shadow-brutal-sm');
+        }
+      });
+    }
+
+    // Update on scroll
+    window.addEventListener('scroll', updateActiveNavLink);
+    // Initial call
+    updateActiveNavLink();
+
+    // Scroll animations for general sections
+    gsap.utils.toArray('.gsap-section:not(#expertise .grid > div)').forEach(section => {
+      gsap.fromTo(section,
+        { opacity: 0, y: 50 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: section,
+            start: 'top 85%',
+          }
+        }
+      );
+    });
+
+    // Elegant stagger animation for Services Matrix
+    const expertiseGrid = document.querySelector('#expertise .grid');
+    if (expertiseGrid) {
+      gsap.fromTo('#expertise .grid > div',
+        { opacity: 0, y: 60, scale: 0.95 },
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          duration: 0.8,
+          ease: 'back.out(1.5)',
+          stagger: 0.15,
+          clearProps: 'transform', // CRITICAL: Ensures Tailwind's hover classes still work after animation!
+          scrollTrigger: {
+            trigger: expertiseGrid,
+            start: 'top 85%',
+          }
+        }
+      );
+    }
+
+    // Stagger animation for Capabilities Cards with Float Effect
+    const capabilitiesSection = document.querySelector('#capabilities');
+    if (capabilitiesSection) {
+      const capCards = capabilitiesSection.querySelectorAll('.grid > div');
+
+      // Initial entrance animation with float effect
+      gsap.fromTo(capCards,
+        { opacity: 0, y: 100, scale: 0.9 },
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          duration: 0.9,
+          ease: 'back.out(1.7)',
+          stagger: 0.12,
+          scrollTrigger: {
+            trigger: capabilitiesSection,
+            start: 'top 80%',
+          },
+          onComplete: function () {
+            // Add continuous float animation after entrance
+            capCards.forEach((card, index) => {
+              gsap.to(card, {
+                y: -10 - (index % 2) * 5,
+                duration: 3 + (index * 0.3),
+                ease: 'sine.inOut',
+                repeat: -1,
+                yoyo: true
+              });
+            });
+          }
+        }
+      );
+    }
+
+    // Navbar slide down animation on load
+    gsap.from('header', {
+      duration: 0.6,
+      y: -80,
+      opacity: 0,
+      ease: 'power3.out',
+      delay: 0.1
+    });
+
+    // Work section cards stagger animation
+    const workCards = document.querySelectorAll('#work .group');
+    if (workCards.length > 0) {
+      gsap.fromTo(workCards,
+        { opacity: 0, y: 60, rotation: -3 },
+        {
+          opacity: 1,
+          y: 0,
+          rotation: 0,
+          duration: 0.8,
+          ease: 'power3.out',
+          stagger: 0.2,
+          scrollTrigger: {
+            trigger: '#work',
+            start: 'top 80%',
+          }
+        }
+      );
+    }
+
+    // Testimonial cards slide in animation
+    const testimonialCards = document.querySelectorAll('#testimonials-carousel > div');
+    if (testimonialCards.length > 0) {
+      testimonialCards.forEach((card, index) => {
+        gsap.fromTo(card,
+          { opacity: 0, x: 100 },
+          {
+            opacity: 1,
+            x: 0,
+            duration: 0.6,
+            ease: 'power2.out',
+            scrollTrigger: {
+              trigger: '#testimonials',
+              start: 'top 80%',
+            },
+            delay: index * 0.1
+          }
+        );
+      });
+    }
+
+    // Contact section elements animation
+    const contactForm = document.querySelector('#contact');
+    if (contactForm) {
+      gsap.fromTo(contactForm,
+        { opacity: 0, y: 40, scale: 0.98 },
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          duration: 0.8,
+          ease: 'back.out(1.2)',
+          scrollTrigger: {
+            trigger: '#contact',
+            start: 'top 85%',
+          }
+        }
+      );
+    }
+
+    // Footer fade in animation
+    gsap.fromTo('footer',
+      { opacity: 0 },
+      {
+        opacity: 1,
         duration: 0.8,
         ease: 'power3.out',
         scrollTrigger: {
-          trigger: section,
-          start: 'top 85%',
+          trigger: 'footer',
+          start: 'top 95%',
         }
+      }
+    );
+
+    // Navbar slide down animation
+    window.addEventListener('load', () => {
+      // Animated badge pulse
+      const badge = document.querySelector('.pulse-badge');
+      if (badge) {
+        badge.classList.add('pulse-badge');
+      }
+    });
+
+    // Hero image parallax effect
+    const heroImage = document.querySelector('#hero img');
+    if (heroImage) {
+      gsap.to(heroImage, {
+        y: -50,
+        scrollTrigger: {
+          trigger: '#hero',
+          start: 'top top',
+          end: 'bottom center',
+          scrub: 1,
+          markers: false,
+        }
+      });
+    }
+
+    // Subtle parallax on work section
+    const workSection = document.querySelector('#work');
+    if (workSection) {
+      gsap.to(workSection, {
+        y: 30,
+        scrollTrigger: {
+          trigger: '#work',
+          start: 'top center',
+          end: 'bottom center',
+          scrub: 1,
+          markers: false,
+        }
+      });
+    }
+
+    // Animate section title on scroll
+    const sectionTitles = document.querySelectorAll('h2[class*="gsap-section"]');
+    sectionTitles.forEach(title => {
+      gsap.fromTo(title,
+        { opacity: 0, x: -40 },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 0.8,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: title,
+            start: 'top 85%',
+          }
+        }
+      );
+    });
+
+    // Interactive hover animations for project cards
+    document.querySelectorAll('#work .group').forEach(card => {
+      card.addEventListener('mouseenter', function () {
+        gsap.to(this, {
+          duration: 0.3,
+          boxShadow: '0 0 30px rgba(0, 85, 255, 0.3)',
+          ease: 'power2.out'
+        });
+      });
+
+      card.addEventListener('mouseleave', function () {
+        gsap.to(this, {
+          duration: 0.3,
+          boxShadow: 'none',
+          ease: 'power2.out'
+        });
+      });
+    });
+
+    // Contact form input focus animations
+    document.querySelectorAll('.contact-form-input').forEach(input => {
+      input.addEventListener('focus', function () {
+        gsap.to(this, {
+          duration: 0.3,
+          scale: 1.02,
+          boxShadow: '0 0 0 3px rgba(0, 85, 255, 0.1), inset 0 0 0 1px #0055FF',
+          ease: 'power2.out'
+        });
+      });
+
+      input.addEventListener('blur', function () {
+        gsap.to(this, {
+          duration: 0.3,
+          scale: 1,
+          boxShadow: 'none',
+          ease: 'power2.out'
+        });
+      });
+    });
+
+    // Stagger animation for interactive badges on hover
+    document.querySelectorAll('.flex.flex-wrap').forEach(container => {
+      const badges = container.querySelectorAll('div');
+      container.addEventListener('mouseenter', function () {
+        badges.forEach((badge, index) => {
+          gsap.to(badge, {
+            duration: 0.2,
+            y: -2,
+            delay: index * 0.05,
+            ease: 'power2.out'
+          });
+        });
+      });
+
+      container.addEventListener('mouseleave', function () {
+        badges.forEach((badge) => {
+          gsap.to(badge, {
+            duration: 0.3,
+            y: 0,
+            ease: 'power2.out'
+          });
+        });
       });
     });
   </script>
