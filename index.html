@@ -1423,6 +1423,13 @@
       
       const clone = document.body.cloneNode(true);
       clone.querySelectorAll('script, .custom-cursor, .custom-cursor-follower, .noise-overlay').forEach(el => el.remove());
+      
+      const fixedElements = clone.querySelectorAll('.fixed');
+      fixedElements.forEach(el => {
+        el.classList.remove('fixed');
+        el.classList.add('absolute', 'clone-fixed-element');
+      });
+
       clone.querySelectorAll('*').forEach(el => {
         el.removeAttribute('style');
         el.removeAttribute('id');
@@ -1440,6 +1447,7 @@
       gsap.set(magnifierContent, { scale: scale });
       gsap.set(cursor, { xPercent: -50, yPercent: -50 });
       gsap.set(cursorFollower, { xPercent: -50, yPercent: -50, width: followerSize, height: followerSize });
+      gsap.set(magnifierContent.querySelectorAll('.clone-fixed-element'), { y: window.scrollY });
 
       let mouseX = window.innerWidth / 2;
       let mouseY = window.innerHeight / 2;
@@ -1501,6 +1509,7 @@
           duration: 0.1,
           ease: 'none'
         });
+        gsap.set(magnifierContent.querySelectorAll('.clone-fixed-element'), { y: window.scrollY });
       });
 
       interactiveElements.forEach(el => {
