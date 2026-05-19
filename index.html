@@ -80,6 +80,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
   <link rel="stylesheet" href="./styles.css">
+  <!-- Cloudflare Turnstile Captcha -->
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
 
 <body class="grid-flow selection:bg-electric selection:text-white">
@@ -750,9 +752,8 @@
 
       <!-- Right side: Contact Form -->
       <div class="flex flex-col items-start lg:items-end z-10 pl-0 lg:pl-8 w-full">
-        <form id="contact-form" action="https://api.web3forms.com/submit" method="POST"
+        <form id="contact-form" action="https://submit-form.com/qjRYcrzqb" method="POST"
           class="w-full flex flex-col gap-4">
-          <input type="hidden" name="access_key" value="2720e9b3-cd7b-49e2-b25e-6f2d11895dae">
 
           <div id="contact-form-inner" class="flex flex-col gap-4 sm:gap-5 w-full">
             <div class="flex flex-col gap-2 w-full">
@@ -799,7 +800,7 @@
           <div id="contact-form-controls" class="flex flex-col gap-2 w-full">
 
             <div class="w-full flex justify-center sm:justify-start overflow-hidden">
-              <div class="h-captcha" data-captcha="true"></div>
+              <div class="cf-turnstile" data-sitekey="0x4AAAAAADSmO47d_pl1ounn" data-theme="light"></div>
             </div>
 
             <button type="submit" id="contact-submit-btn"
@@ -935,7 +936,6 @@
 
   <!-- Scripts -->
   <script src="./script.js"></script>
-  <script src="https://web3forms.com/client/script.js" async defer></script>
 </body>
 
 </html>

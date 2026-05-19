@@ -387,66 +387,52 @@ gsap.from('header', {
   delay: 0.1
 });
 
-// Contact form: set a 24-hour cookie on submit and show the Received box until it expires
-(function () {
-  const FORM_ID = 'contact-form';
-  const FORM_INNER_ID = 'contact-form-inner';
-  const FORM_CONTROLS_ID = 'contact-form-controls';
-  const RECEIVED_ID = 'contact-success';
-  const COOKIE_NAME = 'kyte_contact_submitted';
-  const COOKIE_HOURS = 24;
+// Contact form cookie helpers for tracking submission success
+const COOKIE_NAME = 'kyte_contact_submitted';
+const COOKIE_HOURS = 24;
 
-  function setCookie(name, value, hours) {
-    const d = new Date();
-    d.setTime(d.getTime() + hours * 60 * 60 * 1000);
-    document.cookie = name + '=' + encodeURIComponent(value) + ';expires=' + d.toUTCString() + ';path=/';
+function setCookie(name, value, hours) {
+  const d = new Date();
+  d.setTime(d.getTime() + hours * 60 * 60 * 1000);
+  document.cookie = name + '=' + encodeURIComponent(value) + ';expires=' + d.toUTCString() + ';path=/';
+}
+
+function getCookie(name) {
+  const match = document.cookie.match(new RegExp('(^|; )' + name + '=([^;]+)'));
+  return match ? decodeURIComponent(match[2]) : null;
+}
+
+function showReceivedBox() {
+  const box = document.getElementById('contact-success');
+  const inner = document.getElementById('contact-form-inner');
+  const controls = document.getElementById('contact-form-controls');
+  if (inner) inner.classList.add('hidden');
+  if (controls) controls.classList.add('hidden');
+  if (box) {
+    box.classList.remove('hidden');
+    box.classList.add('flex');
   }
+}
 
-  function getCookie(name) {
-    const match = document.cookie.match(new RegExp('(^|; )' + name + '=([^;]+)'));
-    return match ? decodeURIComponent(match[2]) : null;
+function hideReceivedBox() {
+  const box = document.getElementById('contact-success');
+  const inner = document.getElementById('contact-form-inner');
+  const controls = document.getElementById('contact-form-controls');
+  if (box) box.classList.add('hidden');
+  if (inner) inner.classList.remove('hidden');
+  if (controls) controls.classList.remove('hidden');
+}
+
+function checkCookieAndToggle() {
+  if (getCookie(COOKIE_NAME)) {
+    showReceivedBox();
+  } else {
+    hideReceivedBox();
   }
+}
 
-  function showReceivedBox() {
-    const box = document.getElementById(RECEIVED_ID);
-    const inner = document.getElementById(FORM_INNER_ID);
-    const controls = document.getElementById(FORM_CONTROLS_ID);
-    if (inner) inner.classList.add('hidden');
-    if (controls) controls.classList.add('hidden');
-    if (box) box.classList.remove('hidden');
-  }
-
-  function hideReceivedBox() {
-    const box = document.getElementById(RECEIVED_ID);
-    const inner = document.getElementById(FORM_INNER_ID);
-    const controls = document.getElementById(FORM_CONTROLS_ID);
-    if (box) box.classList.add('hidden');
-    if (inner) inner.classList.remove('hidden');
-    if (controls) controls.classList.remove('hidden');
-  }
-
-  function checkCookieAndToggle() {
-    if (getCookie(COOKIE_NAME)) showReceivedBox();
-    else hideReceivedBox();
-  }
-
-  document.addEventListener('DOMContentLoaded', function () {
-    const form = document.getElementById(FORM_ID);
-    if (form) {
-      form.addEventListener('submit', function () {
-        try {
-          setCookie(COOKIE_NAME, '1', COOKIE_HOURS);
-          showReceivedBox();
-        } catch (e) {
-          // ignore cookie errors
-        }
-      });
-    }
-
-    // initial check
-    checkCookieAndToggle();
-  });
-})();
+// Initial cookie check on load
+document.addEventListener('DOMContentLoaded', checkCookieAndToggle);
 
 // Work section cards stagger animation
 const workCards = document.querySelectorAll('#work .group');
@@ -627,17 +613,17 @@ document.querySelectorAll('.flex.flex-wrap').forEach(container => {
 });
 
 
-// Web3Forms AJAX Submission
-const web3ContactForm = document.getElementById('contact-form');
-if (web3ContactForm) {
-  web3ContactForm.addEventListener('submit', function (e) {
+// Formspark AJAX Submission
+const kyteContactForm = document.getElementById('contact-form');
+if (kyteContactForm) {
+  kyteContactForm.addEventListener('submit', function (e) {
     e.preventDefault();
 
-    const formData = new FormData(web3ContactForm);
+    const formData = new FormData(kyteContactForm);
 
-    // Client-side hCaptcha validation
-    const hCaptchaResponse = formData.get('h-captcha-response');
-    if (!hCaptchaResponse) {
+    // Client-side Cloudflare Turnstile validation
+    const turnstileResponse = formData.get('cf-turnstile-response');
+    if (!turnstileResponse) {
       alert('Please complete the Captcha challenge before submitting!');
       return;
     }
@@ -649,7 +635,9 @@ if (web3ContactForm) {
     const object = Object.fromEntries(formData);
     const json = JSON.stringify(object);
 
-    fetch('https://api.web3forms.com/submit', {
+    const actionUrl = kyteContactForm.getAttribute('action') || 'https://submit-form.com/YOUR_FORMSPARK_FORM_ID';
+
+    fetch(actionUrl, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -658,20 +646,48 @@ if (web3ContactForm) {
       body: json
     })
       .then(async (response) => {
-        if (response.status == 200) {
-          document.getElementById('contact-form-inner').classList.add('hidden');
-          document.getElementById('contact-success').classList.remove('hidden');
-          document.getElementById('contact-success').classList.add('flex');
+        if (response.ok) {
+          try {
+            setCookie(COOKIE_NAME, '1', COOKIE_HOURS);
+          } catch (err) {
+            // Ignore cookie errors
+          }
+          showReceivedBox();
         } else {
           console.log(response);
           submitBtn.innerHTML = originalContent;
-          alert("Something went wrong! Please try again.");
+          if (typeof turnstile !== 'undefined') {
+            turnstile.reset();
+          }
+          
+          let errorMessage = "Something went wrong! Please try again.";
+          try {
+            const responseText = await response.text();
+            try {
+              const errorJson = JSON.parse(responseText);
+              if (errorJson && errorJson.message) {
+                errorMessage = `Submission failed: ${errorJson.message}`;
+              } else if (errorJson && typeof errorJson === 'object') {
+                errorMessage = `Submission failed: ${JSON.stringify(errorJson)}`;
+              }
+            } catch (jsonErr) {
+              if (responseText) {
+                errorMessage = `Submission failed: ${responseText}`;
+              }
+            }
+          } catch (textErr) {
+            // Stream read failed
+          }
+          alert(errorMessage);
         }
       })
       .catch(error => {
         console.log(error);
         submitBtn.innerHTML = originalContent;
-        alert("Something went wrong! Please try again.");
+        if (typeof turnstile !== 'undefined') {
+          turnstile.reset();
+        }
+        alert("Network error: " + error.message);
       });
   });
 }
