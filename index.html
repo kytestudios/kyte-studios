@@ -4,12 +4,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+
   <!-- Primary Meta Tags -->
   <title>Kyte Studios | Premium Web & App Development Agency</title>
   <meta name="title" content="Kyte Studios | Premium Web & App Development Agency">
-  <meta name="description" content="Kyte Studios is a digital agency specializing in high-performance web development, AI workflows, internal tooling, and modern SaaS development. Let's build your digital future.">
-  <meta name="keywords" content="Web Development, App Development, AI Workflows, SaaS Development, Cloud Infrastructure, Digital Agency, Kyte Studios, UI/UX Design">
+  <meta name="description"
+    content="Kyte Studios is a digital agency specializing in high-performance web development, AI workflows, internal tooling, and modern SaaS development. Let's build your digital future.">
+  <meta name="keywords"
+    content="Web Development, App Development, AI Workflows, SaaS Development, Cloud Infrastructure, Digital Agency, Kyte Studios, UI/UX Design">
   <meta name="author" content="Kyte Studios">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://www.kytestudios.in">
@@ -18,15 +20,17 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.kytestudios.in/">
   <meta property="og:title" content="Kyte Studios | Premium Web & App Development Agency">
-  <meta property="og:description" content="Kyte Studios is a digital agency specializing in high-performance web development, AI workflows, internal tooling, and modern SaaS development. Let's build your digital future.">
-  <meta property="og:image" content="https://www.kytestudios.in/Kite_Transparent.png">
+  <meta property="og:description"
+    content="Kyte Studios is a digital agency specializing in high-performance web development, AI workflows, internal tooling, and modern SaaS development. Let's build your digital future.">
+  <meta property="og:image" content="https://www.kytestudios.in/images/logo.png">
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="https://www.kytestudios.in/">
   <meta property="twitter:title" content="Kyte Studios | Premium Web & App Development Agency">
-  <meta property="twitter:description" content="Kyte Studios is a digital agency specializing in high-performance web development, AI workflows, internal tooling, and modern SaaS development. Let's build your digital future.">
-  <meta property="twitter:image" content="https://www.kytestudios.in/Kite_Transparent.png">
+  <meta property="twitter:description"
+    content="Kyte Studios is a digital agency specializing in high-performance web development, AI workflows, internal tooling, and modern SaaS development. Let's build your digital future.">
+  <meta property="twitter:image" content="https://www.kytestudios.in/images/logo.png">
 
   <!-- Schema.org JSON-LD -->
   <script type="application/ld+json">
@@ -34,7 +38,7 @@
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     "name": "Kyte Studios",
-    "image": "https://www.kytestudios.in/Kite_Transparent.png",
+    "image": "https://www.kytestudios.in/images/logo.png",
     "@id": "https://www.kytestudios.in",
     "url": "https://www.kytestudios.in",
     "telephone": "+919355185187",
@@ -49,8 +53,12 @@
   }
   </script>
 
-  <link rel="icon" type="image/png" href="/Kite_Transparent.png">
-  <link rel="apple-touch-icon" href="/Kite_Transparent.png">
+  <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="Kyte Studios" />
+  <link rel="manifest" href="/favicon/site.webmanifest" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -64,192 +72,14 @@
 
   <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['Inter', 'sans-serif'],
-            mono: ['JetBrains Mono', 'monospace'],
-            serif: ['Playfair Display', 'serif'],
-          },
-          colors: {
-            bg: '#FAF9F6',
-            ink: '#111111',
-            tangerine: '#FF5522',
-            electric: '#0055FF',
-            surface: '#FFFFFF',
-          },
-          boxShadow: {
-            'brutal': '6px 6px 0px 0px #111111',
-            'brutal-sm': '4px 4px 0px 0px #111111',
-            'brutal-hover': '2px 2px 0px 0px #111111',
-          }
-        }
-      }
-    }
-  </script>
+  <script src="./tailwind.config.js"></script>
 
   <!-- GSAP & Lenis -->
   <script src="https://unpkg.com/@studio-freight/lenis@1.0.39/dist/lenis.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
-  <style>
-    body {
-      background-color: #FAF9F6;
-      background-image:
-        linear-gradient(rgba(0, 85, 255, 0.07) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 85, 255, 0.07) 1px, transparent 1px);
-      background-size: 32px 32px;
-      overflow-x: hidden;
-      color: #111111;
-    }
-
-    @media (pointer: fine) {
-
-      body,
-      html {
-        cursor: url("data:image/svg+xml;charset=utf-8,%3Csvg width='28' height='28' viewBox='0 0 28 28' fill='%23FF5522' stroke='%23111111' stroke-width='2.5' stroke-linejoin='round' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2 2L24 10L14 14L10 24Z'/%3E%3C/svg%3E") 2 2, auto;
-      }
-
-      a,
-      button,
-      .interactive-element,
-      .cursor-pointer,
-      input,
-      textarea,
-      select {
-        cursor: url("data:image/svg+xml;charset=utf-8,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='%23FF5522' stroke='%23111111' stroke-width='2.5' stroke-linejoin='round' xmlns='http://www.w3.org/2000/svg'%3E%3Cg transform='scale(1.15) translate(0, 0)'%3E%3Cpath d='M2 2L24 10L14 14L10 24Z'/%3E%3C/g%3E%3C/svg%3E") 2 2, pointer !important;
-      }
-    }
-
-    .brutal-border {
-      border: 2px solid #111111;
-    }
-
-    .interactive-element {
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
-    }
-
-    .interactive-element:hover {
-      transform: translate(2px, 2px);
-      box-shadow: 4px 4px 0px 0px #111111;
-    }
-
-    .interactive-element:active {
-      transform: translate(6px, 6px);
-      box-shadow: 0px 0px 0px 0px #111111;
-    }
-
-    .grid-flow {
-      animation: backgroundPan 20s linear infinite;
-    }
-
-    @keyframes backgroundPan {
-      from {
-        background-position: 0 0;
-      }
-
-      to {
-        background-position: -32px -32px;
-      }
-    }
-
-    .hide-scrollbar::-webkit-scrollbar {
-      display: none;
-    }
-
-    .hide-scrollbar {
-      -ms-overflow-style: none;
-      scrollbar-width: none;
-    }
-
-    /* Additional Animations */
-    .pulse-badge {
-      animation: subtle-pulse 2s ease-in-out infinite;
-    }
-
-    @keyframes subtle-pulse {
-
-      0%,
-      100% {
-        transform: scale(1);
-        box-shadow: 0 0 0 0 rgba(255, 85, 34, 0.3);
-      }
-
-      50% {
-        transform: scale(1.05);
-        box-shadow: 0 0 0 4px rgba(255, 85, 34, 0);
-      }
-    }
-
-    .float-animation {
-      animation: gentle-float 3s ease-in-out infinite;
-    }
-
-    @keyframes gentle-float {
-
-      0%,
-      100% {
-        transform: translateY(0px);
-      }
-
-      50% {
-        transform: translateY(-8px);
-      }
-    }
-
-    .glow-on-hover {
-      transition: box-shadow 0.3s ease, transform 0.3s ease;
-    }
-
-    .glow-on-hover:hover {
-      box-shadow: 0 0 20px rgba(0, 85, 255, 0.3), 6px 6px 0px 0px #111111;
-      transform: translateY(-4px);
-    }
-
-    .work-card {
-      transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-    }
-
-    .work-card:hover {
-      transform: translateY(-12px) rotate(1deg);
-    }
-
-    .section-title-underline {
-      position: relative;
-      display: inline-block;
-    }
-
-    .section-title-underline::after {
-      content: '';
-      position: absolute;
-      bottom: -8px;
-      left: 0;
-      width: 100%;
-      height: 3px;
-      background: #0055FF;
-      transform: scaleX(0);
-      transform-origin: left;
-      animation: underline-expand 0.8s ease-out forwards;
-    }
-
-    @keyframes underline-expand {
-      to {
-        transform: scaleX(1);
-      }
-    }
-
-    .contact-form-input {
-      transition: all 0.3s ease;
-    }
-
-    .contact-form-input:focus {
-      box-shadow: 0 0 0 3px rgba(0, 85, 255, 0.1), inset 0 0 0 1px #0055FF;
-      transform: scale(1.02);
-    }
-  </style>
+  <link rel="stylesheet" href="./styles.css">
 </head>
 
 <body class="grid-flow selection:bg-electric selection:text-white">
@@ -258,10 +88,10 @@
   <!-- Navbar -->
   <header class="fixed top-4 left-4 right-4 z-50">
     <div
-      class="max-w-7xl mx-auto bg-surface brutal-border shadow-brutal flex justify-between items-center p-3 md:p-4 relative z-50">
-      <a href="#" class="flex items-center gap-2 pl-1">
-        <img src="./Kite_Transparent.png" alt="KyteStudios" class="h-9 md:h-10 w-auto object-contain">
-        <span class="font-sans font-black text-2xl md:text-3xl tracking-tighter leading-none">KyteStudios</span>
+      class="max-w-7xl mx-auto bg-surface brutal-border shadow-brutal flex justify-between items-center p-2.5 sm:p-3 md:p-4 relative z-50">
+      <a href="#" class="flex items-center gap-1.5 sm:gap-2 pl-1">
+        <img src="./images/logo.png" alt="KyteStudios" class="h-8 sm:h-9 md:h-10 w-auto object-contain">
+        <span class="font-sans font-black text-xl sm:text-2xl md:text-3xl tracking-tighter leading-none">KyteStudios</span>
       </a>
       <nav class="hidden md:flex gap-4 font-mono text-sm font-bold uppercase items-center">
         <a href="#hero"
@@ -289,45 +119,58 @@
 
     <!-- Mobile Menu Dropdown -->
     <div id="mobile-menu"
-      class="max-w-7xl mx-auto mt-2 bg-surface brutal-border shadow-brutal p-4 flex flex-col gap-2 md:hidden opacity-0 pointer-events-none -translate-y-4 transition-all duration-300 transform origin-top">
+      class="hidden md:hidden absolute left-0 right-0 top-full mt-2 max-w-7xl mx-auto bg-surface brutal-border shadow-brutal p-3 flex flex-col gap-1.5 transition-all duration-300 transform origin-top z-40">
       <a href="#hero"
-        class="mobile-link nav-link text-center px-4 py-3 border-2 border-transparent hover:border-ink hover:bg-electric hover:text-surface font-mono text-sm font-bold uppercase transition-all"
-        data-section="hero">Home</a>
+        class="mobile-link mobile-nav-item nav-link text-left px-4 py-3 border-2 border-transparent hover:border-ink hover:bg-electric hover:text-surface font-mono text-sm font-bold uppercase transition-all flex items-center justify-between"
+        data-section="hero">
+        <span>Home</span>
+        <span class="material-symbols-outlined text-[18px]">home</span>
+      </a>
       <a href="#expertise"
-        class="mobile-link nav-link text-center px-4 py-3 border-2 border-transparent hover:border-ink hover:bg-electric hover:text-surface font-mono text-sm font-bold uppercase transition-all"
-        data-section="expertise">Expertise</a>
+        class="mobile-link mobile-nav-item nav-link text-left px-4 py-3 border-2 border-transparent hover:border-ink hover:bg-electric hover:text-surface font-mono text-sm font-bold uppercase transition-all flex items-center justify-between"
+        data-section="expertise">
+        <span>Expertise</span>
+        <span class="material-symbols-outlined text-[18px]">layers</span>
+      </a>
       <a href="#work"
-        class="mobile-link nav-link text-center px-4 py-3 border-2 border-transparent hover:border-ink hover:bg-tangerine hover:text-ink font-mono text-sm font-bold uppercase transition-all"
-        data-section="work">Work</a>
+        class="mobile-link mobile-nav-item nav-link text-left px-4 py-3 border-2 border-transparent hover:border-ink hover:bg-tangerine hover:text-ink font-mono text-sm font-bold uppercase transition-all flex items-center justify-between"
+        data-section="work">
+        <span>Work</span>
+        <span class="material-symbols-outlined text-[18px]">folder_open</span>
+      </a>
       <a href="#testimonials"
-        class="mobile-link nav-link text-center px-4 py-3 border-2 border-transparent hover:border-ink hover:bg-electric hover:text-surface font-mono text-sm font-bold uppercase transition-all"
-        data-section="testimonials">Testimonials</a>
+        class="mobile-link mobile-nav-item nav-link text-left px-4 py-3 border-2 border-transparent hover:border-ink hover:bg-electric hover:text-surface font-mono text-sm font-bold uppercase transition-all flex items-center justify-between"
+        data-section="testimonials">
+        <span>Testimonials</span>
+        <span class="material-symbols-outlined text-[18px]">star</span>
+      </a>
+      <div class="h-[1px] bg-ink/10 my-1"></div>
       <a href="#contact"
-        class="mobile-link text-center bg-ink text-surface px-4 py-3 border-2 border-ink hover:bg-surface hover:text-ink font-mono text-sm font-bold uppercase flex justify-center items-center gap-2 transition-colors">
-        Let's Talk <span class="material-symbols-outlined text-[18px]">chat</span>
+        class="mobile-link text-center bg-ink text-surface px-4 py-3.5 border-2 border-ink hover:bg-surface hover:text-ink font-mono text-sm font-bold uppercase flex justify-center items-center gap-2 transition-colors shadow-brutal-sm hover:-translate-y-0.5">
+        <span>Let's Talk</span>
+        <span class="material-symbols-outlined text-[18px]">chat</span>
       </a>
     </div>
   </header>
 
   <!-- Hero Section -->
-  <section id="hero" class="max-w-7xl mx-auto px-6 pt-40 pb-20 min-h-[90vh] flex flex-col justify-center">
+  <section id="hero" class="max-w-7xl mx-auto px-4 sm:px-6 pt-28 md:pt-40 pb-12 md:pb-20 min-h-[90vh] flex flex-col justify-center overflow-x-hidden">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
 
       <!-- Left Side: Copy -->
-      <div class="lg:col-span-7 flex flex-col gap-6 relative z-10">
+      <div class="lg:col-span-7 flex flex-col gap-5 md:gap-6 relative z-10">
         <!-- Badge -->
         <div
-          class="gsap-slide-up bg-surface brutal-border shadow-brutal p-3 inline-flex items-center gap-2 self-start -rotate-2 pulse-badge">
-          <span class="w-3 h-3 bg-tangerine rounded-full animate-pulse brutal-border border-ink"></span>
-          <span class="font-mono text-sm font-bold tracking-tight uppercase">KyteStudios // Digital Product
-            Agency</span>
+          class="gsap-slide-up bg-surface brutal-border shadow-brutal p-2 sm:p-3 inline-flex items-center gap-2 self-start -rotate-2 pulse-badge">
+          <span class="w-2.5 h-2.5 bg-tangerine rounded-full animate-pulse brutal-border border-ink"></span>
+          <span class="font-mono text-xs sm:text-sm font-bold tracking-tight uppercase">KyteStudios // Digital Product Agency</span>
         </div>
 
         <!-- Headline -->
         <div class="gsap-slide-up relative">
-          <div class="bg-surface brutal-border shadow-brutal p-6 md:p-10 rotate-1 relative z-10">
+          <div class="bg-surface brutal-border shadow-brutal p-4 sm:p-6 md:p-10 rotate-1 relative z-10">
             <h1
-              class="font-sans font-black text-5xl md:text-7xl lg:text-[5rem] leading-[0.95] tracking-tighter uppercase break-words">
+              class="font-sans font-black text-4xl sm:text-5xl md:text-7xl lg:text-[5rem] leading-[0.95] tracking-tighter uppercase break-words">
               Digital<br>
               <span class="text-electric">Products</span><br>
               That Scale.
@@ -335,44 +178,44 @@
           </div>
           <!-- Abstract geometry behind headline -->
           <div
-            class="absolute -top-6 -right-4 md:-right-6 w-20 h-20 md:w-24 md:h-24 bg-tangerine brutal-border shadow-brutal rotate-12 -z-10 flex items-center justify-center">
-            <span class="material-symbols-outlined text-4xl md:text-5xl text-ink">rocket_launch</span>
+            class="absolute -top-4 -right-2 md:-top-6 md:-right-6 w-16 h-16 md:w-24 md:h-24 bg-tangerine brutal-border shadow-brutal rotate-12 -z-10 flex items-center justify-center">
+            <span class="material-symbols-outlined text-3xl md:text-5xl text-ink">rocket_launch</span>
           </div>
         </div>
 
         <!-- Subhead -->
-        <div class="gsap-slide-up bg-surface brutal-border shadow-brutal p-6 md:p-8 -rotate-1 max-w-xl">
-          <p class="font-sans text-lg md:text-xl leading-relaxed font-medium">
+        <div class="gsap-slide-up bg-surface brutal-border shadow-brutal p-4 sm:p-6 md:p-8 -rotate-1 max-w-xl">
+          <p class="font-sans text-sm sm:text-base md:text-xl leading-relaxed font-medium">
             We are a boutique product studio. We craft high-converting web experiences and scalable platforms that drive
             growth. Fast. Reliable. Beautiful.
           </p>
         </div>
 
         <!-- CTA -->
-        <div class="gsap-slide-up flex flex-wrap gap-4 mt-2">
+        <div class="gsap-slide-up flex flex-col sm:flex-row gap-4 mt-2 w-full sm:w-auto">
           <a href="#contact"
-            class="bg-tangerine text-ink brutal-border shadow-brutal interactive-element px-6 py-4 font-mono font-bold uppercase text-sm flex items-center gap-2">
-            Start a Project <span class="material-symbols-outlined">rocket_launch</span>
+            class="bg-tangerine text-ink brutal-border shadow-brutal interactive-element px-5 py-3.5 sm:px-6 sm:py-4 font-mono font-bold uppercase text-xs sm:text-sm flex items-center justify-center gap-2 w-full sm:w-auto text-center">
+            Start a Project <span class="material-symbols-outlined text-base">rocket_launch</span>
           </a>
           <a href="#expertise"
-            class="bg-surface text-ink brutal-border shadow-brutal interactive-element px-6 py-4 font-mono font-bold uppercase text-sm flex items-center gap-2 hidden sm:flex">
-            Our Expertise <span class="material-symbols-outlined">insights</span>
+            class="bg-surface text-ink brutal-border shadow-brutal interactive-element px-5 py-3.5 sm:px-6 sm:py-4 font-mono font-bold uppercase text-xs sm:text-sm flex items-center justify-center gap-2 w-full sm:w-auto text-center">
+            Our Expertise <span class="material-symbols-outlined text-base">insights</span>
           </a>
         </div>
       </div>
 
       <!-- Right Side: Visual -->
-      <div class="lg:col-span-5 relative mt-12 lg:mt-0 perspective-1000">
+      <div class="lg:col-span-5 relative mt-6 lg:mt-0 perspective-1000 px-2 sm:px-0">
         <div
-          class="gsap-fade-in aspect-[4/5] bg-surface brutal-border shadow-brutal rotate-3 relative overflow-hidden group">
-          <img src="./Kite_Landing.png" alt="Code Structure"
+          class="gsap-fade-in aspect-[4/3] sm:aspect-[4/5] bg-surface brutal-border shadow-brutal rotate-1 sm:rotate-3 relative overflow-hidden group">
+          <img src="./images/hero.png" alt="Code Structure"
             class="w-full h-full object-cover object-[75%_center] grayscale contrast-125 group-hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100">
 
           <!-- Overlay badge -->
           <div
-            class="absolute bottom-6 left-6 bg-electric text-white brutal-border shadow-brutal p-4 -rotate-3 transition-transform group-hover:rotate-0">
-            <div class="font-mono text-xs border-b border-white/30 pb-1 mb-1 font-bold">FEATURED</div>
-            <div class="font-sans font-black text-xl md:text-2xl uppercase tracking-tight">Product<br>Strategy</div>
+            class="absolute bottom-4 left-4 sm:bottom-6 sm:left-6 bg-electric text-white brutal-border shadow-brutal p-3 sm:p-4 -rotate-3 transition-transform group-hover:rotate-0">
+            <div class="font-mono text-[10px] sm:text-xs border-b border-white/30 pb-1 mb-1 font-bold">FEATURED</div>
+            <div class="font-sans font-black text-lg sm:text-xl md:text-2xl uppercase tracking-tight">Product<br>Strategy</div>
           </div>
         </div>
       </div>
@@ -380,38 +223,38 @@
   </section>
 
   <!-- Capabilities Matrix -->
-  <section id="expertise" class="max-w-7xl mx-auto px-6 py-24 flex flex-col gap-12">
+  <section id="expertise" class="max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-24 flex flex-col gap-8 md:gap-12">
     <h2
-      class="font-serif font-black text-4xl md:text-5xl text-ink uppercase inline-block bg-surface p-3 brutal-border shadow-brutal -rotate-1 self-start z-10 gsap-section">
+      class="font-serif font-black text-3xl sm:text-4xl md:text-5xl text-ink uppercase inline-block bg-surface p-2.5 sm:p-3 brutal-border shadow-brutal -rotate-0.5 sm:-rotate-1 self-start z-10 gsap-section">
       Services
     </h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 z-10">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 z-10">
       <!-- Service 1 -->
       <div
-        class="gsap-section bg-surface brutal-border shadow-brutal p-6 relative group rotate-1 hover:rotate-0 hover:-translate-y-2 transition-all duration-300">
+        class="gsap-section bg-surface brutal-border shadow-brutal p-5 sm:p-6 relative group rotate-0.5 sm:rotate-1 hover:rotate-0 hover:-translate-y-2 transition-all duration-300">
 
-        <h3 class="font-serif font-bold text-2xl md:text-3xl text-ink mb-4 mt-2">Web & App Development</h3>
-        <p class="font-mono text-sm text-ink/80 mb-6 leading-relaxed">
+        <h3 class="font-serif font-bold text-xl sm:text-2xl md:text-3xl text-ink mb-4 mt-2">Web & App Development</h3>
+        <p class="font-mono text-xs sm:text-sm text-ink/80 mb-6 leading-relaxed">
           From high-converting websites to powerful mobile apps, we build
           <span class="text-electric font-bold">stunning digital products</span>. We engineer fast,
           <span class="text-tangerine font-bold">cross-platform applications</span> for iOS, Android, and the Web that
           launch quickly and scale effortlessly.
         </p>
-        <div class="flex flex-wrap gap-2">
+        <div class="flex flex-wrap gap-1.5 sm:gap-2">
           <div
-            class="flex items-center gap-1.5 px-3 py-1 brutal-border bg-bg font-mono text-xs cursor-pointer hover:bg-electric hover:text-surface hover:shadow-brutal-sm hover:-translate-y-1 transition-all duration-200">
+            class="flex items-center gap-1 sm:gap-1.5 px-2 py-0.5 sm:px-3 sm:py-1 brutal-border bg-bg font-mono text-[10px] sm:text-xs cursor-pointer hover:bg-electric hover:text-surface hover:shadow-brutal-sm hover:-translate-y-1 transition-all duration-200">
             <span class="material-symbols-outlined text-sm">devices</span> UI/UX Design
           </div>
           <div
-            class="flex items-center gap-1.5 px-3 py-1 brutal-border bg-bg font-mono text-xs cursor-pointer hover:bg-electric hover:text-surface hover:shadow-brutal-sm hover:-translate-y-1 transition-all duration-200">
+            class="flex items-center gap-1 sm:gap-1.5 px-2 py-0.5 sm:px-3 sm:py-1 brutal-border bg-bg font-mono text-[10px] sm:text-xs cursor-pointer hover:bg-electric hover:text-surface hover:shadow-brutal-sm hover:-translate-y-1 transition-all duration-200">
             <span class="material-symbols-outlined text-sm">phone_iphone</span> Mobile Apps (iOS/Android)
           </div>
           <div
-            class="flex items-center gap-1.5 px-3 py-1 brutal-border bg-bg font-mono text-xs cursor-pointer hover:bg-electric hover:text-surface hover:shadow-brutal-sm hover:-translate-y-1 transition-all duration-200">
+            class="flex items-center gap-1 sm:gap-1.5 px-2 py-0.5 sm:px-3 sm:py-1 brutal-border bg-bg font-mono text-[10px] sm:text-xs cursor-pointer hover:bg-electric hover:text-surface hover:shadow-brutal-sm hover:-translate-y-1 transition-all duration-200">
             <span class="material-symbols-outlined text-sm">layers</span> Full-Stack Web
           </div>
           <div
-            class="flex items-center gap-1.5 px-3 py-1 brutal-border bg-bg font-mono text-xs cursor-pointer hover:bg-electric hover:text-surface hover:shadow-brutal-sm hover:-translate-y-1 transition-all duration-200">
+            class="flex items-center gap-1 sm:gap-1.5 px-2 py-0.5 sm:px-3 sm:py-1 brutal-border bg-bg font-mono text-[10px] sm:text-xs cursor-pointer hover:bg-electric hover:text-surface hover:shadow-brutal-sm hover:-translate-y-1 transition-all duration-200">
             <span class="material-symbols-outlined text-sm">bolt</span> Performance Optimization
           </div>
         </div>
@@ -419,31 +262,27 @@
 
       <!-- Service 2 -->
       <div
-        class="gsap-section bg-surface brutal-border shadow-brutal p-6 relative group -rotate-1 hover:rotate-0 hover:-translate-y-2 transition-all duration-300">
+        class="gsap-section bg-surface brutal-border shadow-brutal p-5 sm:p-6 relative group -rotate-0.5 sm:-rotate-1 hover:rotate-0 hover:-translate-y-2 transition-all duration-300">
 
-        <h3 class="font-serif font-bold text-2xl md:text-3xl text-ink mb-4 mt-2">AI Workflows</h3>
-        <p class="font-mono text-sm text-ink/80 mb-6 leading-relaxed">
+        <h3 class="font-serif font-bold text-xl sm:text-2xl md:text-3xl text-ink mb-4 mt-2">AI Workflows</h3>
+        <p class="font-mono text-xs sm:text-sm text-ink/80 mb-6 leading-relaxed">
           Don't just chase the AI hype—build systems that actually work for your business. We design and integrate
           intelligent AI workflows that
           <span class="text-electric font-bold">automate repetitive tasks</span>,
-          <span class="text-tangerine font-bold">extract deep data insights</span>
-          , and
-          <span class="text-electric font-bold">power smart</span>,
-
-          decision-making, allowing your team to focus on growth while your software handles the heavy lifting.
-          to maximize your digital ROI.
+          <span class="text-tangerine font-bold">extract deep data insights</span>, and
+          <span class="text-electric font-bold">power smart decision-making</span>, allowing your team to focus on growth while your software handles the heavy lifting to maximize your digital ROI.
         </p>
-        <div class="flex flex-wrap gap-2">
+        <div class="flex flex-wrap gap-1.5 sm:gap-2">
           <div
-            class="flex items-center gap-1.5 px-3 py-1 brutal-border bg-bg font-mono text-xs cursor-pointer hover:bg-electric hover:text-surface hover:shadow-brutal-sm hover:-translate-y-1 transition-all duration-200">
+            class="flex items-center gap-1 sm:gap-1.5 px-2 py-0.5 sm:px-3 sm:py-1 brutal-border bg-bg font-mono text-[10px] sm:text-xs cursor-pointer hover:bg-electric hover:text-surface hover:shadow-brutal-sm hover:-translate-y-1 transition-all duration-200">
             <span class="material-symbols-outlined text-sm">flash_on </span> Agentic Workflows
           </div>
           <div
-            class="flex items-center gap-1.5 px-3 py-1 brutal-border bg-bg font-mono text-xs cursor-pointer hover:bg-electric hover:text-surface hover:shadow-brutal-sm hover:-translate-y-1 transition-all duration-200">
+            class="flex items-center gap-1 sm:gap-1.5 px-2 py-0.5 sm:px-3 sm:py-1 brutal-border bg-bg font-mono text-[10px] sm:text-xs cursor-pointer hover:bg-electric hover:text-surface hover:shadow-brutal-sm hover:-translate-y-1 transition-all duration-200">
             <span class="material-symbols-outlined text-sm">ads_click</span> Event-Driven Smart Triggers
           </div>
           <div
-            class="flex items-center gap-1.5 px-3 py-1 brutal-border bg-bg font-mono text-xs cursor-pointer hover:bg-electric hover:text-surface hover:shadow-brutal-sm hover:-translate-y-1 transition-all duration-200">
+            class="flex items-center gap-1 sm:gap-1.5 px-2 py-0.5 sm:px-3 sm:py-1 brutal-border bg-bg font-mono text-[10px] sm:text-xs cursor-pointer hover:bg-electric hover:text-surface hover:shadow-brutal-sm hover:-translate-y-1 transition-all duration-200">
             <span class="material-symbols-outlined text-sm">trending_up</span> Legacy System Integration
           </div>
         </div>
@@ -451,129 +290,128 @@
 
       <!-- Service 3 -->
       <div
-        class="gsap-section bg-surface brutal-border shadow-brutal p-6 relative group rotate-2 hover:rotate-0 hover:-translate-y-2 transition-all duration-300">
+        class="gsap-section bg-surface brutal-border shadow-brutal p-5 sm:p-6 relative group rotate-1 sm:rotate-2 hover:rotate-0 hover:-translate-y-2 transition-all duration-300">
 
-        <h3 class="font-serif font-bold text-2xl md:text-3xl text-ink mb-4 mt-2">Internal Tooling</h3>
-        <p class="font-mono text-sm text-ink/80 mb-6 leading-relaxed">
+        <h3 class="font-serif font-bold text-xl sm:text-2xl md:text-3xl text-ink mb-4 mt-2">Internal Tooling</h3>
+        <p class="font-mono text-xs sm:text-sm text-ink/80 mb-6 leading-relaxed">
           Stop fighting with messy spreadsheets and disconnected apps. We build
           <span class="text-electric font-bold">custom internal tools</span>,
-          <span class="text-tangerine font-bold">admin panels</span>
-          , and
+          <span class="text-tangerine font-bold">admin panels</span>, and
           <span class="text-electric font-bold">dashboards</span>,
-
           tailored exactly to how your business runs, so your team can work faster and mistake-free.
-        <div class="flex flex-wrap gap-2">
+        </p>
+        <div class="flex flex-wrap gap-1.5 sm:gap-2">
           <div
-            class="flex items-center gap-1.5 px-3 py-1 brutal-border bg-bg font-mono text-xs cursor-pointer hover:bg-electric hover:text-surface hover:shadow-brutal-sm hover:-translate-y-1 transition-all duration-200">
-            <span class="material-symbols-outlined text-sm">draw</span> Logo Design
+            class="flex items-center gap-1 sm:gap-1.5 px-2 py-0.5 sm:px-3 sm:py-1 brutal-border bg-bg font-mono text-[10px] sm:text-xs cursor-pointer hover:bg-electric hover:text-surface hover:shadow-brutal-sm hover:-translate-y-1 transition-all duration-200">
+            <span class="material-symbols-outlined text-sm">dashboard</span> Custom Dashboards
           </div>
           <div
-            class="flex items-center gap-1.5 px-3 py-1 brutal-border bg-bg font-mono text-xs cursor-pointer hover:bg-electric hover:text-surface hover:shadow-brutal-sm hover:-translate-y-1 transition-all duration-200">
-            <span class="material-symbols-outlined text-sm">menu_book</span> Brand Guidelines
+            class="flex items-center gap-1 sm:gap-1.5 px-2 py-0.5 sm:px-3 sm:py-1 brutal-border bg-bg font-mono text-[10px] sm:text-xs cursor-pointer hover:bg-electric hover:text-surface hover:shadow-brutal-sm hover:-translate-y-1 transition-all duration-200">
+            <span class="material-symbols-outlined text-sm">admin_panel_settings</span> Admin Panels
           </div>
           <div
-            class="flex items-center gap-1.5 px-3 py-1 brutal-border bg-bg font-mono text-xs cursor-pointer hover:bg-electric hover:text-surface hover:shadow-brutal-sm hover:-translate-y-1 transition-all duration-200">
-            <span class="material-symbols-outlined text-sm">font_download</span> Typography
+            class="flex items-center gap-1 sm:gap-1.5 px-2 py-0.5 sm:px-3 sm:py-1 brutal-border bg-bg font-mono text-[10px] sm:text-xs cursor-pointer hover:bg-electric hover:text-surface hover:shadow-brutal-sm hover:-translate-y-1 transition-all duration-200">
+            <span class="material-symbols-outlined text-sm">database</span> Database Integrations
           </div>
           <div
-            class="flex items-center gap-1.5 px-3 py-1 brutal-border bg-bg font-mono text-xs cursor-pointer hover:bg-electric hover:text-surface hover:shadow-brutal-sm hover:-translate-y-1 transition-all duration-200">
-            <span class="material-symbols-outlined text-sm">palette</span> Art Direction
+            class="flex items-center gap-1 sm:gap-1.5 px-2 py-0.5 sm:px-3 sm:py-1 brutal-border bg-bg font-mono text-[10px] sm:text-xs cursor-pointer hover:bg-electric hover:text-surface hover:shadow-brutal-sm hover:-translate-y-1 transition-all duration-200">
+            <span class="material-symbols-outlined text-sm">speed</span> Operations Automation
           </div>
         </div>
       </div>
 
-
+      <!-- Service 4 -->
       <div
-        class="gsap-section bg-surface brutal-border shadow-brutal p-6 relative group -rotate-2 hover:rotate-0 hover:-translate-y-2 transition-all duration-300">
+        class="gsap-section bg-surface brutal-border shadow-brutal p-5 sm:p-6 relative group -rotate-1 sm:-rotate-2 hover:rotate-0 hover:-translate-y-2 transition-all duration-300">
 
-        <h3 class="font-serif font-bold text-2xl md:text-3xl text-ink mb-4 mt-2">Cloud Infrastructure</h3>
-        <p class="font-mono text-sm text-ink/80 mb-6 leading-relaxed">
+        <h3 class="font-serif font-bold text-xl sm:text-2xl md:text-3xl text-ink mb-4 mt-2">Cloud Infrastructure</h3>
+        <p class="font-mono text-xs sm:text-sm text-ink/80 mb-6 leading-relaxed">
           Keep your software fast, secure, and always online. We design and manage
           <span class="text-tangerine font-bold">bulletproof cloud setups</span> and
           <span class="text-electric font-bold">automated pipelines</span>,
           so your platform scales to thousands of users effortlessly without crashing or slowing down.
         </p>
-        <div class="flex flex-wrap gap-2">
+        <div class="flex flex-wrap gap-1.5 sm:gap-2">
           <div
-            class="flex items-center gap-1.5 px-3 py-1 brutal-border bg-bg font-mono text-xs cursor-pointer hover:bg-electric hover:text-surface hover:shadow-brutal-sm hover:-translate-y-1 transition-all duration-200">
+            class="flex items-center gap-1 sm:gap-1.5 px-2 py-0.5 sm:px-3 sm:py-1 brutal-border bg-bg font-mono text-[10px] sm:text-xs cursor-pointer hover:bg-electric hover:text-surface hover:shadow-brutal-sm hover:-translate-y-1 transition-all duration-200">
             <span class="material-symbols-outlined text-sm">cloud</span> AWS / Supabase
           </div>
           <div
-            class="flex items-center gap-1.5 px-3 py-1 brutal-border bg-bg font-mono text-xs cursor-pointer hover:bg-electric hover:text-surface hover:shadow-brutal-sm hover:-translate-y-1 transition-all duration-200">
+            class="flex items-center gap-1 sm:gap-1.5 px-2 py-0.5 sm:px-3 sm:py-1 brutal-border bg-bg font-mono text-[10px] sm:text-xs cursor-pointer hover:bg-electric hover:text-surface hover:shadow-brutal-sm hover:-translate-y-1 transition-all duration-200">
             <span class="material-symbols-outlined text-sm">bolt</span> Auto-Scaling
           </div>
           <div
-            class="flex items-center gap-1.5 px-3 py-1 brutal-border bg-bg font-mono text-xs cursor-pointer hover:bg-electric hover:text-surface hover:shadow-brutal-sm hover:-translate-y-1 transition-all duration-200">
+            class="flex items-center gap-1 sm:gap-1.5 px-2 py-0.5 sm:px-3 sm:py-1 brutal-border bg-bg font-mono text-[10px] sm:text-xs cursor-pointer hover:bg-electric hover:text-surface hover:shadow-brutal-sm hover:-translate-y-1 transition-all duration-200">
             <span class="material-symbols-outlined text-sm">security</span> Database Backup
           </div>
           <div
-            class="flex items-center gap-1.5 px-3 py-1 brutal-border bg-bg font-mono text-xs cursor-pointer hover:bg-electric hover:text-surface hover:shadow-brutal-sm hover:-translate-y-1 transition-all duration-200">
+            class="flex items-center gap-1 sm:gap-1.5 px-2 py-0.5 sm:px-3 sm:py-1 brutal-border bg-bg font-mono text-[10px] sm:text-xs cursor-pointer hover:bg-electric hover:text-surface hover:shadow-brutal-sm hover:-translate-y-1 transition-all duration-200">
             <span class="material-symbols-outlined text-sm">sync_alt</span> CI/CD Automation
           </div>
         </div>
       </div>
 
-
+      <!-- Service 5 -->
       <div
-        class="gsap-section bg-surface brutal-border shadow-brutal p-6 relative group rotate-1 hover:rotate-0 hover:-translate-y-2 transition-all duration-300">
+        class="gsap-section bg-surface brutal-border shadow-brutal p-5 sm:p-6 relative group rotate-0.5 sm:rotate-1 hover:rotate-0 hover:-translate-y-2 transition-all duration-300">
 
-        <h3 class="font-serif font-bold text-2xl md:text-3xl text-ink mb-4 mt-2">SaaS Development</h3>
-        <p class="font-mono text-sm text-ink/80 mb-6 leading-relaxed">
+        <h3 class="font-serif font-bold text-xl sm:text-2xl md:text-3xl text-ink mb-4 mt-2">SaaS Development</h3>
+        <p class="font-mono text-xs sm:text-sm text-ink/80 mb-6 leading-relaxed">
           Turn your software idea into a recurring revenue engine. We build robust
           <span class="text-electric font-bold">multi-tenant platforms</span>, secure
           <span class="text-tangerine font-bold">subscription systems</span>, and clean
           user dashboards, ensuring a seamless, day-one launch for your subscribers.
         </p>
-        <div class="flex flex-wrap gap-2">
+        <div class="flex flex-wrap gap-1.5 sm:gap-2">
           <div
-            class="flex items-center gap-1.5 px-3 py-1 brutal-border bg-bg font-mono text-xs cursor-pointer hover:bg-electric hover:text-surface hover:shadow-brutal-sm hover:-translate-y-1 transition-all duration-200">
+            class="flex items-center gap-1 sm:gap-1.5 px-2 py-0.5 sm:px-3 sm:py-1 brutal-border bg-bg font-mono text-[10px] sm:text-xs cursor-pointer hover:bg-electric hover:text-surface hover:shadow-brutal-sm hover:-translate-y-1 transition-all duration-200">
             <span class="material-symbols-outlined text-sm">credit_card</span> Stripe / Billing
           </div>
           <div
-            class="flex items-center gap-1.5 px-3 py-1 brutal-border bg-bg font-mono text-xs cursor-pointer hover:bg-electric hover:text-surface hover:shadow-brutal-sm hover:-translate-y-1 transition-all duration-200">
+            class="flex items-center gap-1 sm:gap-1.5 px-2 py-0.5 sm:px-3 sm:py-1 brutal-border bg-bg font-mono text-[10px] sm:text-xs cursor-pointer hover:bg-electric hover:text-surface hover:shadow-brutal-sm hover:-translate-y-1 transition-all duration-200">
             <span class="material-symbols-outlined text-sm">group</span> Multi-Tenancy
           </div>
           <div
-            class="flex items-center gap-1.5 px-3 py-1 brutal-border bg-bg font-mono text-xs cursor-pointer hover:bg-electric hover:text-surface hover:shadow-brutal-sm hover:-translate-y-1 transition-all duration-200">
+            class="flex items-center gap-1 sm:gap-1.5 px-2 py-0.5 sm:px-3 sm:py-1 brutal-border bg-bg font-mono text-[10px] sm:text-xs cursor-pointer hover:bg-electric hover:text-surface hover:shadow-brutal-sm hover:-translate-y-1 transition-all duration-200">
             <span class="material-symbols-outlined text-sm">analytics</span> Usage Analytics
           </div>
           <div
-            class="flex items-center gap-1.5 px-3 py-1 brutal-border bg-bg font-mono text-xs cursor-pointer hover:bg-electric hover:text-surface hover:shadow-brutal-sm hover:-translate-y-1 transition-all duration-200">
+            class="flex items-center gap-1 sm:gap-1.5 px-2 py-0.5 sm:px-3 sm:py-1 brutal-border bg-bg font-mono text-[10px] sm:text-xs cursor-pointer hover:bg-electric hover:text-surface hover:shadow-brutal-sm hover:-translate-y-1 transition-all duration-200">
             <span class="material-symbols-outlined text-sm">vpn_key</span> Auth & Roles
           </div>
         </div>
       </div>
 
+      <!-- Service 6 -->
       <div
-        class="gsap-section bg-surface brutal-border shadow-brutal p-6 relative group -rotate-1 hover:rotate-0 hover:-translate-y-2 transition-all duration-300">
+        class="gsap-section bg-surface brutal-border shadow-brutal p-5 sm:p-6 relative group -rotate-0.5 sm:-rotate-1 hover:rotate-0 hover:-translate-y-2 transition-all duration-300">
 
-        <h3 class="font-serif font-bold text-2xl md:text-3xl text-ink mb-4 mt-2">Chatbot & WhatsApp Automation</h3>
-        <p class="font-mono text-sm text-ink/80 mb-6 leading-relaxed">
+        <h3 class="font-serif font-bold text-xl sm:text-2xl md:text-3xl text-ink mb-4 mt-2">Chatbot & WhatsApp Automation</h3>
+        <p class="font-mono text-xs sm:text-sm text-ink/80 mb-6 leading-relaxed">
           Be there for your clients 24/7 without lifting a finger. We build
           <span class="text-electric font-bold">intelligent bots</span> and official
           <span class="text-tangerine font-bold">WhatsApp pipelines</span> that answer customer queries, send instant
           payment reminders, and close deals automatically.
         </p>
-        <div class="flex flex-wrap gap-2">
+        <div class="flex flex-wrap gap-1.5 sm:gap-2">
           <div
-            class="flex items-center gap-1.5 px-3 py-1 brutal-border bg-bg font-mono text-xs cursor-pointer hover:bg-electric hover:text-surface hover:shadow-brutal-sm hover:-translate-y-1 transition-all duration-200">
+            class="flex items-center gap-1 sm:gap-1.5 px-2 py-0.5 sm:px-3 sm:py-1 brutal-border bg-bg font-mono text-[10px] sm:text-xs cursor-pointer hover:bg-electric hover:text-surface hover:shadow-brutal-sm hover:-translate-y-1 transition-all duration-200">
             <span class="material-symbols-outlined text-sm">chat</span> WhatsApp Business API
           </div>
           <div
-            class="flex items-center gap-1.5 px-3 py-1 brutal-border bg-bg font-mono text-xs cursor-pointer hover:bg-electric hover:text-surface hover:shadow-brutal-sm hover:-translate-y-1 transition-all duration-200">
+            class="flex items-center gap-1 sm:gap-1.5 px-2 py-0.5 sm:px-3 sm:py-1 brutal-border bg-bg font-mono text-[10px] sm:text-xs cursor-pointer hover:bg-electric hover:text-surface hover:shadow-brutal-sm hover:-translate-y-1 transition-all duration-200">
             <span class="material-symbols-outlined text-sm">notifications_active</span> Auto-Reminders
           </div>
           <div
-            class="flex items-center gap-1.5 px-3 py-1 brutal-border bg-bg font-mono text-xs cursor-pointer hover:bg-electric hover:text-surface hover:shadow-brutal-sm hover:-translate-y-1 transition-all duration-200">
+            class="flex items-center gap-1 sm:gap-1.5 px-2 py-0.5 sm:px-3 sm:py-1 brutal-border bg-bg font-mono text-[10px] sm:text-xs cursor-pointer hover:bg-electric hover:text-surface hover:shadow-brutal-sm hover:-translate-y-1 transition-all duration-200">
             <span class="material-symbols-outlined text-sm">smart_toy</span> AI Support Agents
           </div>
           <div
-            class="flex items-center gap-1.5 px-3 py-1 brutal-border bg-bg font-mono text-xs cursor-pointer hover:bg-electric hover:text-surface hover:shadow-brutal-sm hover:-translate-y-1 transition-all duration-200">
+            class="flex items-center gap-1 sm:gap-1.5 px-2 py-0.5 sm:px-3 sm:py-1 brutal-border bg-bg font-mono text-[10px] sm:text-xs cursor-pointer hover:bg-electric hover:text-surface hover:shadow-brutal-sm hover:-translate-y-1 transition-all duration-200">
             <span class="material-symbols-outlined text-sm">hub</span> CRM Data Sync
           </div>
         </div>
       </div>
-
 
     </div>
   </section>
@@ -596,10 +434,7 @@
           <div class="aspect-[4/3] brutal-border overflow-hidden relative mb-6">
             <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1000&q=80"
               alt="Dashboard"
-              class="w-full h-full object-cover grayscale contrast-125 group-hover:grayscale-0 transition-all duration-500">
-            <div
-              class="absolute inset-0 bg-electric/20 mix-blend-multiply opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-            </div>
+              class="w-full h-full object-cover">
           </div>
           <div class="flex justify-between items-start">
             <div>
@@ -620,10 +455,7 @@
           <div class="aspect-[4/3] brutal-border overflow-hidden relative mb-6">
             <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1000&q=80"
               alt="E-Commerce"
-              class="w-full h-full object-cover grayscale contrast-125 group-hover:grayscale-0 transition-all duration-500">
-            <div
-              class="absolute inset-0 bg-tangerine/20 mix-blend-multiply opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-            </div>
+              class="w-full h-full object-cover">
           </div>
           <div class="flex justify-between items-start">
             <div>
@@ -640,102 +472,88 @@
   </section>
 
   <!-- Voices Section -->
-  <section id="testimonials" class="max-w-7xl mx-auto px-6 py-24 relative">
-    <div class="relative z-10 flex flex-col gap-4">
-      <div class="flex items-center justify-between gap-4">
+  <section id="testimonials" class="max-w-7xl mx-auto px-4 sm:px-6 py-20 sm:py-24 relative">
+    <div class="relative z-10 flex flex-col gap-6 sm:gap-8">
+      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div class="flex items-center gap-4">
           <span class="material-symbols-outlined text-electric">star</span>
-          <h2 class="font-mono text-sm text-electric font-bold uppercase tracking-widest">WHAT OUR CLIENTS SAY
+          <h2 class="font-mono text-xs sm:text-sm text-electric font-bold uppercase tracking-widest">WHAT OUR CLIENTS SAY
           </h2>
-        </div>
-        <div class="flex gap-2">
-          <button id="prev-testimonial"
-            class="w-10 h-10 brutal-border flex items-center justify-center bg-surface hover:bg-electric hover:text-surface transition-colors interactive-element">
-            <span class="material-symbols-outlined">arrow_back</span>
-          </button>
-          <button id="next-testimonial"
-            class="w-10 h-10 brutal-border flex items-center justify-center bg-surface hover:bg-electric hover:text-surface transition-colors interactive-element">
-            <span class="material-symbols-outlined">arrow_forward</span>
-          </button>
         </div>
       </div>
 
-      <div id="testimonials-carousel"
-        class="flex overflow-x-auto snap-x snap-mandatory pb-8 pt-4 -mx-6 px-6 gap-6 hide-scrollbar cursor-grab active:cursor-grabbing scroll-smooth">
+      <div id="testimonials-grid" class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
 
         <!-- Testimonial 1 -->
         <div
-          class="w-[95%] md:w-[85%] lg:w-[80%] snap-center shrink-0 gsap-section bg-surface brutal-border shadow-brutal p-8 md:p-12 rotate-1 relative overflow-hidden">
+          class="gsap-section bg-surface brutal-border shadow-brutal p-5 sm:p-6 md:p-8 rotate-1 relative overflow-hidden h-full flex flex-col gap-4 sticky top-16 sm:top-20 z-10 md:static md:top-auto md:z-auto">
           <div class="absolute top-0 left-0 w-full h-1 bg-electric/10"></div>
-          <div class="flex gap-6">
-            <span
-              class="material-symbols-outlined text-6xl text-electric opacity-20 hidden md:block shrink-0">format_quote</span>
-            <blockquote class="flex-1 flex flex-col gap-6 min-w-0">
-              <p
-                class="font-serif text-3xl md:text-5xl italic text-ink leading-[1.1] tracking-tight font-black break-words">
-                "Their structural approach to web engineering transformed our digital footprint from a fragile
-                storefront into a fortress of conversion."
-              </p>
-              <footer class="font-mono text-xs font-bold text-ink flex items-center gap-2">
-                <span class="w-8 h-px bg-ink shrink-0"></span>
-                CHIEF TECHNOLOGY OFFICER, LOGISTICS CORP.
-              </footer>
-            </blockquote>
-          </div>
-          <div
-            class="absolute bottom-4 right-4 font-mono text-[10px] text-ink/40 uppercase font-bold hover:text-electric transition-colors cursor-pointer">
-            View Case Study →
-          </div>
+          <span class="material-symbols-outlined text-4xl sm:text-5xl text-electric opacity-25 shrink-0">format_quote</span>
+          <blockquote class="flex-1 flex flex-col gap-5 min-w-0">
+            <p
+              class="font-serif text-lg sm:text-xl md:text-2xl italic text-ink leading-[1.15] tracking-tight font-black break-words">
+              "Their structural approach to web engineering transformed our digital footprint from a fragile
+              storefront into a fortress of conversion."
+            </p>
+            <footer class="font-mono text-[10px] sm:text-xs font-bold text-ink flex items-center gap-2 mt-auto">
+              <span class="w-8 h-px bg-ink shrink-0"></span>
+              CHIEF TECHNOLOGY OFFICER, LOGISTICS CORP.
+            </footer>
+          </blockquote>
         </div>
 
         <!-- Testimonial 2 -->
         <div
-          class="w-[95%] md:w-[85%] lg:w-[80%] snap-center shrink-0 gsap-section bg-surface brutal-border shadow-brutal p-8 md:p-12 -rotate-1 relative overflow-hidden mt-4 lg:mt-0">
+          class="gsap-section bg-surface brutal-border shadow-brutal p-5 sm:p-6 md:p-8 -rotate-1 relative overflow-hidden h-full flex flex-col gap-4 sticky top-16 sm:top-20 z-20 md:static md:top-auto md:z-auto">
           <div class="absolute top-0 left-0 w-full h-1 bg-tangerine/10"></div>
-          <div class="flex gap-6">
-            <span
-              class="material-symbols-outlined text-6xl text-tangerine opacity-20 hidden md:block shrink-0">format_quote</span>
-            <blockquote class="flex-1 flex flex-col gap-6 min-w-0">
-              <p
-                class="font-serif text-3xl md:text-5xl italic text-ink leading-[1.1] tracking-tight font-black break-words">
-                "KyteStudios delivered a full-stack architecture that scales effortlessly. Absolute precision from day
-                one."
-              </p>
-              <footer class="font-mono text-xs font-bold text-ink flex items-center gap-2">
-                <span class="w-8 h-px bg-ink shrink-0"></span>
-                LEAD ENGINEER, FINTECH SYNDICATE
-              </footer>
-            </blockquote>
-          </div>
-          <div
-            class="absolute bottom-4 right-4 font-mono text-[10px] text-ink/40 uppercase font-bold hover:text-electric transition-colors cursor-pointer">
-            View Case Study →
-          </div>
+          <span class="material-symbols-outlined text-4xl sm:text-5xl text-tangerine opacity-25 shrink-0">format_quote</span>
+          <blockquote class="flex-1 flex flex-col gap-5 min-w-0">
+            <p
+              class="font-serif text-lg sm:text-xl md:text-2xl italic text-ink leading-[1.15] tracking-tight font-black break-words">
+              "KyteStudios delivered a full-stack architecture that scales effortlessly. Absolute precision from day
+              one."
+            </p>
+            <footer class="font-mono text-[10px] sm:text-xs font-bold text-ink flex items-center gap-2 mt-auto">
+              <span class="w-8 h-px bg-ink shrink-0"></span>
+              LEAD ENGINEER, FINTECH SYNDICATE
+            </footer>
+          </blockquote>
         </div>
 
         <!-- Testimonial 3 -->
         <div
-          class="w-[95%] md:w-[85%] lg:w-[80%] snap-center shrink-0 gsap-section bg-surface brutal-border shadow-brutal p-8 md:p-12 rotate-1 relative overflow-hidden mt-4 lg:mt-0">
+          class="gsap-section bg-surface brutal-border shadow-brutal p-5 sm:p-6 md:p-8 rotate-1 relative overflow-hidden h-full flex flex-col gap-4 sticky top-16 sm:top-20 z-30 md:static md:top-auto md:z-auto">
           <div class="absolute top-0 left-0 w-full h-1 bg-electric/10"></div>
-          <div class="flex gap-6">
-            <span
-              class="material-symbols-outlined text-6xl text-electric opacity-20 hidden md:block shrink-0">format_quote</span>
-            <blockquote class="flex-1 flex flex-col gap-6 min-w-0">
-              <p
-                class="font-serif text-3xl md:text-5xl italic text-ink leading-[1.1] tracking-tight font-black break-words">
-                "A rare combination of beautiful interface design and deeply robust backend systems. They build to
-                last."
-              </p>
-              <footer class="font-mono text-xs font-bold text-ink flex items-center gap-2">
-                <span class="w-8 h-px bg-ink shrink-0"></span>
-                PRODUCT MANAGER, GLOBAL E-COMMERCE
-              </footer>
-            </blockquote>
-          </div>
-          <div
-            class="absolute bottom-4 right-4 font-mono text-[10px] text-ink/40 uppercase font-bold hover:text-electric transition-colors cursor-pointer">
-            View Case Study →
-          </div>
+          <span class="material-symbols-outlined text-4xl sm:text-5xl text-electric opacity-25 shrink-0">format_quote</span>
+          <blockquote class="flex-1 flex flex-col gap-5 min-w-0">
+            <p
+              class="font-serif text-lg sm:text-xl md:text-2xl italic text-ink leading-[1.15] tracking-tight font-black break-words">
+              "A rare combination of beautiful interface design and deeply robust backend systems. They build to
+              last."
+            </p>
+            <footer class="font-mono text-[10px] sm:text-xs font-bold text-ink flex items-center gap-2 mt-auto">
+              <span class="w-8 h-px bg-ink shrink-0"></span>
+              PRODUCT MANAGER, GLOBAL E-COMMERCE
+            </footer>
+          </blockquote>
+        </div>
+
+        <!-- Testimonial 4 -->
+        <div
+          class="gsap-section bg-surface brutal-border shadow-brutal p-5 sm:p-6 md:p-8 -rotate-1 relative overflow-hidden h-full flex flex-col gap-4 sticky top-16 sm:top-20 z-40 md:static md:top-auto md:z-auto">
+          <div class="absolute top-0 left-0 w-full h-1 bg-electric/10"></div>
+          <span class="material-symbols-outlined text-4xl sm:text-5xl text-electric opacity-25 shrink-0">format_quote</span>
+          <blockquote class="flex-1 flex flex-col gap-5 min-w-0">
+            <p
+              class="font-serif text-lg sm:text-xl md:text-2xl italic text-ink leading-[1.15] tracking-tight font-black break-words">
+              "They moved quickly, communicated clearly, and delivered a polished product that our team could trust
+              from launch."
+            </p>
+            <footer class="font-mono text-[10px] sm:text-xs font-bold text-ink flex items-center gap-2 mt-auto">
+              <span class="w-8 h-px bg-ink shrink-0"></span>
+              FOUNDER, HEALTH TECH STARTUP
+            </footer>
+          </blockquote>
         </div>
 
       </div>
@@ -743,18 +561,18 @@
   </section>
 
   <!-- Capabilities Field Guide Section -->
-  <section id="capabilities" class="py-24 px-6">
+  <section id="capabilities" class="py-20 sm:py-24 px-4 sm:px-6">
     <div
-      class="bg-[#0055FF] text-white p-6 md:p-12 brutal-border shadow-brutal rotate-1 relative overflow-hidden max-w-7xl mx-auto">
+      class="bg-[#0055FF] text-white p-4 sm:p-6 md:p-12 brutal-border shadow-brutal rotate-1 relative overflow-hidden max-w-7xl mx-auto">
       <div class="relative z-10">
-        <div class="flex items-center justify-between gap-2 md:gap-4 mb-16 gsap-section">
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-10 sm:mb-16 gsap-section">
           <div class="flex items-center gap-2 md:gap-4 min-w-0">
             <span class="material-symbols-outlined text-white flex-shrink-0">verified</span>
-            <h2 class="font-serif font-black text-2xl md:text-5xl text-white uppercase inline-block truncate">
+            <h2 class="font-serif font-black text-xl sm:text-2xl md:text-5xl text-white uppercase inline-block truncate">
               Capabilities
             </h2>
           </div>
-          <div class="flex gap-2 flex-shrink-0">
+          <div class="hidden sm:flex gap-2 flex-shrink-0">
             <button id="prev-capability"
               class="w-8 h-8 md:w-10 md:h-10 brutal-border flex items-center justify-center bg-white text-[#0055FF] hover:bg-white/80 transition-colors interactive-element flex-shrink-0">
               <span class="material-symbols-outlined text-sm md:text-base">arrow_back</span>
@@ -767,130 +585,106 @@
         </div>
 
         <div id="capabilities-carousel"
-          class="flex overflow-x-auto snap-x snap-mandatory pb-8 pt-4 -mx-6 px-6 gap-6 hide-scrollbar cursor-grab active:cursor-grabbing scroll-smooth">
+          class="flex overflow-x-auto snap-x snap-mandatory pb-6 sm:pb-8 pt-2 sm:pt-4 -mx-4 sm:-mx-6 px-4 sm:px-6 gap-4 sm:gap-6 hide-scrollbar cursor-grab active:cursor-grabbing scroll-smooth">
           <!-- Capability Card 1 -->
           <div
-            class="w-[95%] md:w-[85%] lg:w-[50%] snap-center shrink-0 gsap-section bg-[#FFFDF9] text-black brutal-border shadow-brutal p-6 -rotate-1 flex flex-col gap-4 hover:shadow-lg transition-shadow">
+            class="w-[92%] sm:w-[80%] md:w-[58%] lg:w-[32%] snap-start sm:snap-center shrink-0 gsap-section bg-[#FFFDF9] text-black brutal-border shadow-brutal p-5 sm:p-6 -rotate-1 flex flex-col gap-3 sm:gap-4 hover:shadow-lg transition-shadow">
             <div class="flex items-start justify-between">
               <div>
-                <h3 class="font-serif font-bold text-xl text-black uppercase">Full-Stack Dev</h3>
+                <h3 class="font-serif font-bold text-lg sm:text-xl text-black uppercase">Full-Stack Dev</h3>
               </div>
               <div class="text-3xl"></div>
             </div>
             <div class="flex flex-wrap gap-2">
-              <span class="font-mono text-xs border border-black px-2 py-1 uppercase">Next.js</span>
-              <span class="font-mono text-xs border border-black px-2 py-1 uppercase">TypeScript</span>
-              <span class="font-mono text-xs border border-black px-2 py-1 uppercase">Tailwind</span>
-              <span class="font-mono text-xs border border-black px-2 py-1 uppercase">Prisma</span>
-            </div>
-            <div class="border-t border-black/20 pt-3 mt-auto">
-              <div class="font-mono text-xs text-black/60 mb-1">Proficiency:</div>
-              <div class="font-mono font-bold text-sm">Expert Level</div>
+              <span class="font-mono text-[10px] sm:text-xs border border-black px-2 py-1 uppercase">Next.js</span>
+              <span class="font-mono text-[10px] sm:text-xs border border-black px-2 py-1 uppercase">TypeScript</span>
+              <span class="font-mono text-[10px] sm:text-xs border border-black px-2 py-1 uppercase">Tailwind</span>
+              <span class="font-mono text-[10px] sm:text-xs border border-black px-2 py-1 uppercase">Prisma</span>
             </div>
           </div>
 
           <!-- Capability Card 2 -->
           <div
-            class="w-[95%] md:w-[85%] lg:w-[50%] snap-center shrink-0 gsap-section bg-[#FFFDF9] text-black brutal-border shadow-brutal p-6 rotate-1 flex flex-col gap-4 hover:shadow-lg transition-shadow">
+            class="w-[92%] sm:w-[80%] md:w-[58%] lg:w-[32%] snap-start sm:snap-center shrink-0 gsap-section bg-[#FFFDF9] text-black brutal-border shadow-brutal p-5 sm:p-6 rotate-1 flex flex-col gap-3 sm:gap-4 hover:shadow-lg transition-shadow">
             <div class="flex items-start justify-between">
               <div>
-                <h3 class="font-serif font-bold text-xl text-black uppercase">UI/UX Design</h3>
+                <h3 class="font-serif font-bold text-lg sm:text-xl text-black uppercase">UI/UX Design</h3>
               </div>
               <div class="text-3xl"></div>
             </div>
             <div class="flex flex-wrap gap-2">
-              <span class="font-mono text-xs border border-black px-2 py-1 uppercase">Figma</span>
-              <span class="font-mono text-xs border border-black px-2 py-1 uppercase">Framer Motion</span>
-              <span class="font-mono text-xs border border-black px-2 py-1 uppercase">Storybook</span>
-              <span class="font-mono text-xs border border-black px-2 py-1 uppercase">GSAP</span>
-            </div>
-            <div class="border-t border-black/20 pt-3 mt-auto">
-              <div class="font-mono text-xs text-black/60 mb-1">Proficiency:</div>
-              <div class="font-mono font-bold text-sm">Expert Level</div>
+              <span class="font-mono text-[10px] sm:text-xs border border-black px-2 py-1 uppercase">Figma</span>
+              <span class="font-mono text-[10px] sm:text-xs border border-black px-2 py-1 uppercase">Framer Motion</span>
+              <span class="font-mono text-[10px] sm:text-xs border border-black px-2 py-1 uppercase">Storybook</span>
+              <span class="font-mono text-[10px] sm:text-xs border border-black px-2 py-1 uppercase">GSAP</span>
             </div>
           </div>
 
           <!-- Capability Card 3 -->
           <div
-            class="w-[95%] md:w-[85%] lg:w-[50%] snap-center shrink-0 gsap-section bg-[#FFFDF9] text-black brutal-border shadow-brutal p-6 -rotate-1 flex flex-col gap-4 hover:shadow-lg transition-shadow">
+            class="w-[92%] sm:w-[80%] md:w-[58%] lg:w-[32%] snap-start sm:snap-center shrink-0 gsap-section bg-[#FFFDF9] text-black brutal-border shadow-brutal p-5 sm:p-6 -rotate-1 flex flex-col gap-3 sm:gap-4 hover:shadow-lg transition-shadow">
             <div class="flex items-start justify-between">
               <div>
-                <h3 class="font-serif font-bold text-xl text-black uppercase">Performance</h3>
+                <h3 class="font-serif font-bold text-lg sm:text-xl text-black uppercase">Performance</h3>
               </div>
               <div class="text-3xl"></div>
             </div>
             <div class="flex flex-wrap gap-2">
-              <span class="font-mono text-xs border border-black px-2 py-1 uppercase">Lighthouse</span>
-              <span class="font-mono text-xs border border-black px-2 py-1 uppercase">Web Vitals</span>
-              <span class="font-mono text-xs border border-black px-2 py-1 uppercase">Sentry</span>
-              <span class="font-mono text-xs border border-black px-2 py-1 uppercase">New Relic</span>
-            </div>
-            <div class="border-t border-black/20 pt-3 mt-auto">
-              <div class="font-mono text-xs text-black/60 mb-1">Proficiency:</div>
-              <div class="font-mono font-bold text-sm">Expert Level</div>
+              <span class="font-mono text-[10px] sm:text-xs border border-black px-2 py-1 uppercase">Lighthouse</span>
+              <span class="font-mono text-[10px] sm:text-xs border border-black px-2 py-1 uppercase">Web Vitals</span>
+              <span class="font-mono text-[10px] sm:text-xs border border-black px-2 py-1 uppercase">Sentry</span>
+              <span class="font-mono text-[10px] sm:text-xs border border-black px-2 py-1 uppercase">New Relic</span>
             </div>
           </div>
 
           <!-- Capability Card 4 -->
           <div
-            class="w-[95%] md:w-[85%] lg:w-[50%] snap-center shrink-0 gsap-section bg-[#FFFDF9] text-black brutal-border shadow-brutal p-6 rotate-2 flex flex-col gap-4 hover:shadow-lg transition-shadow">
+            class="w-[92%] sm:w-[80%] md:w-[58%] lg:w-[32%] snap-start sm:snap-center shrink-0 gsap-section bg-[#FFFDF9] text-black brutal-border shadow-brutal p-5 sm:p-6 rotate-2 flex flex-col gap-3 sm:gap-4 hover:shadow-lg transition-shadow">
             <div class="flex items-start justify-between">
               <div>
-                <h3 class="font-serif font-bold text-xl text-black uppercase">Database Design</h3>
+                <h3 class="font-serif font-bold text-lg sm:text-xl text-black uppercase">Database Design</h3>
               </div>
               <div class="text-3xl"></div>
             </div>
             <div class="flex flex-wrap gap-2">
-              <span class="font-mono text-xs border border-black px-2 py-1 uppercase">PostgreSQL</span>
-              <span class="font-mono text-xs border border-black px-2 py-1 uppercase">Supabase</span>
-              <span class="font-mono text-xs border border-black px-2 py-1 uppercase">Redis</span>
-              <span class="font-mono text-xs border border-black px-2 py-1 uppercase">DynamoDB</span>
-            </div>
-            <div class="border-t border-black/20 pt-3 mt-auto">
-              <div class="font-mono text-xs text-black/60 mb-1">Proficiency:</div>
-              <div class="font-mono font-bold text-sm">Advanced</div>
+              <span class="font-mono text-[10px] sm:text-xs border border-black px-2 py-1 uppercase">PostgreSQL</span>
+              <span class="font-mono text-[10px] sm:text-xs border border-black px-2 py-1 uppercase">Supabase</span>
+              <span class="font-mono text-[10px] sm:text-xs border border-black px-2 py-1 uppercase">Redis</span>
+              <span class="font-mono text-[10px] sm:text-xs border border-black px-2 py-1 uppercase">DynamoDB</span>
             </div>
           </div>
 
           <!-- Capability Card 5 -->
           <div
-            class="w-[95%] md:w-[85%] lg:w-[50%] snap-center shrink-0 gsap-section bg-[#FFFDF9] text-black brutal-border shadow-brutal p-6 -rotate-2 flex flex-col gap-4 hover:shadow-lg transition-shadow">
+            class="w-[92%] sm:w-[80%] md:w-[58%] lg:w-[32%] snap-start sm:snap-center shrink-0 gsap-section bg-[#FFFDF9] text-black brutal-border shadow-brutal p-5 sm:p-6 -rotate-2 flex flex-col gap-3 sm:gap-4 hover:shadow-lg transition-shadow">
             <div class="flex items-start justify-between">
               <div>
-                <h3 class="font-serif font-bold text-xl text-black uppercase">DevOps & Cloud</h3>
+                <h3 class="font-serif font-bold text-lg sm:text-xl text-black uppercase">DevOps & Cloud</h3>
               </div>
               <div class="text-3xl"></div>
             </div>
             <div class="flex flex-wrap gap-2">
-              <span class="font-mono text-xs border border-black px-2 py-1 uppercase">AWS</span>
-              <span class="font-mono text-xs border border-black px-2 py-1 uppercase">Kubernetes</span>
-              <span class="font-mono text-xs border border-black px-2 py-1 uppercase">GitHub Actions</span>
-              <span class="font-mono text-xs border border-black px-2 py-1 uppercase">Terraform</span>
-            </div>
-            <div class="border-t border-black/20 pt-3 mt-auto">
-              <div class="font-mono text-xs text-black/60 mb-1">Proficiency:</div>
-              <div class="font-mono font-bold text-sm">Advanced</div>
+              <span class="font-mono text-[10px] sm:text-xs border border-black px-2 py-1 uppercase">AWS</span>
+              <span class="font-mono text-[10px] sm:text-xs border border-black px-2 py-1 uppercase">Kubernetes</span>
+              <span class="font-mono text-[10px] sm:text-xs border border-black px-2 py-1 uppercase">GitHub Actions</span>
+              <span class="font-mono text-[10px] sm:text-xs border border-black px-2 py-1 uppercase">Terraform</span>
             </div>
           </div>
 
           <!-- Capability Card 6 -->
           <div
-            class="w-[95%] md:w-[85%] lg:w-[50%] snap-center shrink-0 gsap-section bg-[#FFFDF9] text-black brutal-border shadow-brutal p-6 rotate-1 flex flex-col gap-4 hover:shadow-lg transition-shadow">
+            class="w-[92%] sm:w-[80%] md:w-[58%] lg:w-[32%] snap-start sm:snap-center shrink-0 gsap-section bg-[#FFFDF9] text-black brutal-border shadow-brutal p-5 sm:p-6 rotate-1 flex flex-col gap-3 sm:gap-4 hover:shadow-lg transition-shadow">
             <div class="flex items-start justify-between">
               <div>
-                <h3 class="font-serif font-bold text-xl text-black uppercase">AI & ML</h3>
+                <h3 class="font-serif font-bold text-lg sm:text-xl text-black uppercase">AI & ML</h3>
               </div>
               <div class="text-3xl"></div>
             </div>
             <div class="flex flex-wrap gap-2">
-              <span class="font-mono text-xs border border-black px-2 py-1 uppercase">OpenAI API</span>
-              <span class="font-mono text-xs border border-black px-2 py-1 uppercase">LangChain</span>
-              <span class="font-mono text-xs border border-black px-2 py-1 uppercase">PyTorch</span>
-              <span class="font-mono text-xs border border-black px-2 py-1 uppercase">Hugging Face</span>
-            </div>
-            <div class="border-t border-black/20 pt-3 mt-auto">
-              <div class="font-mono text-xs text-black/60 mb-1">Proficiency:</div>
-              <div class="font-mono font-bold text-sm">Expert Level</div>
+              <span class="font-mono text-[10px] sm:text-xs border border-black px-2 py-1 uppercase">OpenAI API</span>
+              <span class="font-mono text-[10px] sm:text-xs border border-black px-2 py-1 uppercase">LangChain</span>
+              <span class="font-mono text-[10px] sm:text-xs border border-black px-2 py-1 uppercase">PyTorch</span>
+              <span class="font-mono text-[10px] sm:text-xs border border-black px-2 py-1 uppercase">Hugging Face</span>
             </div>
           </div>
         </div>
@@ -908,22 +702,48 @@
       </div>
 
       <!-- Left side: Contact Info -->
-      <div class="flex flex-col gap-6 md:gap-8 z-10 pr-0 lg:pr-8">
+      <div class="flex flex-col gap-6 md:gap-8 z-10 pr-0 lg:pr-8 justify-center">
         <div class="flex items-center gap-3">
           <span class="material-symbols-outlined text-tangerine text-3xl md:text-4xl">waving_hand</span>
           <h2 class="font-sans font-black text-3xl md:text-4xl uppercase tracking-tighter">Let's Work Together</h2>
         </div>
-        <div class="flex flex-col gap-8 md:gap-10 mt-2">
-          <div class="flex flex-col gap-2">
-            <span class="font-mono text-xs md:text-sm font-bold text-ink/70 uppercase">Email Us</span>
-            <a href="mailto:hello@kytestudios.in"
-              class="font-sans font-black text-xl sm:text-2xl md:text-3xl lg:text-4xl text-ink hover:text-electric transition-colors break-words" style="word-break: break-all;">hello@kytestudios.in</a>
+        <div class="flex flex-col gap-6 sm:gap-7 mt-2">
+          <!-- Email Block -->
+          <div class="flex gap-5 sm:gap-6 items-center">
+            <div class="w-10 h-10 sm:w-12 sm:h-12 brutal-border bg-tangerine flex items-center justify-center shadow-brutal-sm shrink-0 -rotate-2">
+              <span class="material-symbols-outlined text-ink text-xl sm:text-2xl font-bold">mail</span>
+            </div>
+            <div class="flex flex-col gap-0.5 min-w-0">
+              <span class="font-mono text-[10px] sm:text-xs font-bold text-ink/60 uppercase">Email Us</span>
+              <a href="mailto:hello@kytestudios.in"
+                class="font-sans font-bold text-sm sm:text-lg md:text-xl lg:text-2xl text-ink hover:text-electric transition-colors break-words"
+                style="word-break: break-all;">hello@kytestudios.in</a>
+            </div>
           </div>
-          <div class="flex flex-col gap-2">
-            <span class="font-mono text-xs md:text-sm font-bold text-ink/70 uppercase">Call Us</span>
-            <a href="tel:+919355185187"
-              class="font-sans font-black text-xl sm:text-2xl md:text-3xl lg:text-4xl text-ink hover:text-tangerine transition-colors break-words">+91
-              9355185187</a>
+
+          <!-- Call Block -->
+          <div class="flex gap-5 sm:gap-6 items-center">
+            <div class="w-10 h-10 sm:w-12 sm:h-12 brutal-border bg-electric flex items-center justify-center shadow-brutal-sm shrink-0 rotate-2">
+              <span class="material-symbols-outlined text-surface text-xl sm:text-2xl font-bold">call</span>
+            </div>
+            <div class="flex flex-col gap-0.5 min-w-0">
+              <span class="font-mono text-[10px] sm:text-xs font-bold text-ink/60 uppercase">Call Us</span>
+              <a href="tel:+919355185187"
+                class="font-sans font-bold text-sm sm:text-lg md:text-xl lg:text-2xl text-ink hover:text-tangerine transition-colors break-words">+91
+                9355185187</a>
+            </div>
+          </div>
+
+          <!-- Location Block -->
+          <div class="flex gap-5 sm:gap-6 items-center">
+            <div class="w-10 h-10 sm:w-12 sm:h-12 brutal-border bg-surface flex items-center justify-center shadow-brutal-sm shrink-0 -rotate-1">
+              <span class="material-symbols-outlined text-ink text-xl sm:text-2xl font-bold">location_on</span>
+            </div>
+            <div class="flex flex-col gap-0.5 min-w-0">
+              <span class="font-mono text-[10px] sm:text-xs font-bold text-ink/60 uppercase">Location</span>
+              <span
+                class="font-sans font-bold text-sm sm:text-lg md:text-xl lg:text-2xl text-ink transition-colors break-words">Delhi, India</span>
+            </div>
           </div>
         </div>
       </div>
@@ -932,62 +752,58 @@
       <div class="flex flex-col items-start lg:items-end z-10 pl-0 lg:pl-8 w-full">
         <form id="contact-form" action="https://api.web3forms.com/submit" method="POST"
           class="w-full flex flex-col gap-4">
-          <input type="hidden" name="access_key" value="a0b85c5c-cc8e-4157-b3f2-57eee839dc50">
+          <input type="hidden" name="access_key" value="2720e9b3-cd7b-49e2-b25e-6f2d11895dae">
 
-          <div id="contact-form-inner" class="flex flex-col gap-4 w-full">
+          <div id="contact-form-inner" class="flex flex-col gap-4 sm:gap-5 w-full">
             <div class="flex flex-col gap-2 w-full">
-              <label class="font-mono text-xs font-bold uppercase text-ink/70">Name</label>
+              <label class="font-mono text-xs sm:text-sm font-bold uppercase text-ink/70">Name</label>
               <input type="text" name="name" required placeholder="Your Name"
-                class="w-full brutal-border bg-bg px-4 py-3 font-mono text-sm text-ink placeholder:text-ink/40 focus:outline-none focus:ring-2 focus:ring-electric transition-shadow">
+                class="w-full brutal-border bg-bg px-4 py-3 sm:py-3.5 font-mono text-sm text-ink placeholder:text-ink/40 focus:outline-none focus:ring-2 focus:ring-electric transition-shadow">
             </div>
 
             <div class="flex flex-col gap-2 w-full">
-              <label class="font-mono text-xs font-bold uppercase text-ink/70">Email</label>
-              <input type="email" name="email" required placeholder="your@email.com"
-                class="w-full brutal-border bg-bg px-4 py-3 font-mono text-sm text-ink placeholder:text-ink/40 focus:outline-none focus:ring-2 focus:ring-electric transition-shadow">
-            </div>
-
-            <div class="flex flex-col gap-2 w-full">
-              <label class="font-mono text-xs font-bold uppercase text-ink/70">Message</label>
-              <textarea name="message" required placeholder="Tell us about your project..." rows="3"
-                class="w-full brutal-border bg-bg px-4 py-3 font-mono text-sm text-ink placeholder:text-ink/40 focus:outline-none focus:ring-2 focus:ring-electric transition-shadow resize-none"></textarea>
-            </div>
-
-            <div class="flex flex-col gap-2 w-full">
-              <label class="font-mono text-xs font-bold uppercase text-ink/70">Phone Number</label>
-              <div class="flex gap-2">
-                <select name="country_code" data-lenis-prevent class="brutal-border bg-bg pl-3 pr-8 py-3 font-mono text-sm text-ink focus:outline-none focus:ring-2 focus:ring-electric transition-shadow w-32 cursor-pointer">
-                  <option value="+1">🇺🇸 +1</option>
-                  <option value="+44">🇬🇧 +44</option>
-                  <option value="+91" selected>🇮🇳 +91</option>
-                  <option value="+61">🇦🇺 +61</option>
-                  <option value="+81">🇯🇵 +81</option>
-                  <option value="+49">🇩🇪 +49</option>
-                  <option value="+33">🇫🇷 +33</option>
-                  <option value="+39">🇮🇹 +39</option>
-                  <option value="+34">🇪🇸 +34</option>
-                  <option value="+86">🇨🇳 +86</option>
-                  <option value="+55">🇧🇷 +55</option>
-                  <option value="+52">🇲🇽 +52</option>
-                  <option value="+27">🇿🇦 +27</option>
-                  <option value="+971">🇦🇪 +971</option>
-                  <option value="+65">🇸🇬 +65</option>
-                  <option value="+82">🇰🇷 +82</option>
-                  <option value="+31">🇳🇱 +31</option>
-                  <option value="+41">🇨🇭 +41</option>
-                  <option value="+46">🇸🇪 +46</option>
-                </select>
-                <input type="tel" name="phone" required placeholder="93551 85187"
-                  class="flex-1 brutal-border bg-bg px-4 py-3 font-mono text-sm text-ink placeholder:text-ink/40 focus:outline-none focus:ring-2 focus:ring-electric transition-shadow">
+              <div class="flex flex-col sm:flex-row gap-4 sm:gap-5 w-full">
+                <div class="flex-1 flex flex-col gap-2">
+                  <label class="font-mono text-xs sm:text-sm font-bold uppercase text-ink/70">Email</label>
+                  <input type="email" name="email" required placeholder="your@email.com"
+                    class="w-full brutal-border bg-bg px-4 py-3 sm:py-3.5 font-mono text-sm text-ink placeholder:text-ink/40 focus:outline-none focus:ring-2 focus:ring-electric transition-shadow">
+                </div>
+                <div class="flex-1 flex flex-col gap-2">
+                  <label class="font-mono text-xs sm:text-sm font-bold uppercase text-ink/70">Phone Number</label>
+                  <input type="tel" name="phone" required placeholder="+919999999999"
+                    class="w-full brutal-border bg-bg px-4 py-3 sm:py-3.5 font-mono text-sm text-ink placeholder:text-ink/40 focus:outline-none focus:ring-2 focus:ring-electric transition-shadow">
+                </div>
               </div>
             </div>
+
+            <div class="flex flex-col gap-2 w-full">
+              <label class="font-mono text-xs sm:text-sm font-bold uppercase text-ink/70">Estimated Budget (USD)</label>
+              <input type="number" name="budget" min="0" step="1" inputmode="numeric" placeholder="your estimated budget"
+                class="w-full brutal-border bg-bg px-4 py-3 sm:py-3.5 font-mono text-sm text-ink placeholder:text-ink/40 focus:outline-none focus:ring-2 focus:ring-electric transition-shadow">
+            </div>
+            <div class="flex flex-col gap-2 w-full">
+              <label class="font-mono text-xs sm:text-sm font-bold uppercase text-ink/70">Message</label>
+              <textarea name="message" required placeholder="Tell us about your project..." rows="4" minlength="10"
+                class="w-full brutal-border bg-bg px-4 py-3 sm:py-3.5 font-mono text-sm text-ink placeholder:text-ink/40 focus:outline-none focus:ring-2 focus:ring-electric transition-shadow resize-none"></textarea>
+            </div>
+
+            <div id="contact-info-box" class="hidden w-full">
+              <div
+                class="bg-electric/10 border-l-4 border-electric text-ink p-4 rounded brutal-border font-mono text-sm">
+                We'll get back to you within 24 hours.</div>
+            </div>
+
+          </div>
+
+
+          <div id="contact-form-controls" class="flex flex-col gap-2 w-full">
 
             <div class="w-full flex justify-center sm:justify-start overflow-hidden">
               <div class="h-captcha" data-captcha="true"></div>
             </div>
 
             <button type="submit" id="contact-submit-btn"
-              class="w-full mt-2 bg-electric text-surface brutal-border shadow-brutal interactive-element px-8 py-4 font-mono font-bold uppercase flex items-center justify-center gap-3 hover:bg-ink transition-colors cursor-pointer">
+              class="w-full mt-2 bg-electric text-surface brutal-border shadow-brutal interactive-element px-8 py-4 sm:py-5 font-mono font-bold uppercase flex items-center justify-center gap-3 hover:bg-ink transition-colors cursor-pointer text-sm sm:text-base">
               <span>Send Message</span> <span class="material-symbols-outlined">send</span>
             </button>
           </div>
@@ -1004,526 +820,121 @@
   </section>
 
   <!-- Footer -->
-  <footer class="bg-ink text-surface py-12 px-6 mt-12">
-    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
-      <div class="flex flex-col md:flex-row items-center gap-4 md:gap-8">
-        <div class="font-sans font-black text-2xl tracking-tighter flex items-center gap-3">
-          KyteStudios
+  <footer class="bg-ink text-surface pt-20 pb-12 px-6 mt-20 brutal-border border-t-4 border-ink relative overflow-hidden">
+    <!-- Decorative brutalist grid element on background (aesthetic) -->
+    <div class="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.05)_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none opacity-50"></div>
+
+    <div class="max-w-7xl mx-auto relative z-10">
+      
+      <!-- Top Section: Multi-column layout -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-16 pb-16 border-b border-surface/20">
+        
+        <!-- Brand Column -->
+        <div class="lg:col-span-5 flex flex-col gap-6">
+          <a href="#" class="flex items-center gap-3 self-start">
+            <img src="./images/logo_full.png" alt="KyteStudios" class="h-12 md:h-14 w-auto object-contain brutal-border rounded-md">
+            <span class="font-sans font-black text-3xl md:text-4xl tracking-tighter leading-none text-surface">KyteStudios</span>
+          </a>
+          <p class="font-mono text-sm text-surface/75 leading-relaxed max-w-md">Your go to tech partner for all your business needs.</p>
+          
+          <!-- Social Links (Retro-Brutalist Squares) -->
+          <div class="flex gap-3 mt-2">
+            <a href="https://instagram.com/kyte_studios" target="_blank" rel="noopener noreferrer" aria-label="Instagram"
+              class="w-11 h-11 border-2 border-surface/30 bg-surface/5 flex items-center justify-center text-surface hover:bg-tangerine hover:text-ink hover:border-tangerine hover:-translate-y-1 hover:-translate-x-1 hover:shadow-[4px_4px_0px_0px_#FFF] transition-all duration-200">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+            <a href="https://twitter.com/kytestudiox" target="_blank" rel="noopener noreferrer" aria-label="Twitter X"
+              class="w-11 h-11 border-2 border-surface/30 bg-surface/5 flex items-center justify-center text-surface hover:bg-electric hover:text-white hover:border-electric hover:-translate-y-1 hover:-translate-x-1 hover:shadow-[4px_4px_0px_0px_#FFF] transition-all duration-200">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
+                <path
+                  d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865l8.875 11.633Z" />
+              </svg>
+            </a>
+            <a href="https://www.linkedin.com/company/kytestudio" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"
+              class="w-11 h-11 border-2 border-surface/30 bg-surface/5 flex items-center justify-center text-surface hover:bg-tangerine hover:text-ink hover:border-tangerine hover:-translate-y-1 hover:-translate-x-1 hover:shadow-[4px_4px_0px_0px_#FFF] transition-all duration-200">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                <rect x="2" y="9" width="4" height="12"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+            </a>
+          </div>
         </div>
-        <div class="hidden md:block w-px h-6 bg-surface/20"></div>
-        <div class="font-mono text-xs text-surface/50 text-center">
-          © KyteStudios 2026
+
+        <!-- Links Column 1: Navigation -->
+        <div class="lg:col-span-2 flex flex-col gap-5">
+          <h3 class="font-mono text-xs font-black uppercase text-tangerine tracking-widest border-b border-surface/10 pb-2">Navigation</h3>
+          <ul class="flex flex-col gap-3 font-mono text-sm font-bold uppercase">
+            <li>
+              <a href="#hero" class="text-surface/80 hover:text-electric transition-colors hover:pl-1.5 transition-all">Home</a>
+            </li>
+            <li>
+              <a href="#expertise" class="text-surface/80 hover:text-electric transition-colors hover:pl-1.5 transition-all">Expertise</a>
+            </li>
+            <li>
+              <a href="#work" class="text-surface/80 hover:text-tangerine transition-colors hover:pl-1.5 transition-all">Work</a>
+            </li>
+            <li>
+              <a href="#testimonials" class="text-surface/80 hover:text-electric transition-colors hover:pl-1.5 transition-all">Testimonials</a>
+            </li>
+            <li>
+              <a href="#contact" class="text-surface/80 hover:text-tangerine transition-colors hover:pl-1.5 transition-all">Contact</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Links Column 2: Capabilities -->
+        <div class="lg:col-span-2 flex flex-col gap-5">
+          <h3 class="font-mono text-xs font-black uppercase text-electric tracking-widest border-b border-surface/10 pb-2">Expertise</h3>
+          <ul class="flex flex-col gap-3 font-mono text-sm font-semibold text-surface/85">
+            <li class="hover:text-surface transition-colors cursor-default">// Web & App Dev</li>
+            <li class="hover:text-surface transition-colors cursor-default">// AI Workflows</li>
+            <li class="hover:text-surface transition-colors cursor-default">// Internal Tooling</li>
+            <li class="hover:text-surface transition-colors cursor-default">// Cloud & Database</li>
+            <li class="hover:text-surface transition-colors cursor-default">// SaaS Platforms</li>
+            <li class="hover:text-surface transition-colors cursor-default">// WhatsApp Bots</li>
+          </ul>
+        </div>
+
+        <!-- Links Column 3: Quick Contact / CTA -->
+        <div class="lg:col-span-3 flex flex-col gap-6">
+          <h3 class="font-mono text-xs font-black uppercase text-tangerine tracking-widest border-b border-surface/10 pb-2">Connect</h3>
+          <div class="flex flex-col gap-4 font-mono text-sm">
+            <div class="flex flex-col gap-1">
+              <span class="text-surface/50 text-xs uppercase font-bold">Mail Us</span>
+              <a href="mailto:hello@kytestudios.in" class="text-surface hover:text-electric font-black transition-colors">hello@kytestudios.in</a>
+            </div>
+            <div class="flex flex-col gap-1">
+              <span class="text-surface/50 text-xs uppercase font-bold">Ring Us</span>
+              <a href="tel:+919355185187" class="text-surface hover:text-tangerine font-black transition-colors">+91 9355185187</a>
+            </div>
+            <div class="flex flex-col gap-1">
+              <span class="text-surface/50 text-xs uppercase font-bold">Location</span>
+              <span class="text-surface/80 font-medium">Delhi, India</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom Section: Copyright & Badges -->
+      <div class="pt-8 flex flex-col md:flex-row justify-between items-center gap-6 font-mono text-xs text-surface/50">
+        <div class="flex flex-col md:flex-row items-center gap-2 md:gap-4 text-center md:text-left">
+          <span>© KyteStudios 2026. All rights reserved.</span>
         </div>
       </div>
 
-      <div class="flex flex-wrap gap-6 font-mono text-sm font-bold uppercase">
-        <a href="https://instagram.com/kyte_studios" target="_blank" rel="noopener noreferrer"
-          class="flex items-center gap-2 hover:text-electric transition-colors">
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-          </svg>
-          Instagram
-        </a>
-        <a href="https://twitter.com/kytestudiox" target="_blank" rel="noopener noreferrer"
-          class="flex items-center gap-2 hover:text-tangerine transition-colors">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-            <path
-              d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865l8.875 11.633Z" />
-          </svg>
-          X
-        </a>
-        <a href="https://www.linkedin.com/company/kytestudio" target="_blank" rel="noopener noreferrer"
-          class="flex items-center gap-2 hover:text-electric transition-colors">
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-            <rect x="2" y="9" width="4" height="12"></rect>
-            <circle cx="4" cy="4" r="2"></circle>
-          </svg>
-          LinkedIn
-        </a>
-      </div>
     </div>
   </footer>
 
   <!-- Scripts -->
-  <script>
-    // Smooth scrolling initialization
-    const lenis = new Lenis({
-      duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      smooth: true
-    });
-
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-    requestAnimationFrame(raf);
-
-    // Anchor link smooth scrolling
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-
-        // Close mobile menu if open
-        if (typeof isMobileMenuOpen !== 'undefined' && isMobileMenuOpen) {
-          toggleMobileMenu();
-        }
-
-        const target = this.getAttribute('href');
-        if (target === '#') {
-          lenis.scrollTo(0, { duration: 1.2 });
-        } else {
-          lenis.scrollTo(target, { duration: 1.2, offset: -80 });
-        }
-      });
-    });
-
-    // Mobile Menu Logic
-    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-    const mobileMenuIcon = document.getElementById('mobile-menu-icon');
-    const mobileMenu = document.getElementById('mobile-menu');
-    let isMobileMenuOpen = false;
-
-    function toggleMobileMenu() {
-      isMobileMenuOpen = !isMobileMenuOpen;
-      if (isMobileMenuOpen) {
-        mobileMenuIcon.innerText = 'close';
-        mobileMenu.classList.remove('opacity-0', 'pointer-events-none', '-translate-y-4');
-        mobileMenu.classList.add('opacity-100', 'pointer-events-auto', 'translate-y-0');
-        mobileMenuBtn.classList.remove('bg-ink', 'text-surface');
-        mobileMenuBtn.classList.add('bg-electric', 'text-white');
-      } else {
-        mobileMenuIcon.innerText = 'menu';
-        mobileMenu.classList.add('opacity-0', 'pointer-events-none', '-translate-y-4');
-        mobileMenu.classList.remove('opacity-100', 'pointer-events-auto', 'translate-y-0');
-        mobileMenuBtn.classList.add('bg-ink', 'text-surface');
-        mobileMenuBtn.classList.remove('bg-electric', 'text-white');
-      }
-    }
-
-    if (mobileMenuBtn) {
-      mobileMenuBtn.addEventListener('click', toggleMobileMenu);
-    }
-
-    // Close mobile menu when nav link is clicked
-    document.querySelectorAll('.mobile-link').forEach(link => {
-      link.addEventListener('click', () => {
-        if (isMobileMenuOpen) {
-          toggleMobileMenu();
-        }
-      });
-    });
-
-    // GSAP Animations
-    gsap.registerPlugin(ScrollTrigger);
-
-    // Initial load animations
-    window.addEventListener('load', () => {
-      // Slide up elements
-      gsap.fromTo('.gsap-slide-up',
-        { y: 40, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.8, stagger: 0.1, ease: 'power3.out', delay: 0.2 }
-      );
-
-      // Fade in elements
-      gsap.fromTo('.gsap-fade-in',
-        { scale: 0.95, opacity: 0 },
-        { scale: 1, opacity: 1, duration: 1, ease: 'power3.out', delay: 0.4 }
-      );
-    });
-
-    // Testimonials Carousel Controls
-    const carousel = document.getElementById('testimonials-carousel');
-    const prevBtn = document.getElementById('prev-testimonial');
-    const nextBtn = document.getElementById('next-testimonial');
-
-    if (carousel && prevBtn && nextBtn) {
-      prevBtn.addEventListener('click', () => {
-        carousel.scrollBy({ left: -carousel.clientWidth * 0.8, behavior: 'smooth' });
-      });
-      nextBtn.addEventListener('click', () => {
-        carousel.scrollBy({ left: carousel.clientWidth * 0.8, behavior: 'smooth' });
-      });
-    }
-
-    // Capabilities Carousel Controls
-    const capabilitiesCarousel = document.getElementById('capabilities-carousel');
-    const prevCapBtn = document.getElementById('prev-capability');
-    const nextCapBtn = document.getElementById('next-capability');
-
-    if (capabilitiesCarousel && prevCapBtn && nextCapBtn) {
-      prevCapBtn.addEventListener('click', () => {
-        capabilitiesCarousel.scrollBy({ left: -capabilitiesCarousel.clientWidth * 0.8, behavior: 'smooth' });
-      });
-      nextCapBtn.addEventListener('click', () => {
-        capabilitiesCarousel.scrollBy({ left: capabilitiesCarousel.clientWidth * 0.8, behavior: 'smooth' });
-      });
-    }
-
-    // Active Link Highlighting on Scroll
-    function updateActiveNavLink() {
-      const sections = ['hero', 'expertise', 'work', 'testimonials', 'contact'];
-      let currentSection = 'hero';
-
-      for (const section of sections) {
-        const element = document.getElementById(section);
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          if (rect.top <= window.innerHeight / 2) {
-            currentSection = section;
-          }
-        }
-      }
-
-      // Update all nav links
-      document.querySelectorAll('.nav-link').forEach(link => {
-        const linkSection = link.getAttribute('data-section');
-        link.classList.remove('bg-electric', 'text-surface', 'border-ink', 'shadow-brutal-sm');
-
-        if (linkSection === currentSection) {
-          link.classList.add('bg-electric', 'text-surface', 'border-ink', 'shadow-brutal-sm');
-        }
-      });
-    }
-
-    // Update on scroll
-    window.addEventListener('scroll', updateActiveNavLink);
-    // Initial call
-    updateActiveNavLink();
-
-    // Scroll animations for general sections
-    gsap.utils.toArray('.gsap-section:not(#expertise .grid > div)').forEach(section => {
-      gsap.fromTo(section,
-        { opacity: 0, y: 50 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.8,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: section,
-            start: 'top 85%',
-          }
-        }
-      );
-    });
-
-    // Elegant stagger animation for Services Matrix
-    const expertiseGrid = document.querySelector('#expertise .grid');
-    if (expertiseGrid) {
-      gsap.fromTo('#expertise .grid > div',
-        { opacity: 0, y: 60, scale: 0.95 },
-        {
-          opacity: 1,
-          y: 0,
-          scale: 1,
-          duration: 0.8,
-          ease: 'back.out(1.5)',
-          stagger: 0.15,
-          clearProps: 'transform', // CRITICAL: Ensures Tailwind's hover classes still work after animation!
-          scrollTrigger: {
-            trigger: expertiseGrid,
-            start: 'top 85%',
-          }
-        }
-      );
-    }
-
-    // Stagger animation for Capabilities Cards with Float Effect
-    const capabilitiesSection = document.querySelector('#capabilities');
-    if (capabilitiesSection) {
-      const capCards = capabilitiesSection.querySelectorAll('.grid > div');
-
-      // Initial entrance animation with float effect
-      gsap.fromTo(capCards,
-        { opacity: 0, y: 100, scale: 0.9 },
-        {
-          opacity: 1,
-          y: 0,
-          scale: 1,
-          duration: 0.9,
-          ease: 'back.out(1.7)',
-          stagger: 0.12,
-          scrollTrigger: {
-            trigger: capabilitiesSection,
-            start: 'top 80%',
-          },
-          onComplete: function () {
-            // Add continuous float animation after entrance
-            capCards.forEach((card, index) => {
-              gsap.to(card, {
-                y: -10 - (index % 2) * 5,
-                duration: 3 + (index * 0.3),
-                ease: 'sine.inOut',
-                repeat: -1,
-                yoyo: true
-              });
-            });
-          }
-        }
-      );
-    }
-
-    // Navbar slide down animation on load
-    gsap.from('header', {
-      duration: 0.6,
-      y: -80,
-      opacity: 0,
-      ease: 'power3.out',
-      delay: 0.1
-    });
-
-    // Work section cards stagger animation
-    const workCards = document.querySelectorAll('#work .group');
-    if (workCards.length > 0) {
-      gsap.fromTo(workCards,
-        { opacity: 0, y: 60, rotation: -3 },
-        {
-          opacity: 1,
-          y: 0,
-          rotation: 0,
-          duration: 0.8,
-          ease: 'power3.out',
-          stagger: 0.2,
-          scrollTrigger: {
-            trigger: '#work',
-            start: 'top 80%',
-          }
-        }
-      );
-    }
-
-    // Testimonial cards slide in animation
-    const testimonialCards = document.querySelectorAll('#testimonials-carousel > div');
-    if (testimonialCards.length > 0) {
-      testimonialCards.forEach((card, index) => {
-        gsap.fromTo(card,
-          { opacity: 0, x: 100 },
-          {
-            opacity: 1,
-            x: 0,
-            duration: 0.6,
-            ease: 'power2.out',
-            scrollTrigger: {
-              trigger: '#testimonials',
-              start: 'top 80%',
-            },
-            delay: index * 0.1
-          }
-        );
-      });
-    }
-
-    // Contact section elements animation
-    const contactForm = document.querySelector('#contact');
-    if (contactForm) {
-      gsap.fromTo(contactForm,
-        { opacity: 0, y: 40, scale: 0.98 },
-        {
-          opacity: 1,
-          y: 0,
-          scale: 1,
-          duration: 0.8,
-          ease: 'back.out(1.2)',
-          scrollTrigger: {
-            trigger: '#contact',
-            start: 'top 85%',
-          }
-        }
-      );
-    }
-
-    // Footer fade in animation
-    gsap.fromTo('footer',
-      { opacity: 0 },
-      {
-        opacity: 1,
-        duration: 0.8,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: 'footer',
-          start: 'top 95%',
-        }
-      }
-    );
-
-    // Navbar slide down animation
-    window.addEventListener('load', () => {
-      // Animated badge pulse
-      const badge = document.querySelector('.pulse-badge');
-      if (badge) {
-        badge.classList.add('pulse-badge');
-      }
-    });
-
-    // Hero image parallax effect
-    const heroImage = document.querySelector('#hero img');
-    if (heroImage) {
-      gsap.to(heroImage, {
-        y: -50,
-        scrollTrigger: {
-          trigger: '#hero',
-          start: 'top top',
-          end: 'bottom center',
-          scrub: 1,
-          markers: false,
-        }
-      });
-    }
-
-    // Subtle parallax on work section
-    const workSection = document.querySelector('#work');
-    if (workSection) {
-      gsap.to(workSection, {
-        y: 30,
-        scrollTrigger: {
-          trigger: '#work',
-          start: 'top center',
-          end: 'bottom center',
-          scrub: 1,
-          markers: false,
-        }
-      });
-    }
-
-    // Animate section title on scroll
-    const sectionTitles = document.querySelectorAll('h2[class*="gsap-section"]');
-    sectionTitles.forEach(title => {
-      gsap.fromTo(title,
-        { opacity: 0, x: -40 },
-        {
-          opacity: 1,
-          x: 0,
-          duration: 0.8,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: title,
-            start: 'top 85%',
-          }
-        }
-      );
-    });
-
-    // Interactive hover animations for project cards
-    document.querySelectorAll('#work .group').forEach(card => {
-      card.addEventListener('mouseenter', function () {
-        gsap.to(this, {
-          duration: 0.3,
-          boxShadow: '0 0 30px rgba(0, 85, 255, 0.3)',
-          ease: 'power2.out'
-        });
-      });
-
-      card.addEventListener('mouseleave', function () {
-        gsap.to(this, {
-          duration: 0.3,
-          boxShadow: 'none',
-          ease: 'power2.out'
-        });
-      });
-    });
-
-    // Contact form input focus animations
-    document.querySelectorAll('.contact-form-input').forEach(input => {
-      input.addEventListener('focus', function () {
-        gsap.to(this, {
-          duration: 0.3,
-          scale: 1.02,
-          boxShadow: '0 0 0 3px rgba(0, 85, 255, 0.1), inset 0 0 0 1px #0055FF',
-          ease: 'power2.out'
-        });
-      });
-
-      input.addEventListener('blur', function () {
-        gsap.to(this, {
-          duration: 0.3,
-          scale: 1,
-          boxShadow: 'none',
-          ease: 'power2.out'
-        });
-      });
-    });
-
-    // Stagger animation for interactive badges on hover
-    document.querySelectorAll('.flex.flex-wrap').forEach(container => {
-      const badges = container.querySelectorAll('div');
-      container.addEventListener('mouseenter', function () {
-        badges.forEach((badge, index) => {
-          gsap.to(badge, {
-            duration: 0.2,
-            y: -2,
-            delay: index * 0.05,
-            ease: 'power2.out'
-          });
-        });
-      });
-
-      container.addEventListener('mouseleave', function () {
-        badges.forEach((badge) => {
-          gsap.to(badge, {
-            duration: 0.3,
-            y: 0,
-            ease: 'power2.out'
-          });
-        });
-      });
-    });
-
-
-    // Web3Forms AJAX Submission
-    const web3ContactForm = document.getElementById('contact-form');
-    if (web3ContactForm) {
-      web3ContactForm.addEventListener('submit', function (e) {
-        e.preventDefault();
-
-        const formData = new FormData(web3ContactForm);
-        
-        // Client-side hCaptcha validation
-        const hCaptchaResponse = formData.get('h-captcha-response');
-        if (!hCaptchaResponse) {
-          alert('Please complete the Captcha challenge before submitting!');
-          return;
-        }
-
-        const submitBtn = document.getElementById('contact-submit-btn');
-        const originalContent = submitBtn.innerHTML;
-        submitBtn.innerHTML = '<span>Sending...</span> <span class="material-symbols-outlined animate-spin" style="animation: spin 1s linear infinite;">sync</span>';
-
-        const object = Object.fromEntries(formData);
-        const json = JSON.stringify(object);
-
-        fetch('https://api.web3forms.com/submit', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-          },
-          body: json
-        })
-          .then(async (response) => {
-            if (response.status == 200) {
-              document.getElementById('contact-form-inner').classList.add('hidden');
-              document.getElementById('contact-success').classList.remove('hidden');
-              document.getElementById('contact-success').classList.add('flex');
-            } else {
-              console.log(response);
-              submitBtn.innerHTML = originalContent;
-              alert("Something went wrong! Please try again.");
-            }
-          })
-          .catch(error => {
-            console.log(error);
-            submitBtn.innerHTML = originalContent;
-            alert("Something went wrong! Please try again.");
-          });
-      });
-    }
-  </script>
+  <script src="./script.js"></script>
   <script src="https://web3forms.com/client/script.js" async defer></script>
 </body>
 

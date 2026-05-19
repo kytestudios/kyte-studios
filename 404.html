@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Primary Meta Tags -->
+  <title>Page Not Found | Kyte Studios</title>
+  <meta name="title" content="Page Not Found | Kyte Studios">
+  <meta name="description" content="Oops! The page you're looking for doesn't exist. Let's get you back on track.">
+  <meta name="robots" content="noindex, follow">
+
+  <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="Kyte Studios" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=JetBrains+Mono:wght@400;500;700&family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&display=swap"
+    rel="stylesheet">
+  <!-- Material Symbols -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    rel="stylesheet" />
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="./tailwind.config.js"></script>
+
+  <!-- GSAP & Lenis -->
+  <script src="https://unpkg.com/@studio-freight/lenis@1.0.39/dist/lenis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body class="grid-flow selection:bg-electric selection:text-white">
+  <div class="noise-overlay"></div>
+
+  <!-- Navbar -->
+  <header class="fixed top-4 left-4 right-4 z-50">
+    <div
+      class="max-w-7xl mx-auto bg-surface brutal-border shadow-brutal flex justify-between items-center p-3 md:p-4 relative z-50">
+      <a href="/" class="flex items-center gap-2 pl-1">
+        <img src="./images/logo.png" alt="KyteStudios" class="h-9 md:h-10 w-auto object-contain">
+        <span class="font-sans font-black text-2xl md:text-3xl tracking-tighter leading-none">KyteStudios</span>
+      </a>
+      <nav class="hidden md:flex gap-4 font-mono text-sm font-bold uppercase items-center">
+        <a href="/#hero"
+          class="nav-link px-3 py-1.5 border-2 border-transparent hover:border-ink hover:bg-electric hover:text-surface hover:shadow-brutal-sm transition-all hover:-translate-y-1">Home</a>
+        <a href="/#expertise"
+          class="nav-link px-3 py-1.5 border-2 border-transparent hover:border-ink hover:bg-electric hover:text-surface hover:shadow-brutal-sm transition-all hover:-translate-y-1">Expertise</a>
+        <a href="/#work"
+          class="nav-link px-3 py-1.5 border-2 border-transparent hover:border-ink hover:bg-tangerine hover:text-ink hover:shadow-brutal-sm transition-all hover:-translate-y-1">Work</a>
+        <a href="/#testimonials"
+          class="nav-link px-3 py-1.5 border-2 border-transparent hover:border-ink hover:bg-electric hover:text-surface hover:shadow-brutal-sm transition-all hover:-translate-y-1">Testimonials</a>
+      </nav>
+      <a href="/#contact"
+        class="bg-ink text-surface px-6 py-3 font-mono text-sm font-bold uppercase brutal-border interactive-element hidden md:flex items-center gap-2">
+        Let's Talk <span class="material-symbols-outlined text-[18px]">chat</span>
+      </a>
+      <button id="mobile-menu-btn"
+        class="md:hidden bg-ink text-surface p-2 brutal-border interactive-element transition-colors">
+        <span id="mobile-menu-icon" class="material-symbols-outlined block">menu</span>
+      </button>
+    </div>
+
+    <!-- Mobile Menu Dropdown -->
+    <div id="mobile-menu"
+      class="hidden md:hidden absolute left-4 right-4 top-full mt-2 max-w-7xl mx-auto bg-surface brutal-border shadow-brutal p-4 flex flex-col gap-2 transition-all duration-300 transform origin-top z-40">
+      <a href="/#hero"
+        class="mobile-link text-center px-4 py-3 border-2 border-transparent hover:border-ink hover:bg-electric hover:text-surface font-mono text-sm font-bold uppercase transition-all">Home</a>
+      <a href="/#expertise"
+        class="mobile-link text-center px-4 py-3 border-2 border-transparent hover:border-ink hover:bg-electric hover:text-surface font-mono text-sm font-bold uppercase transition-all">Expertise</a>
+      <a href="/#work"
+        class="mobile-link text-center px-4 py-3 border-2 border-transparent hover:border-ink hover:bg-tangerine hover:text-ink font-mono text-sm font-bold uppercase transition-all">Work</a>
+      <a href="/#testimonials"
+        class="mobile-link text-center px-4 py-3 border-2 border-transparent hover:border-ink hover:bg-electric hover:text-surface font-mono text-sm font-bold uppercase transition-all">Testimonials</a>
+      <a href="/#contact"
+        class="mobile-link text-center bg-ink text-surface px-4 py-3 border-2 border-ink hover:bg-surface hover:text-ink font-mono text-sm font-bold uppercase flex justify-center items-center gap-2 transition-colors">
+        Let's Talk <span class="material-symbols-outlined text-[18px]">chat</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- 404 Section -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 py-24 sm:py-32 min-h-screen flex flex-col justify-center items-center relative">
+    <div class="w-full max-w-2xl">
+      <!-- Main 404 Container -->
+      <div class="grid grid-cols-1 gap-12 items-center">
+        <!-- 404 Visual Section -->
+        <div class="flex flex-col items-center gap-8">
+          <!-- Large 404 with rotation and styling -->
+          <div class="relative">
+            <div
+              class="bg-gradient-to-br from-electric/5 to-tangerine/5 brutal-border shadow-brutal p-8 sm:p-12 -rotate-1">
+              <div class="flex items-center justify-center gap-2 sm:gap-4">
+                <span class="material-symbols-outlined text-6xl sm:text-8xl text-electric animate-pulse">error</span>
+                <div class="flex flex-col">
+                  <span class="font-mono text-4xl sm:text-6xl font-black text-ink">404</span>
+                  <span class="font-mono text-xs text-ink/50 uppercase tracking-widest">Page Lost</span>
+                </div>
+              </div>
+            </div>
+            <!-- Decorative corner element -->
+            <div
+              class="absolute -top-4 -right-4 sm:-top-6 sm:-right-6 w-8 h-8 sm:w-12 sm:h-12 brutal-border bg-tangerine/20 rotate-45">
+            </div>
+          </div>
+
+          <!-- Content -->
+          <div class="text-center flex flex-col gap-4 sm:gap-6">
+            <div class="flex flex-col gap-2">
+              <h1 class="font-sans font-black text-2xl sm:text-4xl md:text-5xl uppercase tracking-tighter">
+                Oops! This Page Wandered Off
+              </h1>
+              <p class="font-mono text-sm sm:text-base text-ink/60">
+                The page you're looking for doesn't exist in our universe. Let's get you back on the right path.
+              </p>
+            </div>
+
+            <!-- CTA Buttons -->
+            <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mt-4 sm:mt-8">
+              <a href="/"
+                class="bg-electric text-surface brutal-border shadow-brutal interactive-element px-6 sm:px-8 py-3 sm:py-4 font-mono font-bold uppercase flex items-center justify-center gap-2 hover:bg-ink transition-colors text-sm sm:text-base">
+                <span class="material-symbols-outlined">home</span>
+                Back to Home
+              </a>
+              <a href="/#contact"
+                class="bg-tangerine text-ink brutal-border shadow-brutal interactive-element px-6 sm:px-8 py-3 sm:py-4 font-mono font-bold uppercase flex items-center justify-center gap-2 hover:shadow-lg transition-all text-sm sm:text-base">
+                Contact Us <span class="material-symbols-outlined">arrow_forward</span>
+              </a>
+            </div>
+
+            <!-- Quick Navigation -->
+            <div class="mt-8 sm:mt-12 pt-8 border-t-2 border-dashed border-ink/20">
+              <p class="font-mono text-xs text-ink/50 uppercase tracking-widest mb-4">Quick Navigation</p>
+              <div class="flex flex-wrap gap-2 justify-center">
+                <a href="/#hero"
+                  class="px-3 py-2 border-2 border-ink/20 hover:border-electric hover:bg-electric hover:text-surface font-mono text-xs font-bold uppercase transition-all">
+                  Home
+                </a>
+                <a href="/#expertise"
+                  class="px-3 py-2 border-2 border-ink/20 hover:border-electric hover:bg-electric hover:text-surface font-mono text-xs font-bold uppercase transition-all">
+                  Expertise
+                </a>
+                <a href="/#work"
+                  class="px-3 py-2 border-2 border-ink/20 hover:border-tangerine hover:bg-tangerine hover:text-ink font-mono text-xs font-bold uppercase transition-all">
+                  Work
+                </a>
+                <a href="/#testimonials"
+                  class="px-3 py-2 border-2 border-ink/20 hover:border-electric hover:bg-electric hover:text-surface font-mono text-xs font-bold uppercase transition-all">
+                  Testimonials
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16 border-t-2 border-dashed border-ink/10 mt-12 sm:mt-16">
+    <div class="flex flex-col sm:flex-row justify-between items-center gap-6">
+      <div class="flex items-center gap-2">
+        <img src="./images/logo.png" alt="KyteStudios" class="h-8 w-auto object-contain">
+        <span class="font-mono text-xs text-ink/60">&copy; 2024 Kyte Studios. All rights reserved.</span>
+      </div>
+      <div class="flex gap-4">
+        <a href="mailto:hello@kytestudios.in" class="font-mono text-xs text-ink/60 hover:text-electric transition-colors">Email</a>
+        <a href="/#contact" class="font-mono text-xs text-ink/60 hover:text-tangerine transition-colors">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileMenuIcon = document.getElementById('mobile-menu-icon');
+    let isMobileMenuOpen = false;
+
+    mobileMenuBtn.addEventListener('click', () => {
+      isMobileMenuOpen = !isMobileMenuOpen;
+      if (isMobileMenuOpen) {
+        mobileMenu.classList.remove('hidden');
+        mobileMenuIcon.textContent = 'close';
+      } else {
+        mobileMenu.classList.add('hidden');
+        mobileMenuIcon.textContent = 'menu';
+      }
+    });
+
+    // Close menu on outside click
+    document.addEventListener('click', (event) => {
+      if (!isMobileMenuOpen) return;
+      const clickedInsideNavbar = event.target.closest('header');
+      if (!clickedInsideNavbar) {
+        mobileMenu.classList.add('hidden');
+        mobileMenuIcon.textContent = 'menu';
+        isMobileMenuOpen = false;
+      }
+    });
+
+    // Close menu on link click
+    document.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        mobileMenuIcon.textContent = 'menu';
+        isMobileMenuOpen = false;
+      });
+    });
+
+    // Smooth scroll with Lenis
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      direction: 'vertical',
+      gestureDirection: 'vertical',
+      smooth: true,
+      smoothTouch: false,
+      touchMultiplier: 2,
+    });
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+
+    // GSAP animations for 404 section
+    gsap.registerPlugin(ScrollTrigger);
+    
+    gsap.fromTo('.bg-gradient-to-br',
+      { opacity: 0, scale: 0.8, rotateZ: -10 },
+      {
+        opacity: 1,
+        scale: 1,
+        rotateZ: -1,
+        duration: 0.8,
+        ease: 'back.out'
+      }
+    );
+
+    gsap.fromTo('h1',
+      { opacity: 0, y: 30 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        delay: 0.2,
+        ease: 'power2.out'
+      }
+    );
+
+    gsap.fromTo('p',
+      { opacity: 0, y: 20 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        delay: 0.3,
+        ease: 'power2.out'
+      }
+    );
+
+    gsap.fromTo('a[href="/"]',
+      { opacity: 0, x: -30 },
+      {
+        opacity: 1,
+        x: 0,
+        duration: 0.8,
+        delay: 0.4,
+        ease: 'power2.out'
+      }
+    );
+
+    gsap.fromTo('a[href="/#contact"]',
+      { opacity: 0, x: 30 },
+      {
+        opacity: 1,
+        x: 0,
+        duration: 0.8,
+        delay: 0.4,
+        ease: 'power2.out'
+      }
+    );
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,2 @@
+User-agent: *
+# plain html h bhai mat dund kuch
