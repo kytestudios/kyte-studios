@@ -9,7 +9,7 @@
   <title>Kyte Studios | Premium Web & App Development Agency</title>
   <meta name="title" content="Kyte Studios | Premium Web & App Development Agency">
   <meta name="description"
-    content="Kyte Studios is a digital agency specializing in high-performance web development, AI workflows, internal tooling, and modern SaaS development. Let's build your digital future.">
+    content="Kyte Studios is a premium digital agency specializing in high-performance web development, AI workflows, internal tooling, and modern SaaS development.">
   <meta name="keywords"
     content="Web Development, App Development, AI Workflows, SaaS Development, Cloud Infrastructure, Digital Agency, Kyte Studios, UI/UX Design">
   <meta name="author" content="Kyte Studios">
@@ -21,16 +21,16 @@
   <meta property="og:url" content="https://www.kytestudios.in/">
   <meta property="og:title" content="Kyte Studios | Premium Web & App Development Agency">
   <meta property="og:description"
-    content="Kyte Studios is a digital agency specializing in high-performance web development, AI workflows, internal tooling, and modern SaaS development. Let's build your digital future.">
+    content="Kyte Studios is a premium digital agency specializing in high-performance web development, AI workflows, internal tooling, and modern SaaS development.">
   <meta property="og:image" content="https://www.kytestudios.in/images/logo.png">
 
   <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://www.kytestudios.in/">
-  <meta property="twitter:title" content="Kyte Studios | Premium Web & App Development Agency">
-  <meta property="twitter:description"
-    content="Kyte Studios is a digital agency specializing in high-performance web development, AI workflows, internal tooling, and modern SaaS development. Let's build your digital future.">
-  <meta property="twitter:image" content="https://www.kytestudios.in/images/logo.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://www.kytestudios.in/">
+  <meta name="twitter:title" content="Kyte Studios | Premium Web & App Development Agency">
+  <meta name="twitter:description"
+    content="Kyte Studios is a premium digital agency specializing in high-performance web development, AI workflows, internal tooling, and modern SaaS development.">
+  <meta name="twitter:image" content="https://www.kytestudios.in/images/logo.png">
 
   <!-- Schema.org JSON-LD -->
   <script type="application/ld+json">
@@ -71,8 +71,7 @@
     rel="stylesheet" />
 
   <!-- Tailwind -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="./tailwind.config.js"></script>
+  <link rel="stylesheet" href="./tailwind.css">
 
   <!-- GSAP & Lenis -->
   <script src="https://unpkg.com/@studio-freight/lenis@1.0.39/dist/lenis.min.js"></script>
@@ -86,6 +85,12 @@
 
 <body class="grid-flow selection:bg-electric selection:text-white">
   <div class="noise-overlay"></div>
+
+  <!-- Screen-Reader Only Keyword Rich Semantic Helper (SEO Optimization) -->
+  <div style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border-width:0;">
+    <h2>Kyte Studios | Premium Web &amp; App Development Agency</h2>
+    <p>Kyte Studios is a premium digital agency specializing in high-performance web development, AI workflows, custom internal tooling, and modern SaaS development. At Kyte Studios, we design and build scalable, secure, and beautiful digital products that drive growth and maximize ROI. As a leading product studio, Kyte Studios integrates intelligent AI agentic workflows, custom dashboards, admin panels, and auto-scaling cloud infrastructure on AWS and Supabase. Contact Kyte Studios today to start your next custom software engineering or product design project.</p>
+  </div>
 
   <!-- Navbar -->
   <header class="fixed top-4 left-4 right-4 z-50">
@@ -210,11 +215,11 @@
       <div class="lg:col-span-5 relative mt-6 lg:mt-0 perspective-1000 px-2 sm:px-0">
         <div id="hero-visual-card"
           class="gsap-fade-in aspect-[4/3] sm:aspect-[4/5] bg-surface brutal-border shadow-brutal rotate-1 sm:rotate-3 relative overflow-hidden group">
-          <img src="./images/hero.png" alt="Code Structure"
+          <img src="./images/hero.webp" alt="Code Structure" fetchpriority="high"
             class="w-full h-full object-cover object-[75%_center] grayscale contrast-125 group-hover:grayscale-0 transition-all duration-700">
           
           <!-- Subtle hover animated video -->
-          <video id="hero-video" src="./images/Kite_Animated.mp4" loop muted playsinline
+          <video id="hero-video" data-src="./images/Kite_Animated.mp4" preload="none" loop muted playsinline
             class="absolute inset-0 w-full h-full object-cover object-[75%_center] opacity-0 group-hover:opacity-100 transition-all duration-700 pointer-events-none"></video>
 
           <!-- Overlay badge -->
@@ -439,7 +444,7 @@
         <div
           class="bg-surface brutal-border shadow-brutal p-4 sm:p-5 -rotate-1 transition-transform duration-300 group-hover:rotate-0 group-hover:-translate-y-2 h-full flex flex-col justify-between w-full">
           <div class="aspect-[4/3] brutal-border overflow-hidden relative mb-6">
-            <img src="./images/EhaxPage.png" alt="EHAX" class="w-full h-full object-cover">
+            <img src="./images/EhaxPage.webp" alt="EHAX" loading="lazy" class="w-full h-full object-cover">
           </div>
           <div class="flex justify-between items-start mt-auto gap-4">
             <div>
@@ -459,7 +464,7 @@
         <div
           class="bg-surface brutal-border shadow-brutal p-4 sm:p-5 rotate-1 transition-transform duration-300 group-hover:rotate-0 group-hover:-translate-y-2 h-full flex flex-col justify-between w-full">
           <div class="aspect-[4/3] brutal-border overflow-hidden relative mb-6">
-            <img src="./images/BanarasiDasPage.png" alt="Banarsidas Jewels" class="w-full h-full object-cover object-left">
+            <img src="./images/BanarasiDasPage.webp" alt="Banarsidas Jewels" loading="lazy" class="w-full h-full object-cover object-left">
           </div>
           <div class="flex justify-between items-start mt-auto gap-4">
             <div>
@@ -479,7 +484,7 @@
         <div
           class="bg-surface brutal-border shadow-brutal p-4 sm:p-5 -rotate-1 transition-transform duration-300 group-hover:rotate-0 group-hover:-translate-y-2 h-full flex flex-col justify-between w-full">
           <div class="aspect-[4/3] brutal-border overflow-hidden relative mb-6">
-            <img src="./images/Trust1ssuesPage.png" alt="Trust1ssues" class="w-full h-full object-cover">
+            <img src="./images/Trust1ssuesPage.webp" alt="Trust1ssues" loading="lazy" class="w-full h-full object-cover">
           </div>
           <div class="flex justify-between items-start mt-auto gap-4">
             <div>
@@ -499,7 +504,7 @@
         <div
           class="bg-surface brutal-border shadow-brutal p-4 sm:p-5 rotate-1 transition-transform duration-300 group-hover:rotate-0 group-hover:-translate-y-2 h-full flex flex-col justify-between w-full">
           <div class="aspect-[4/3] brutal-border overflow-hidden relative mb-6">
-            <img src="./images/GraphidePage.png" alt="Graphide" class="w-full h-full object-cover">
+            <img src="./images/GraphidePage.webp" alt="Graphide" loading="lazy" class="w-full h-full object-cover">
           </div>
           <div class="flex justify-between items-start mt-auto gap-4">
             <div>
@@ -519,7 +524,7 @@
         <div
           class="bg-surface brutal-border shadow-brutal p-4 sm:p-5 -rotate-1 transition-transform duration-300 group-hover:rotate-0 group-hover:-translate-y-2 h-full flex flex-col justify-between w-full">
           <div class="aspect-[4/3] brutal-border overflow-hidden relative mb-6">
-            <img src="./images/BullRoomPage.png" alt="Bullsroom" class="w-full h-full object-cover">
+            <img src="./images/BullRoomPage.webp" alt="Bullsroom" loading="lazy" class="w-full h-full object-cover">
           </div>
           <div class="flex justify-between items-start mt-auto gap-4">
             <div>
@@ -539,7 +544,7 @@
         <div
           class="bg-surface brutal-border shadow-brutal p-4 sm:p-5 rotate-1 transition-transform duration-300 group-hover:rotate-0 group-hover:-translate-y-2 h-full flex flex-col justify-between w-full">
           <div class="aspect-[4/3] brutal-border overflow-hidden relative mb-6">
-            <img src="./images/RochitPage.png" alt="Rochit Singh" class="w-full h-full object-cover">
+            <img src="./images/RochitPage.webp" alt="Rochit Singh" loading="lazy" class="w-full h-full object-cover">
           </div>
           <div class="flex justify-between items-start mt-auto gap-4">
             <div>

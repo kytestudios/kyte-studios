@@ -1,2 +1,5 @@
 User-agent: *
-# plain html h bhai mat dund kuch
+Allow: /
+
+# Sitemap Link for SEO indexing
+Sitemap: https://www.kytestudios.in/sitemap.xml

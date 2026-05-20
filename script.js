@@ -78,6 +78,16 @@ document.querySelectorAll('.mobile-link').forEach(link => {
 // GSAP Animations
 gsap.registerPlugin(ScrollTrigger);
 
+// Pre-apply initial hidden states IMMEDIATELY so elements are never
+// painted visible before ScrollTrigger fires (prevents white flicker).
+gsap.set('.gsap-section:not(#expertise .grid > div):not(#work .group)', { opacity: 0, y: 50 });
+gsap.set('#expertise .grid > div', { opacity: 0, y: 60, scale: 0.95 });
+gsap.set('#capabilities .grid > div', { opacity: 0, y: 100, scale: 0.9 });
+gsap.set('#work .group', { opacity: 0, y: 60 });
+gsap.set('#testimonials-carousel > div:not(.marquee-clone)', { opacity: 0, x: 100 });
+gsap.set('#contact', { opacity: 0, y: 40, scale: 0.98 });
+gsap.set('footer', { opacity: 0 });
+
 function enableMouseDragScroll(container) {
   if (!container) {
     return;
@@ -274,39 +284,47 @@ if (capabilitiesCarousel && prevCapBtn && nextCapBtn) {
 }
 enableMouseDragScroll(capabilitiesCarousel);
 
-// Active Link Highlighting on Scroll
-function updateActiveNavLink() {
+// Active Link Highlighting using IntersectionObserver for high scroll performance
+function initActiveNavLinkHighlighting() {
   const sections = ['hero', 'expertise', 'work', 'testimonials', 'contact'];
-  let currentSection = 'hero';
+  const navLinks = document.querySelectorAll('.nav-link');
+  
+  const observerOptions = {
+    root: null,
+    rootMargin: '-20% 0px -60% 0px',
+    threshold: 0
+  };
 
-  for (const section of sections) {
-    const element = document.getElementById(section);
-    if (element) {
-      const rect = element.getBoundingClientRect();
-      if (rect.top <= window.innerHeight / 2) {
-        currentSection = section;
+  const observerCallback = (entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const currentSection = entry.target.id;
+        
+        navLinks.forEach(link => {
+          const linkSection = link.getAttribute('data-section');
+          link.classList.remove('bg-electric', 'text-surface', 'border-ink', 'shadow-brutal-sm');
+          
+          if (linkSection === currentSection) {
+            link.classList.add('bg-electric', 'text-surface', 'border-ink', 'shadow-brutal-sm');
+          }
+        });
       }
-    }
-  }
+    });
+  };
 
-  // Update all nav links
-  document.querySelectorAll('.nav-link').forEach(link => {
-    const linkSection = link.getAttribute('data-section');
-    link.classList.remove('bg-electric', 'text-surface', 'border-ink', 'shadow-brutal-sm');
-
-    if (linkSection === currentSection) {
-      link.classList.add('bg-electric', 'text-surface', 'border-ink', 'shadow-brutal-sm');
-    }
+  const observer = new IntersectionObserver(observerCallback, observerOptions);
+  
+  sections.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) observer.observe(el);
   });
 }
 
-// Update on scroll
-window.addEventListener('scroll', updateActiveNavLink);
-// Initial call
-updateActiveNavLink();
+// Initialize navigation link highlighting
+initActiveNavLinkHighlighting();
 
-// Scroll animations for general sections
-gsap.utils.toArray('.gsap-section:not(#expertise .grid > div)').forEach(section => {
+// Scroll animations for general sections (excluding elements with their own dedicated animators)
+gsap.utils.toArray('.gsap-section:not(#expertise .grid > div):not(#work .group)').forEach(section => {
   gsap.fromTo(section,
     { opacity: 0, y: 50 },
     {
@@ -314,6 +332,7 @@ gsap.utils.toArray('.gsap-section:not(#expertise .grid > div)').forEach(section 
       y: 0,
       duration: 0.8,
       ease: 'power3.out',
+      immediateRender: false,
       scrollTrigger: {
         trigger: section,
         start: 'top 85%',
@@ -334,6 +353,7 @@ if (expertiseGrid) {
       duration: 0.8,
       ease: 'back.out(1.5)',
       stagger: 0.15,
+      immediateRender: false,
       clearProps: 'transform', // CRITICAL: Ensures Tailwind's hover classes still work after animation!
       scrollTrigger: {
         trigger: expertiseGrid,
@@ -358,6 +378,7 @@ if (capabilitiesSection) {
       duration: 0.9,
       ease: 'back.out(1.7)',
       stagger: 0.12,
+      immediateRender: false,
       scrollTrigger: {
         trigger: capabilitiesSection,
         start: 'top 80%',
@@ -446,6 +467,8 @@ if (workCards.length > 0) {
       duration: 0.8,
       ease: 'power3.out',
       stagger: 0.2,
+      immediateRender: false,
+      clearProps: 'transform', // Ensures CSS hover rotate/translate still applies after animation
       scrollTrigger: {
         trigger: '#work',
         start: 'top 80%',
@@ -465,6 +488,7 @@ if (testimonialCards.length > 0) {
         x: 0,
         duration: 0.6,
         ease: 'power2.out',
+        immediateRender: false,
         scrollTrigger: {
           trigger: '#testimonials',
           start: 'top 80%',
@@ -486,6 +510,7 @@ if (contactForm) {
       scale: 1,
       duration: 0.8,
       ease: 'back.out(1.2)',
+      immediateRender: false,
       scrollTrigger: {
         trigger: '#contact',
         start: 'top 85%',
@@ -501,6 +526,7 @@ gsap.fromTo('footer',
     opacity: 1,
     duration: 0.8,
     ease: 'power3.out',
+    immediateRender: false,
     scrollTrigger: {
       trigger: 'footer',
       start: 'top 95%',
@@ -692,12 +718,17 @@ if (kyteContactForm) {
   });
 }
 
-// Hero Visual Video Hover Animation
+// Hero Visual Video Hover Animation with Dynamic Lazy-Loading
 const heroCard = document.getElementById('hero-visual-card');
 const heroVideo = document.getElementById('hero-video');
 
 if (heroCard && heroVideo) {
   heroCard.addEventListener('mouseenter', () => {
+    // Dynamically load video source on hover
+    if (!heroVideo.src && heroVideo.dataset.src) {
+      heroVideo.src = heroVideo.dataset.src;
+      heroVideo.load();
+    }
     heroVideo.play().catch(err => console.log('Video play failed:', err));
   });
 
