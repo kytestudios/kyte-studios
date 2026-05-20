@@ -11,10 +11,7 @@ body {
 @media (pointer: fine) {
 
   body,
-  html {
-    cursor: url("data:image/svg+xml;charset=utf-8,%3Csvg width='28' height='28' viewBox='0 0 28 28' fill='%23FF5522' stroke='%23111111' stroke-width='2.5' stroke-linejoin='round' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2 2L24 10L14 14L10 24Z'/%3E%3C/svg%3E") 2 2, auto;
-  }
-
+  html,
   a,
   button,
   .interactive-element,
@@ -22,7 +19,7 @@ body {
   input,
   textarea,
   select {
-    cursor: url("./images/cursor-pointer.png") 10 6, pointer !important;
+    cursor: url("data:image/svg+xml;charset=utf-8,%3Csvg width='28' height='28' viewBox='0 0 28 28' fill='%23FF5522' stroke='%23111111' stroke-width='2.5' stroke-linejoin='round' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2 2L24 10L14 14L10 24Z'/%3E%3C/svg%3E") 2 2, auto !important;
   }
 }
 
@@ -177,5 +174,17 @@ body {
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
+}
+
+/* Hero Media Parallax & Scale Alignment */
+#hero-visual-card img,
+#hero-visual-card video {
+  scale: 1.05;
+  transition: scale 0.7s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.7s ease, filter 0.7s ease;
+}
+
+#hero-visual-card:hover img,
+#hero-visual-card:hover video {
+  scale: 1;
 }
 

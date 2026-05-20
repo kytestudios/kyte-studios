@@ -517,10 +517,10 @@ window.addEventListener('load', () => {
   }
 });
 
-// Hero image parallax effect
-const heroImage = document.querySelector('#hero img');
-if (heroImage) {
-  gsap.to(heroImage, {
+// Hero image and video parallax effect
+const heroVisuals = document.querySelectorAll('#hero img, #hero video');
+if (heroVisuals.length > 0) {
+  gsap.to(heroVisuals, {
     y: -50,
     scrollTrigger: {
       trigger: '#hero',
@@ -691,3 +691,19 @@ if (kyteContactForm) {
       });
   });
 }
+
+// Hero Visual Video Hover Animation
+const heroCard = document.getElementById('hero-visual-card');
+const heroVideo = document.getElementById('hero-video');
+
+if (heroCard && heroVideo) {
+  heroCard.addEventListener('mouseenter', () => {
+    heroVideo.play().catch(err => console.log('Video play failed:', err));
+  });
+
+  heroCard.addEventListener('mouseleave', () => {
+    heroVideo.pause();
+    heroVideo.currentTime = 0;
+  });
+}
+
