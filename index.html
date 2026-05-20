@@ -14,7 +14,14 @@
     content="Web Development, App Development, AI Workflows, SaaS Development, Cloud Infrastructure, Digital Agency, Kyte Studios, UI/UX Design">
   <meta name="author" content="Kyte Studios">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://www.kytestudios.in">
+  <link rel="canonical" href="https://www.kytestudios.in/">
+
+  <!-- DNS Prefetch for remaining external domains -->
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+
+  <!-- Preload LCP hero image for fastest possible render -->
+  <link rel="preload" href="./images/hero.webp" as="image" fetchpriority="high">
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
@@ -60,27 +67,40 @@
   <meta name="apple-mobile-web-app-title" content="Kyte Studios" />
   <link rel="manifest" href="/favicon/site.webmanifest" />
 
-  <!-- Fonts -->
+  <!-- Fonts: non-blocking async load to avoid render-blocking -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=JetBrains+Mono:wght@400;500;700&family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&display=swap"
-    rel="stylesheet">
-  <!-- Material Symbols -->
+    rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=JetBrains+Mono:wght@400;500;700&family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&display=swap" rel="stylesheet"></noscript>
+  <!-- Material Symbols: non-blocking -->
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
-    rel="stylesheet" />
+    rel="stylesheet" media="print" onload="this.media='all'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"></noscript>
 
   <!-- Tailwind -->
   <link rel="stylesheet" href="./tailwind.css">
-
-  <!-- GSAP & Lenis -->
-  <script src="https://unpkg.com/@studio-freight/lenis@1.0.39/dist/lenis.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-
   <link rel="stylesheet" href="./styles.css">
-  <!-- Cloudflare Turnstile Captcha -->
-  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+
+  <!-- Critical: Pre-hide GSAP animated elements so they're invisible from first paint.
+       Deferred scripts run after parse, so without this, elements flash visible before
+       gsap.set() runs. GSAP removes opacity:0 when ScrollTrigger reveals them. -->
+  <style>
+    .gsap-section:not(#expertise .grid > div):not(#work .group),
+    #expertise .grid > div,
+    #capabilities .grid > div,
+    #work .group,
+    #testimonials-carousel > div:not(.marquee-clone),
+    #contact,
+    footer {
+      opacity: 0;
+    }
+    /* GPU acceleration for smoother animations */
+    .gsap-section, #work .group, #capabilities .grid > div {
+      will-change: opacity, transform;
+    }
+  </style>
 </head>
 
 <body class="grid-flow selection:bg-electric selection:text-white">
@@ -932,7 +952,7 @@
                 <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
               </svg>
             </a>
-            <a href="https://twitter.com/kytestudiox" target="_blank" rel="noopener noreferrer" aria-label="Twitter X"
+            <a href="https://x.com/kytestudiox" target="_blank" rel="noopener noreferrer" aria-label="X (formerly Twitter)"
               class="w-11 h-11 border-2 border-surface/30 bg-surface/5 flex items-center justify-center text-surface hover:bg-electric hover:text-white hover:border-electric hover:-translate-y-1 hover:-translate-x-1 hover:shadow-[4px_4px_0px_0px_#FFF] transition-all duration-200">
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
                 <path
@@ -1017,8 +1037,14 @@
     </div>
   </footer>
 
-  <!-- Scripts -->
-  <script src="./script.js"></script>
+  <!-- Cloudflare Turnstile: deferred to avoid blocking initial render -->
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" defer></script>
+
+  <!-- Self-hosted vendor scripts (no CDN latency) + deferred to not block rendering -->
+  <script src="./js/vendor/lenis.min.js" defer></script>
+  <script src="./js/vendor/gsap.min.js" defer></script>
+  <script src="./js/vendor/ScrollTrigger.min.js" defer></script>
+  <script src="./script.js" defer></script>
 </body>
 
 </html>
