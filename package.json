@@ -2,5 +2,8 @@
   "devDependencies": {
     "@studio-freight/lenis": "^1.0.39",
     "gsap": "^3.12.5"
+  },
+  "dependencies": {
+    "@vercel/analytics": "^2.0.1"
   }
 }
