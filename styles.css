@@ -162,6 +162,7 @@ body {
   transform: scale(1.02);
 }
 
+
 #testimonials-carousel,
 #testimonials-carousel * {
   -webkit-user-select: none;
@@ -194,10 +195,4 @@ body {
   scale: 1;
 }
 
-#work-carousel,
-#work-carousel * {
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
 

@@ -707,18 +707,5 @@ if (heroCard && heroVideo) {
   });
 }
 
-// Work Carousel Controls
-const workCarousel = document.getElementById('work-carousel');
-const prevWorkBtn = document.getElementById('prev-work');
-const nextWorkBtn = document.getElementById('next-work');
 
-if (workCarousel && prevWorkBtn && nextWorkBtn) {
-  prevWorkBtn.addEventListener('click', () => {
-    scrollCarouselByCard(workCarousel, -1);
-  });
-  nextWorkBtn.addEventListener('click', () => {
-    scrollCarouselByCard(workCarousel, 1);
-  });
-}
-enableMouseDragScroll(workCarousel);
 

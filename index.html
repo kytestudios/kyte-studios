@@ -424,30 +424,18 @@
 
   <!-- Work Section -->
   <section id="work" class="max-w-7xl mx-auto px-6 py-24">
-    <div class="flex items-center justify-between mb-12 sm:mb-16 gap-4">
-      <div class="flex items-end min-w-0">
-        <h2
-          class="bg-surface brutal-border shadow-brutal p-3 sm:p-4 font-sans font-black text-2xl sm:text-4xl md:text-5xl uppercase tracking-tighter -rotate-1 inline-block truncate">
-          Featured Work
-        </h2>
-      </div>
-      <div class="flex gap-2 flex-shrink-0">
-        <button id="prev-work"
-          class="w-8 h-8 md:w-10 md:h-10 brutal-border flex items-center justify-center bg-white text-[#0055FF] hover:bg-white/80 transition-colors interactive-element flex-shrink-0">
-          <span class="material-symbols-outlined text-sm md:text-base">arrow_back</span>
-        </button>
-        <button id="next-work"
-          class="w-8 h-8 md:w-10 md:h-10 brutal-border flex items-center justify-center bg-white text-[#0055FF] hover:bg-white/80 transition-colors interactive-element flex-shrink-0">
-          <span class="material-symbols-outlined text-sm md:text-base">arrow_forward</span>
-        </button>
-      </div>
+    <div class="mb-12 sm:mb-16">
+      <h2
+        class="bg-surface brutal-border shadow-brutal p-3 sm:p-4 font-sans font-black text-2xl sm:text-4xl md:text-5xl uppercase tracking-tighter -rotate-1 inline-block">
+        Featured Work
+      </h2>
     </div>
 
-    <div id="work-carousel"
-      class="flex overflow-x-auto snap-x snap-mandatory pb-6 sm:pb-8 pt-2 sm:pt-4 -mx-4 sm:-mx-6 px-4 sm:px-6 gap-6 sm:gap-8 hide-scrollbar cursor-grab active:cursor-grabbing scroll-smooth">
+    <div id="work-grid"
+      class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 pt-2 sm:pt-4">
       <!-- Project 1: EHAX -->
       <a href="https://ehax.in" target="_blank" rel="noopener noreferrer" 
-        class="w-[90%] sm:w-[75%] md:w-[48%] lg:w-[40%] snap-start shrink-0 flex flex-col group gsap-section">
+        class="w-full flex flex-col group gsap-section">
         <div
           class="bg-surface brutal-border shadow-brutal p-4 sm:p-5 -rotate-1 transition-transform duration-300 group-hover:rotate-0 group-hover:-translate-y-2 h-full flex flex-col justify-between w-full">
           <div class="aspect-[4/3] brutal-border overflow-hidden relative mb-6">
@@ -467,7 +455,7 @@
 
       <!-- Project 2: Banarsidas Jewels -->
       <a href="https://banarsidasjewels.com" target="_blank" rel="noopener noreferrer" 
-        class="w-[90%] sm:w-[75%] md:w-[48%] lg:w-[40%] snap-start shrink-0 flex flex-col group gsap-section">
+        class="w-full flex flex-col group gsap-section">
         <div
           class="bg-surface brutal-border shadow-brutal p-4 sm:p-5 rotate-1 transition-transform duration-300 group-hover:rotate-0 group-hover:-translate-y-2 h-full flex flex-col justify-between w-full">
           <div class="aspect-[4/3] brutal-border overflow-hidden relative mb-6">
@@ -487,7 +475,7 @@
 
       <!-- Project 3: Trust1ssues -->
       <a href="https://trust1ssues.xyz" target="_blank" rel="noopener noreferrer" 
-        class="w-[90%] sm:w-[75%] md:w-[48%] lg:w-[40%] snap-start shrink-0 flex flex-col group gsap-section">
+        class="w-full flex flex-col group gsap-section">
         <div
           class="bg-surface brutal-border shadow-brutal p-4 sm:p-5 -rotate-1 transition-transform duration-300 group-hover:rotate-0 group-hover:-translate-y-2 h-full flex flex-col justify-between w-full">
           <div class="aspect-[4/3] brutal-border overflow-hidden relative mb-6">
@@ -507,7 +495,7 @@
 
       <!-- Project 4: Graphide -->
       <a href="https://graphide.xyz" target="_blank" rel="noopener noreferrer" 
-        class="w-[90%] sm:w-[75%] md:w-[48%] lg:w-[40%] snap-start shrink-0 flex flex-col group gsap-section">
+        class="w-full flex flex-col group gsap-section">
         <div
           class="bg-surface brutal-border shadow-brutal p-4 sm:p-5 rotate-1 transition-transform duration-300 group-hover:rotate-0 group-hover:-translate-y-2 h-full flex flex-col justify-between w-full">
           <div class="aspect-[4/3] brutal-border overflow-hidden relative mb-6">
@@ -568,12 +556,11 @@
           <blockquote class="flex-1 flex flex-col gap-5 min-w-0">
             <p
               class="font-serif text-lg sm:text-xl md:text-2xl italic text-ink leading-[1.15] tracking-tight font-black break-words">
-              "Their structural approach to web engineering transformed our digital footprint from a fragile
-              storefront into a fortress of conversion."
+              "KyteStudios designed an incredibly secure, lightning-fast platform that complies with rigorous financial standards. Their execution and attention to security detail are top-notch."
             </p>
             <footer class="font-mono text-[10px] sm:text-xs font-bold text-ink flex items-center gap-2 mt-auto">
               <span class="w-8 h-px bg-ink shrink-0"></span>
-              CHIEF TECHNOLOGY OFFICER, LOGISTICS CORP.
+              ROCHIT SINGH, SEBI REGISTERED RESEARCH ANALYST
             </footer>
           </blockquote>
         </div>
@@ -586,12 +573,11 @@
           <blockquote class="flex-1 flex flex-col gap-5 min-w-0">
             <p
               class="font-serif text-lg sm:text-xl md:text-2xl italic text-ink leading-[1.15] tracking-tight font-black break-words">
-              "KyteStudios delivered a full-stack architecture that scales effortlessly. Absolute precision from day
-              one."
+              "Our landing page conversion rate skyrocketed after KyteStudios redesigned our user experience. The brutalist, modern design makes us stand out in a crowded market."
             </p>
             <footer class="font-mono text-[10px] sm:text-xs font-bold text-ink flex items-center gap-2 mt-auto">
               <span class="w-8 h-px bg-ink shrink-0"></span>
-              LEAD ENGINEER, FINTECH SYNDICATE
+              NIKHIL SINGH SUMAL, GROWTH JET MEDIA
             </footer>
           </blockquote>
         </div>
@@ -604,12 +590,11 @@
           <blockquote class="flex-1 flex flex-col gap-5 min-w-0">
             <p
               class="font-serif text-lg sm:text-xl md:text-2xl italic text-ink leading-[1.15] tracking-tight font-black break-words">
-              "A rare combination of beautiful interface design and deeply robust backend systems. They build to
-              last."
+              "They successfully brought our luxury heritage jewelry brand online. The experience is premium, smooth, and performs flawlessly across both mobile and desktop."
             </p>
             <footer class="font-mono text-[10px] sm:text-xs font-bold text-ink flex items-center gap-2 mt-auto">
               <span class="w-8 h-px bg-ink shrink-0"></span>
-              PRODUCT MANAGER, GLOBAL E-COMMERCE
+              RISHABH JAIN, BANARSIDAS JEWELS
             </footer>
           </blockquote>
         </div>
@@ -622,12 +607,11 @@
           <blockquote class="flex-1 flex flex-col gap-5 min-w-0">
             <p
               class="font-serif text-lg sm:text-xl md:text-2xl italic text-ink leading-[1.15] tracking-tight font-black break-words">
-              "They moved quickly, communicated clearly, and delivered a polished product that our team could trust
-              from launch."
+              "Building real-time data feeds and interactive dashboards is hard, but KyteStudios made it look easy. They delivered a robust, scale-ready infrastructure that handles heavy traffic."
             </p>
             <footer class="font-mono text-[10px] sm:text-xs font-bold text-ink flex items-center gap-2 mt-auto">
               <span class="w-8 h-px bg-ink shrink-0"></span>
-              FOUNDER, HEALTH TECH STARTUP
+              MANVEER SINGH, BULLSROOM
             </footer>
           </blockquote>
         </div>
