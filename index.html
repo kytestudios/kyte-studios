@@ -424,52 +424,102 @@
 
   <!-- Work Section -->
   <section id="work" class="max-w-7xl mx-auto px-6 py-24">
-    <div class="flex items-end gap-4 mb-16">
-      <h2
-        class="bg-surface brutal-border shadow-brutal p-4 font-sans font-black text-4xl md:text-5xl uppercase tracking-tighter -rotate-1 inline-block">
-        Featured Work
-      </h2>
-      <span class="font-mono text-electric font-bold pb-2 hidden md:inline"></span>
+    <div class="flex items-center justify-between mb-12 sm:mb-16">
+      <div class="flex items-end gap-4">
+        <h2
+          class="bg-surface brutal-border shadow-brutal p-4 font-sans font-black text-4xl md:text-5xl uppercase tracking-tighter -rotate-1 inline-block">
+          Featured Work
+        </h2>
+      </div>
+      <div class="hidden sm:flex gap-2 flex-shrink-0">
+        <button id="prev-work"
+          class="w-8 h-8 md:w-10 md:h-10 brutal-border flex items-center justify-center bg-white text-[#0055FF] hover:bg-white/80 transition-colors interactive-element flex-shrink-0">
+          <span class="material-symbols-outlined text-sm md:text-base">arrow_back</span>
+        </button>
+        <button id="next-work"
+          class="w-8 h-8 md:w-10 md:h-10 brutal-border flex items-center justify-center bg-white text-[#0055FF] hover:bg-white/80 transition-colors interactive-element flex-shrink-0">
+          <span class="material-symbols-outlined text-sm md:text-base">arrow_forward</span>
+        </button>
+      </div>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16">
-      <!-- Project 1 -->
-      <a href="https://ehax.in" target="_blank" rel="noopener noreferrer" class="block group gsap-section">
+    <div id="work-carousel"
+      class="flex overflow-x-auto snap-x snap-mandatory pb-6 sm:pb-8 pt-2 sm:pt-4 -mx-4 sm:-mx-6 px-4 sm:px-6 gap-6 sm:gap-8 hide-scrollbar cursor-grab active:cursor-grabbing scroll-smooth">
+      <!-- Project 1: EHAX -->
+      <a href="https://ehax.in" target="_blank" rel="noopener noreferrer" 
+        class="w-[90%] sm:w-[75%] md:w-[48%] lg:w-[40%] snap-start shrink-0 flex flex-col group gsap-section">
         <div
-          class="bg-surface brutal-border shadow-brutal p-4 -rotate-1 transition-transform duration-300 group-hover:rotate-0 group-hover:-translate-y-2">
+          class="bg-surface brutal-border shadow-brutal p-4 sm:p-5 -rotate-1 transition-transform duration-300 group-hover:rotate-0 group-hover:-translate-y-2 h-full flex flex-col justify-between w-full">
           <div class="aspect-[4/3] brutal-border overflow-hidden relative mb-6">
-            <img src="./images/EhaxPage.png"
-              alt="EHAX"
-              class="w-full h-full object-cover">
+            <img src="./images/EhaxPage.png" alt="EHAX" class="w-full h-full object-cover">
           </div>
-          <div class="flex justify-between items-start">
+          <div class="flex justify-between items-start mt-auto gap-4">
             <div>
-              <h3 class="font-sans font-black text-2xl uppercase tracking-tight mb-1">EHAX</h3>
-              <p class="font-mono text-sm text-ink/70">Cybersecurity Society of DTU</p>
+              <h3 class="font-sans font-black text-xl sm:text-2xl uppercase tracking-tight mb-1">EHAX</h3>
+              <p class="font-mono text-xs sm:text-sm text-ink/70">Cybersecurity Society of DTU</p>
             </div>
-            <div class="bg-tangerine brutal-border px-3 py-1 font-mono text-xs font-bold text-ink">
+            <div class="bg-tangerine brutal-border px-3 py-1 font-mono text-[10px] sm:text-xs font-bold text-ink whitespace-nowrap">
               Top-Tier CTF Team
             </div>
           </div>
         </div>
       </a>
 
-      <!-- Project 2 -->
-      <a href="https://banarsidasjewels.com" target="_blank" rel="noopener noreferrer" class="block group gsap-section md:mt-16">
+      <!-- Project 2: Banarsidas Jewels -->
+      <a href="https://banarsidasjewels.com" target="_blank" rel="noopener noreferrer" 
+        class="w-[90%] sm:w-[75%] md:w-[48%] lg:w-[40%] snap-start shrink-0 flex flex-col group gsap-section">
         <div
-          class="bg-surface brutal-border shadow-brutal p-4 rotate-2 transition-transform duration-300 group-hover:rotate-0 group-hover:-translate-y-2">
+          class="bg-surface brutal-border shadow-brutal p-4 sm:p-5 rotate-1 transition-transform duration-300 group-hover:rotate-0 group-hover:-translate-y-2 h-full flex flex-col justify-between w-full">
           <div class="aspect-[4/3] brutal-border overflow-hidden relative mb-6">
-            <img src="./images/BanarasiDasPage.png"
-              alt="Banarsidas Jewels"
-              class="w-full h-full object-cover object-left">
+            <img src="./images/BanarasiDasPage.png" alt="Banarsidas Jewels" class="w-full h-full object-cover object-left">
           </div>
-          <div class="flex justify-between items-start">
+          <div class="flex justify-between items-start mt-auto gap-4">
             <div>
-              <h3 class="font-sans font-black text-2xl uppercase tracking-tight mb-1">Banarsidas Jewels</h3>
-              <p class="font-mono text-sm text-ink/70">Luxury Heritage E-Commerce</p>
+              <h3 class="font-sans font-black text-xl sm:text-2xl uppercase tracking-tight mb-1">Banarsidas Jewels</h3>
+              <p class="font-mono text-xs sm:text-sm text-ink/70">Luxury Heritage E-Commerce</p>
             </div>
-            <div class="bg-electric text-surface brutal-border px-3 py-1 font-mono text-xs font-bold">
+            <div class="bg-electric text-surface brutal-border px-3 py-1 font-mono text-[10px] sm:text-xs font-bold whitespace-nowrap">
               Premium Craftsmanship
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Project 3: Trust1ssues -->
+      <a href="https://trust1ssues.in" target="_blank" rel="noopener noreferrer" 
+        class="w-[90%] sm:w-[75%] md:w-[48%] lg:w-[40%] snap-start shrink-0 flex flex-col group gsap-section">
+        <div
+          class="bg-surface brutal-border shadow-brutal p-4 sm:p-5 -rotate-1 transition-transform duration-300 group-hover:rotate-0 group-hover:-translate-y-2 h-full flex flex-col justify-between w-full">
+          <div class="aspect-[4/3] brutal-border overflow-hidden relative mb-6">
+            <img src="./images/Trust1ssuesPage.png" alt="Trust1ssues" class="w-full h-full object-cover">
+          </div>
+          <div class="flex justify-between items-start mt-auto gap-4">
+            <div>
+              <h3 class="font-sans font-black text-xl sm:text-2xl uppercase tracking-tight mb-1">Trust1ssues</h3>
+              <p class="font-mono text-xs sm:text-sm text-ink/70">Student Led Cybersecurity Venture</p>
+            </div>
+            <div class="bg-[#FFE600] brutal-border px-3 py-1 font-mono text-[10px] sm:text-xs font-bold text-ink whitespace-nowrap">
+              Student-Led
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Project 4: Graphide -->
+      <a href="https://graphide.trust1ssues.in" target="_blank" rel="noopener noreferrer" 
+        class="w-[90%] sm:w-[75%] md:w-[48%] lg:w-[40%] snap-start shrink-0 flex flex-col group gsap-section">
+        <div
+          class="bg-surface brutal-border shadow-brutal p-4 sm:p-5 rotate-1 transition-transform duration-300 group-hover:rotate-0 group-hover:-translate-y-2 h-full flex flex-col justify-between w-full">
+          <div class="aspect-[4/3] brutal-border overflow-hidden relative mb-6">
+            <img src="./images/GraphidePage.png" alt="Graphide" class="w-full h-full object-cover">
+          </div>
+          <div class="flex justify-between items-start mt-auto gap-4">
+            <div>
+              <h3 class="font-sans font-black text-xl sm:text-2xl uppercase tracking-tight mb-1">Graphide</h3>
+              <p class="font-mono text-xs sm:text-sm text-ink/70">Vulnerability Assessment Engine</p>
+            </div>
+            <div class="bg-[#00FF66] brutal-border px-3 py-1 font-mono text-[10px] sm:text-xs font-bold text-ink whitespace-nowrap">
+              Team Trust1ssues
             </div>
           </div>
         </div>

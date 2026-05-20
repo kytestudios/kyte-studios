@@ -152,7 +152,7 @@ function scrollCarouselByCard(container, direction) {
     return;
   }
 
-  const cards = Array.from(container.querySelectorAll(':scope > div'));
+  const cards = Array.from(container.querySelectorAll(':scope > *'));
   if (cards.length === 0) {
     return;
   }
@@ -706,4 +706,19 @@ if (heroCard && heroVideo) {
     heroVideo.currentTime = 0;
   });
 }
+
+// Work Carousel Controls
+const workCarousel = document.getElementById('work-carousel');
+const prevWorkBtn = document.getElementById('prev-work');
+const nextWorkBtn = document.getElementById('next-work');
+
+if (workCarousel && prevWorkBtn && nextWorkBtn) {
+  prevWorkBtn.addEventListener('click', () => {
+    scrollCarouselByCard(workCarousel, -1);
+  });
+  nextWorkBtn.addEventListener('click', () => {
+    scrollCarouselByCard(workCarousel, 1);
+  });
+}
+enableMouseDragScroll(workCarousel);
 
