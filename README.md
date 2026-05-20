@@ -78,6 +78,7 @@ Our portfolio showcases a commitment to performance, security, and aesthetic exc
 *   **🎓 Trust1ssues ([trust1ssues.xyz](https://trust1ssues.xyz)):** Developed the interface and portal for the student-led cybersecurity venture. Clean layout, dark mode colors, and high security.
 *   **🔎 Graphide ([graphide.xyz](https://graphide.xyz)):** A cutting-edge vulnerability assessment engine developed in collaboration with Team Trust1ssues. Interactive threat dashboards and live reports.
 *   **📈 Bullsroom ([bullsroom-deploy.netlify.app](https://bullsroom-deploy.netlify.app/)):** A comprehensive online trading community and learning platform. Hardened UI design, event scheduling, and real-time community engagement setup.
+*   **👨‍💼 Rochit Singh ([rochitsingh.com](https://rochitsingh.com/)):** A premium research, valuation, and advisory platform for stock market investors. Integrated educational courses, custom valuation sheets, and a secure advisory portal.
 
 ---
 
