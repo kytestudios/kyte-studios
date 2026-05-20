@@ -22,7 +22,7 @@ body {
   input,
   textarea,
   select {
-    cursor: url("data:image/svg+xml;charset=utf-8,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='%23FF5522' stroke='%23111111' stroke-width='2.5' stroke-linejoin='round' xmlns='http://www.w3.org/2000/svg'%3E%3Cg transform='scale(1.15) translate(0, 0)'%3E%3Cpath d='M2 2L24 10L14 14L10 24Z'/%3E%3C/g%3E%3C/svg%3E") 2 2, pointer !important;
+    cursor: url("./images/cursor-pointer.png") 10 6, pointer !important;
   }
 }
 
@@ -42,6 +42,19 @@ body {
 .interactive-element:active {
   transform: translate(6px, 6px);
   box-shadow: 0px 0px 0px 0px #111111;
+}
+
+/* Fix CSS transition interpolation glitch with Tailwind CSS custom box-shadow variables */
+.shadow-brutal.interactive-element {
+  box-shadow: 6px 6px 0px 0px #111111 !important;
+}
+
+.shadow-brutal.interactive-element:hover {
+  box-shadow: 4px 4px 0px 0px #111111 !important;
+}
+
+.shadow-brutal.interactive-element:active {
+  box-shadow: 0px 0px 0px 0px #111111 !important;
 }
 
 .grid-flow {
